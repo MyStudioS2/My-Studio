@@ -1,52 +1,56 @@
-CREATE DATABASE IF NOT EXISTS mystudio;
+DROP DATABASE IF EXISTS mystudio;
+CREATE DATABASE mystudio;
+USE mystudio;
 
-CREATE TABLE STYLES {
-    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
-    pseudo VARCHAR(12);
-}
+CREATE TABLE STYLES
+    (id INT(11) NOT NULL AUTO_INCREMENT,
+    pseudo VARCHAR(12),
+    PRIMARY KEY(id) );
 
-CREATE TABLE ARTISTS {
-    id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY;
+CREATE TABLE ARTISTS
+    (id INT(11) NOT NULL AUTO_INCREMENT,
     pseudo varchar(12),
-    style ENUM('amateur','pro')
-}
+    style ENUM('amateur','pro'),
+    PRIMARY KEY(id) );
 
-CREATE TABLE ALBUMS {
-    id INT(11)NOT NULL AUTO_INCREMENT PRIMARY KEY;
-    album_name varchar(45)
+CREATE TABLE ALBUMS
+    (id INT(11)NOT NULL AUTO_INCREMENT,
+    album_name varchar(45),
     album_cover BLOB,
-}
+    PRIMARY KEY(id) );
 
-CREATE TABLE USERS {
-    id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY;
+
+CREATE TABLE USERS
+    (id INT(11) NOT NULL AUTO_INCREMENT,
     pseudo varchar(12),
     pw CHAR(41),
-    class ENUM('artiste','utilisateur')
-}
+    class ENUM('artiste','utilisateur'),
+    PRIMARY KEY(id) );
 
-CREATE TABLE MUSICS {
-    id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY;
+
+CREATE TABLE MUSICS
+    (id INT(11) AUTO_INCREMENT NOT NULL,
     title VARCHAR(45),
-    featuring VARCHAR(45);
-    nb_listening INT(11);
-    lyrics BLOB;
-    translation BLOB;
-    music BLOB;
-    style SMALLINT;
-    album INT(11);
-    artist INT(11);
-}
+    featuring VARCHAR(45),
+    nb_listening INT(11),
+    lyrics BLOB,
+    translation BLOB,
+    music BLOB,
+    style SMALLINT,
+    album INT(11),
+    artist INT(11),
+    PRIMARY KEY(id) );
 
-CREATE TABLE PLAYLISTS {
-    id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY;
-    play_title VARCHAR(45);
-    birthdate DATE;
-    users INT(11);
+CREATE TABLE PLAYLISTS
+    (id int(11) AUTO_INCREMENT NOT NULL,
+    play_title VARCHAR(45),
+    birthdate DATE,
+    users INT(11),
+    PRIMARY KEY(id) );
 
-}
 
-CREATE TABLE REGISTERED_IN {
-    id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY;
-    music INT(11);
-    playlist INT(11);
-}
+CREATE TABLE REGISTERED_IN
+    (id INT(11) AUTO_INCREMENT NOT NULL,
+    music INT(11),
+    playlist INT(11),
+    PRIMARY KEY(id) );
