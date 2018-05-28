@@ -2,7 +2,7 @@
 <?php session_start(); ?>
 <head>
 
-    <title>LE drive d'Ali-mentation</title>
+    <title>Mystudio</title>
     <meta content='http-equiv' content-type='text/html; charset = UTF-8'/>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
     	<style>
