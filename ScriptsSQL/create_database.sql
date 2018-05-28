@@ -1,56 +1,84 @@
-DROP DATABASE IF EXISTS mystudio;
-CREATE DATABASE mystudio;
+CREATE DATABASE IF NOT EXISTS mystudio;
+
 USE mystudio;
 
-CREATE TABLE STYLES
-    (id INT(11) NOT NULL AUTO_INCREMENT,
-    pseudo VARCHAR(12),
-    PRIMARY KEY(id) );
+CREATE TABLE IF NOT EXISTS STYLES {
+    id INT(11) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    style_name VARCHAR(12) NOT NULL,
+}
 
-CREATE TABLE ARTISTS
-    (id INT(11) NOT NULL AUTO_INCREMENT,
-    pseudo varchar(12),
-    style ENUM('amateur','pro'),
-    PRIMARY KEY(id) );
+CREATE TABLE IF NOT EXISTS ARTISTS {
+    id INT(11) AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
+    artist_name varchar(12) NOT NULL,
+    cat ENUM('amateur','pro') NOT NULL,
+}
 
-CREATE TABLE ALBUMS
-    (id INT(11)NOT NULL AUTO_INCREMENT,
-    album_name varchar(45),
+CREATE TABLE IF NOT EXISTS ALBUMS {
+    id INT(11)NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    album_name varchar(45) NOT NULL,
     album_cover BLOB,
-    PRIMARY KEY(id) );
+	release_date YEAR,
+}
 
+CREATE TABLE IF NOT EXISTS USERS {
+    id INT(11) AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
+    username varchar(12) NOT NULL,
+    pw CHAR(41) NOT NULL,
+    cat ENUM('artiste','utilisateur') NOT NULL,
+}
 
-CREATE TABLE USERS
-    (id INT(11) NOT NULL AUTO_INCREMENT,
-    pseudo varchar(12),
-    pw CHAR(41),
-    class ENUM('artiste','utilisateur'),
-    PRIMARY KEY(id) );
-
-
-CREATE TABLE MUSICS
-    (id INT(11) AUTO_INCREMENT NOT NULL,
-    title VARCHAR(45),
-    featuring VARCHAR(45),
-    nb_listening INT(11),
+CREATE TABLE IF NOT EXISTS MUSICS {
+    id INT(11) AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
+    title VARCHAR(45) NOT NULL,
+    featuring VARCHAR(45) NOT NULL,
+    nb_listening INT(11) NULL,
     lyrics BLOB,
-    translation BLOB,
+    trans BLOB,
     music BLOB,
-    style SMALLINT,
+    style SMALLINT NOT NULL,
     album INT(11),
     artist INT(11),
-    PRIMARY KEY(id) );
+	CONSTRAINT fk_album_has_MUSICS
+		FOREIGN KEY (album)
+		REFERENCES mystudio.ALBUMS (album_name)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_artist_has_MUSICS
+		FOREIGN KEY (artist)
+		REFERENCES mystudio.ARTISTS (artist_name)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_style_has_MUSICS
+		FOREIGN KEY (style)
+		REFERENCES mystudio.STYLES (style_name)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+}
 
-CREATE TABLE PLAYLISTS
-    (id int(11) AUTO_INCREMENT NOT NULL,
+CREATE TABLE IF NOT EXISTS PLAYLISTS {
+    id int(11) AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
     play_title VARCHAR(45),
     birthdate DATE,
     users INT(11),
-    PRIMARY KEY(id) );
+CONSTRAINT fk_users_has_GENRES_PLAYLIST
+		FOREIGN KEY (users)
+		REFERENCES mystudio.USERS (username)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+}
 
-
-CREATE TABLE REGISTERED_IN
-    (id INT(11) AUTO_INCREMENT NOT NULL,
+CREATE TABLE IF NOT EXISTS REGISTERED_IN {
+    id INT(11) AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
     music INT(11),
     playlist INT(11),
-    PRIMARY KEY(id) );
+	CONSTRAINT fk_music_has_REGISTERED_IN
+		FOREIGN KEY (music)
+		REFERENCES mystudio.MUSICS (title)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT fk_playlist_has_REGISTERED_IN
+		FOREIGN KEY (playlist)
+		REFERENCES mystudio.PLAYLISTS (playlist_name)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+}
