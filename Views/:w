@@ -19,7 +19,7 @@ echo"<img src='../Views/LOGO.jpg'width='100' height='90'>
         <input type='text' placeholder='Mot de passe**' name='password' value='".$_POST['password']."'>
         <br/>
         <table><tr><td>M'inscrire en tant que:<td><td><input type='radio' name='type' value='artiste'checked>artiste</td><br>
-        <td><input type='radio' name='type' value='auditeur'>auditeur<br></td></tr></table>
+        <td><input type='radio' name='type' value='utilisateur'>utilisateur<br></td></tr></table>
         <input type='submit' name='send' value='Envoyer'>
         </form><br>
         <a href='login_page.php'>Retour à la page de connexion</a>
@@ -41,14 +41,6 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
 <html>
 <head>
        <title>Mettre des commentaires</title>
-	 <style>
-                        body {
-                        Background-Color: DimGray;
-                        font-family: 'Josefin Sans',sans serif;
-                        font-size : 16px;
-                        }
-        </style>
-
 </head>
 <body>
 </body>

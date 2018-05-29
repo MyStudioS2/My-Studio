@@ -2,8 +2,11 @@
 session_start();
 require('../Controllers/login.php');
 if(conect($_POST['pseudo'], $_POST['password']) == 0) {
-echo"<center><h3>Mystudio</h3></center><br><center>Bienvenue sur Mystudio
+        header("refresh:6;url=membre.php");
+echo"<img src='../Views/LOGO.jpg'width='100' height='90'>
+<center><h3>Mystudio</h3></center><br><center>Bienvenue sur Mystudio
 	".$_SESSION['ID']."<br>votre connexion en tant qu'".$_SESSION['type']." est un succès</center>";
+
 
 } else {
 echo"<img src='../Views/LOGO.jpg'width='100' height='90'><center><h3>Mystudio</h3></center><br><center>Bienvenue sur Mystudio</center></p>
@@ -13,7 +16,7 @@ echo"<img src='../Views/LOGO.jpg'width='100' height='90'><center><h3>Mystudio</h
 	<input type='text' placeholder='Mot de passe**' name='password' value='".$_POST['password']."'>
 	<br/>
 	<table><tr><td>Je suis un :<td><td><input type='radio' name='type' value='artiste'checked>artiste</td><br>
-	<td><input type='radio' name='type' value='utilisateur'>utilisateur<br></td></tr></table>
+	<td><input type='radio' name='type' value='auditeur'>auditeur<br></td></tr></table>
 	<input type='submit' name='send' value='Envoyer'>
         </form><br>
 	<a href='registration_page.php'>Créer un compte</a>
