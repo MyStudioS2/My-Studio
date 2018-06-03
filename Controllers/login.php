@@ -11,7 +11,9 @@ function conect ($POST) {
 			$check++;
 		}
 	}
-	if($check != 3) {
+	if(!isset($_POST['pseudo']) || !isset($_POST['password'])) {
+                return 3;
+	}else if($check != 3) {
 		return 1;
 	} else {
 	$donnees = search_pseudo($_POST['pseudo']);
@@ -20,7 +22,7 @@ function conect ($POST) {
 		$_SESSION['type'] = $_POST['type'];
 		return 0;
 	}else{
-		return 1;
+		return 2;
 	}
 	}
 }
