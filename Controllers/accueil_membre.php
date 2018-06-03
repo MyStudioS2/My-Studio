@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php include('navbar.php');?>
+    <?php inclure('session_check.php');include('navbar.php');?>
     <h1>Test</h1>
 </body>
 
