@@ -3,6 +3,7 @@ session_start();
 function conect ($POST) {
 
 	require_once('../Models/search_pseudo.php');
+	require_once('decryptage.php');
 
 	$list = array("pseudo", "password", "type");
 	$check = 0;
@@ -17,9 +18,12 @@ function conect ($POST) {
 		return 1;
 	} else {
 	$donnees = search_pseudo($_POST['pseudo']);
-	if($donnees['username'] == $_POST['pseudo'] && $donnees['pw'] == $_POST['password'] && $donnees['category'] == $_POST['type'])  {
-		$_SESSION['ID'] = $_POST['pseudo'];
-		$_SESSION['type'] = $_POST['type'];
+	$mot = $donnees['pw'];
+	$word = decryptage($mot);
+	if($donnees['username'] == $_POST['pseudo'] && $word == $_POST['password'] && $donnees['category'] == $_POST['type'])  {
+		$_SESSION['pseudo'] = $_POST['pseudo'];
+		//$_SESSION['id'] = $donnees['id_user'];
+		//$_SESSION['type'] = $_POST['type'];
 		return 0;
 	}else{
 		return 2;

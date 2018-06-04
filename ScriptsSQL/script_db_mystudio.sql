@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mystudio`.`USERS` (
   `id_user` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `username` VARCHAR(15) NOT NULL COMMENT '',
-  `pw` VARCHAR(15) NOT NULL COMMENT '',
+  `pw` VARCHAR(25) NOT NULL COMMENT '',
   `category` ENUM('artiste', 'auditeur') NOT NULL COMMENT '',
   PRIMARY KEY (`id_user`)  COMMENT '')
 ENGINE = InnoDB;

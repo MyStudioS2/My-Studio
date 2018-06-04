@@ -1,18 +1,17 @@
 <?php
 require('../Controllers/registration.php');
-
 if(inscription($_POST['pseudo'], $_POST['password']) == 0) {
-
-	header("refresh:6;url=login_page.php");
+header("refresh:6;url=login_page.php");
 echo"<center><h3>Mystudio</h3></center><br><center>L'inscription est une réussite<br>
-<img src='../Views/LOGO.jpg'width='200' height='150'></center><br>
+</center><br>
 <center>Nom : ".$_POST['pseudo']."<br>Mot de passe : ".$_POST['password']."<br>Compte : ".$_POST['type']."</center>";
-
 } else {
-
 echo"<img src='../Views/LOGO.jpg'width='100' height='90'>
+<center><br><br><br><h1>S'inscrire sur Mystudio</h1></center><p class='txt' >MyStudio est une plateforme de diffusion de<br>musique de tous genres en streaming où artistes<br>et auditeurs se croisent.<br>Elle est destinée aux auditeurs de langue française<br>qui aiment avoir toutes les informations disponibles<br>sur leurs artistes favoris, paroles, biographies, et <br>collaborateurs fréquents.<br>
+Les utilisateurs doivent s’inscrire pour accéder au site.<br> Les auditeurs peuvent écouter et apprécier les morceaux<br>de leurs artistes préférés, mais aussi profiter des paroles<br>qui sont accompagnées des traductions.<br>
+    Lors de la création d’un compte utilisateur, il est possible<br>de s’enregistrer en tant qu’artiste et ainsi de diffuser ses<br>créations ou de créer un compte auditeur qui permet<br>simplement d’écouter.
+Le site propose également des<br>suggestions d’écoutes en fonction des goûts et des<br> précédentes visites du client.</p>
 
-<center><br><br><br><h1>S'inscrire sur Mystudio</h1></center><p><img src='My.PNG' width='400' height='340' class='cache'>
         <form class='form' action='' method='POST'>
         <input type='text' class='champ' id='pseudo' placeholder='Pseudo**' name='pseudo' value='".$_POST['pseudo']."'>
         <br/>
@@ -33,7 +32,7 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
 	echo "<center>Les champs ont mal été rempli</center>";
 
 } else if(inscription($_POST['pseudo'], $_POST['password']) == 3) {
-	echo "<center>Votre Pseudo doit contenir un minimum de 5 caractere</center>";
+	echo "<center>Votre Pseudo doit contenir un minimum de 5 caractere et le mot de passe un maximum de 10 caractère</center>";
 } else if(inscription($_POST['pseudo'], $_POST['password']) == 4) {
 	echo "<center>Votre Pseudo existe déja</center>";
 }
@@ -58,7 +57,7 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
         .href {
         margin-left:45%;
         }
-        .cache {
+        .txt {
         float: right;
         }
         .verif {
@@ -143,14 +142,14 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
 <a class="horizontale active" href="">MyStudio</a>
 </li>
 <li class="horizontale">
-<img src='../Views/LOGO.jpg'width='100' height='90'>
+<img src='../Views/images/LOGO.jpg'width='100' height='90'>
 </li>
 <li style="float:right">
 <a class="horizontale1" href="">MyStudio, C'est quoi ?<!--Image--></a>
 </li>
 </ul>
 
-<script src="../../test/jquery.js"></script>
+<script src="jquery.js"></script>
 <script src="style.js"></script>
 
 </head>

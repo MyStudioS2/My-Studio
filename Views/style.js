@@ -10,13 +10,13 @@ jQuery(document).ready(function($){
                 }
         });
 
-        $('.cache').hide();
+        $('.txt').hide();
         $('.horizontale1').on({
                 mouseenter : function(){
-                        $('.cache').show();
+                        $('.txt').show();
                 },
                 mouseleave : function(){
-                        $('.cache').hide();
+                        $('.txt').hide();
                 }
         });
 
@@ -39,5 +39,33 @@ jQuery(document).ready(function($){
 	     }
 	});
 
+	$('.verif').hide();
+	
+	$('#pseudo').keyup(function(){
+	   if($(this).val().length != 0 && $('#mdp').val().length != 0) {
+		   $('.verif').show();
+		}
+	});
+	$('#mdp').keyup(function(){
+	   if($(this).val().length != 0 && $('#pseudo').val().length != 0) {
+		   $('.verif').show();
+		}
+	});
+/*
+	function verifier(champ){
+		if(champ.val() != ""){ // champ pas  vide
+			$('.verif').show();
+		}
+	}
+	verifier($pseudo);
+        //verifier($mdp);
+
+	$('.verif').hide();
+	function verifier(pseudo, mdp){
+		if(pseudo.val() != "" && mdp.val() != ""){ // champ pas  vide
+			$('.verif').show();
+		}
+	}
+*/
 });
 
