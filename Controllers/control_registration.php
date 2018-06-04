@@ -1,6 +1,5 @@
 <?php
 
-
 function inscription () { 
 
 require_once('modele_insert.php');
