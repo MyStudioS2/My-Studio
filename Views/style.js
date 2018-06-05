@@ -26,7 +26,7 @@ jQuery(document).ready(function($){
         $champ = $('.champ');
 
 	$champ.keyup(function(){
-		if($(this).val().length === 0){ // si la chaîne de caractères est inférieure à 5
+		if($(this).val().length === 0 || $(this).val().length > 10){ // si la chaîne de caractères est inférieure à 5
 		$(this).css({ // on rend le champ rouge
 		    borderColor : 'red',
 		    color : 'red'
