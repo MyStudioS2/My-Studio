@@ -30,7 +30,7 @@
 		}
 		else
 		{
-			header("refresh:6;url=navigation.html");
+			//header("refresh:6;url=navigation.html");
 			echo"<center><h3>MyStudio</h3></center><br><center>Changement de nom ?
 			<br>Votre nouveau nom est maintenant ".$_SESSION['ID'].".";
 		}
