@@ -1,33 +1,42 @@
 <?php
-	function changename($truc)
+	function changename($POST)
 	{
 		session_start();
 		require_once('../Models/search_pseudo.php');
 		require_once('../Models/update.php');
-		if(!isset($truc))
+		if(!isset($SESSION))
+		{
+			header("location: http://localhost/My-Studio/Views/registration_page.php");
+		}
+		else if(!isset($_POST['new_pseudo']) || !isset($_POST['conf_pw']))
 		{
 			return 1;
 		}
-		else if(empty($truc))
+		else if($_POST['conf_pw']!=$_SESSION['pw'])
 		{
 			return 2;
 		}
-		else if(strlen($truc) <= 5)
+		else if(empty($_POST['new_pseudo']))
 		{
 			return 3;
 		}
+		else if(strlen($_POST['new_pseudo'])<=5)
+		{
+			return 4;
+		}
 		else
 		{
-			$donnees=search_pseudo($truc);
+			$donnees=search_pseudo($POST);
 			if(!empty($donnees['username']))
 			{
-				return 4;
+				return 5;
 			}
 			else
 			{
-				update($truc, $_SESSION['ID']);
-				$_SESSION['ID']=$truc;
-				return 0;
+				$_POST['pseudo']=$_SESSION['ID'];
+				update($POST]);
+				$_SESSION['ID']=$_POST['new_pseudo'];
+				return 6;
 			}
 		}
 	}
