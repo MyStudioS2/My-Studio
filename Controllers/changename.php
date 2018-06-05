@@ -1,38 +1,35 @@
 <?php
-	session_start();
-	$_SESSION['ID']="Clotilde";
 	function changename($POST)
 	{
+		session_start();
 		require_once('../Models/search_pseudo.php');
 		require_once('../Models/update.php');
-	
-		if(!isset($_POST['pseudo2']))
+		if(!isset($_POST['pseudo']))
 		{
 			return 1;
 		}
-		else if(empty($_POST['pseudo2']))
+		else if(empty($_POST['pseudo']))
 		{
 			return 2;
 		}
-		else if(strlen($_POST['pseudo2']) <= 5)
+		else if(strlen($_POST['pseudo']) <= 5)
 		{
 			return 3;
 		}
 		else
 		{
-			$donnees=search_pseudo($_POST['pseudo2']);
+			$donnees=search_pseudo($_POST['pseudo']);
 			if(!empty($donnees['username']))
 			{
 				return 4;
 			}
 			else
 			{
-				$_POST['pseudo']=$_SESSION['pseudo2'];
-				update($_POST['pseudo2'], $_SESSION['ID']);
+				update($_POST['pseudo'], $_SESSION['ID']);
+				$_SESSION['ID']=$_GET['pseudo'];
 				return 0;
 			}
 		}
-		header("location: changename_page.php");
+		header("location: ../Views/changename_page2.php");
 	}
-
 ?>
