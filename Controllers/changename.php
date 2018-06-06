@@ -1,13 +1,9 @@
 <?php
 	function changename($POST)
 	{
-		session_start();
+		require("../Controllers/session_check.php");
 		require_once('../Models/search_pseudo.php');
 		require_once('../Models/update.php');
-		if(!isset($SESSION))
-		{
-			header("location: http://localhost/My-Studio/Views/registration_page.php");
-		}
 		else if(!isset($_POST['new_pseudo']) || !isset($_POST['conf_pw']))
 		{
 			return 1;
