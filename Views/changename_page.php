@@ -1,5 +1,8 @@
 <?php
+	$_SESSION['name']="Clotilde";
 	require("../Controllers/session_check.php");
+	session_check($_SESSION['name']);
+	$_SESSION['pw']="chocho";
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -9,15 +12,18 @@
 
 <body>
 	<?php
-		require('../Controllers/changename.php');
-		echo"<center><br><br><br><br><br><br><br><h1>Vous voulez changer de pseudo, ".$_SESSION['ID']." ?</h1>
-		<form action='../Views/changename_page2.php' method='POST'>
-		<input type='text' placeholder='Pseudo' name='new_pseudo' value=''>
-		<input type='hidden' placeholder='Password' name='conf_pw' value=''>
-		<br>
-		<input type='submit' name='send' value='Envoyer'>
+		echo"<center><br><br><br><br><br><br><br><h1>Vous voulez changer de pseudo, ".$_SESSION['name']." ?</h1>
+		<form action='../Controllers/changename.php' method='POST'>
+		<input type='text' placeholder='Pseudo' name='new_pseudo'><br>
+		<input type='password' placeholder='Password' name='conf_pw'><br>";
+		if(isset($_SESSION['erreur']) && $_SESSION['erreur']!="")
+		{
+			echo $_SESSION['erreur'];
+			$_SESSION['erreur']="";
+		}
+		echo "<br><button>Envoyer</button>
 		</form>
-		Donnez-nous votre nouveau pseudo pour faire le changement.<br></center>";
+		<br>Donnez-nous votre nouveau pseudo pour faire le changement.<br></center>";
 	?>
 </body>
 </html>
