@@ -1,6 +1,7 @@
 <?php
-	require("../Controllers/session_check.php");
-	session_check($_SESSION['name']);
+	session_start();
+	/*require("../Controllers/session_check.php");
+	session_check($_SESSION['pseudo']);*/
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -10,8 +11,8 @@
 
 <body>
 	<?php
-		echo"<center><h3>MyStudio</h3><br>Changement de nom ?</center>";
-		echo"<center><br>Votre nouveau nom est maintenant ".$_SESSION['name'].".</center>";
+		echo"<center><h1>Changement de nom ?</h1><br>";
+		echo"<center>Votre nouveau nom est maintenant ".$_SESSION['pseudo'].".</center>";
 		header("refresh:6;localisation: navbar.php");
 	?>
 </body>
