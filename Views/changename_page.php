@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	require("../Controllers/session_check.php");
-	session_check($_SESSION['pseudo']);
+	/*require("../Controllers/session_check.php");
+	session_check($_SESSION['pseudo']);*/
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -15,7 +15,7 @@
 		<form action='../Controllers/changename.php' method='POST'>
 		<input type='text' placeholder='Pseudo' name='new_pseudo'><br>
 		<input type='password' placeholder='Password' name='conf_pw'><br><br>";
-		if(isset($_SESSION['erreur']) && $_SESSION['erreur']!="")
+		if(isset($_SESSION['erreur']) && empty($_SESSION['erreur'])==false)
 		{
 			echo $_SESSION['erreur'];
 			$_SESSION['erreur']="";
