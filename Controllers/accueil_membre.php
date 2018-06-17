@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include('session_check.php');include('../Views/navbar.php');?>
+    <?php include('./session_check.php');include('../Views/navbar.php');?>
     <h1>Test</h1>
 </body>
 

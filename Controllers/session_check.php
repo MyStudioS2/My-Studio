@@ -1,8 +1,7 @@
 <?php
-    function session_check($SESSION){
-        if(!isset($_SESSION['name'])){
-            header('refresh: 10;location: register.php');
+        if(!isset($_SESSION['ID'])){
+            echo '<center>Redirection</center>';
+            header("refresh:3;url=../views/login_page.php");
             die();
         } 
-    }
 ?>
