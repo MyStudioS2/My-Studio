@@ -1,7 +1,7 @@
 <?php
-	function update($POST, $SESSION)
+	function update($a, $b, $c)
 	{
-		$bdd = new PDO('mysql:host=localhost;dbname=mystudio;charset=utf8', 'root', 'isma');
-		$req = $bdd->query('UPDATE USERS set username="'.$_POST['pseudo'].'" WHERE username="'.$_SESSION['pseudo'].'"');
+		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=utf8', 'root', 'isma', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$reponse=$bdd->query('UPDATE USERS SET '.$a.'="'.$b.'" WHERE username="'.$c.'"');
 	}
 ?>
