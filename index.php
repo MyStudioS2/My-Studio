@@ -1,67 +1,67 @@
 
 <?php
 session_start();
-require_once("./controllers/function.php");
+require_once("./Controllers/function.php");
 set_time_zone("Europe/Amsterdam");
 if(isset($_GET['page']))
   switch($_GET['page']):
     case 'register':
-        include './views/html_top.html';
-        include './views/navbar.php';
-        include './controllers/registration_page.php';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
+        include './Controllers/registration_page.php';
         break;
     case 'login';
-        include './views/html_top.html';
-        include './views/navbar.php';
-        include './controllers/login_page.php';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
+        include './Controllers/login_page.php';
         break;
     case 'logout';
-        include './controllers/logout.php';
+        include './Controllers/logout.php';
         break;
     case 'accueil_membres';
-        include './views/html_top.html';
-        include './views/navbar.php';
-        include './controllers/appointment.php';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
+        include './Controllers/accueil_membres.php';
         break;
     case 'parcourir';
-        include './views/html_top.html';
-        include './views/navbar.php';
-        include './controllers/vet.php';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
+        include './Controllers/show.php';
         break;
     case 'nouveautes';
-        include './views/html_top.html';;
-        include './views/navbar.php';
-        include './controllers/new_appointment.php';
+        include './Views/html_top.html';;
+        include './Views/navbar.php';
+        include './Controllers/trending.php';
         break;
     case 'favoris';
-        include './views/html_top.html';
-        include './views/navbar.php';
-        include './controllers/dispo.php';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
+        include './Controllers/favorites.php';
         break;
     case 'playlists';
-        include './views/html_top.html';
-        include './views/navbar.php';
-        include './controllers/infos.php';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
+        include './Controllers/playlists.php';
         break;
     case 'settings';
         switch($_SESSION['type']):
             case 'artist':
-                include './views/html_top.html';
-                include './views/navbar.php';
-                include './controllers/artist_settings.php';
+                include './Views/html_top.html';
+                include './Views/navbar.php';
+                include './Controllers/artist_settings.php';
                 break;
             case 'auditor':
-                include './views/html_top.html';
-                include './views/navbar.php';
-                include './controllers/auditor_settings.php';
+                include './Views/html_top.html';
+                include './Views/navbar.php';
+                include './Controllers/auditor_settings.php';
                 break;
     default:
         include './error/404/404.php';
   endswitch;
 else {
-    include './views/html_top.html';
-    include './views/navbar.php';
-    include './controllers/home.php';
+    include './Views/html_top.html';
+    include './Views/navbar.php';
+    include './Controllers/home.php';
 }
-include "./views/html_bottom.php";
+include "./Views/html_bottom.php";
 ?>
