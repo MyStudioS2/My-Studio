@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require("../Controllers/session_check.php");
-	session_check($_SESSION['name']);
+	session_check($_SESSION['pseudo']);
 	require('../Models/search.php');
 	require('../Models/update.php');
 	$a=1;

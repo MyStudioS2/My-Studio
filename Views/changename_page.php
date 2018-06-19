@@ -26,7 +26,10 @@
 		}
 		echo "<br><button>Envoyer</button>
 		</form>
-		<br>Donnez-nous votre nouveau pseudo pour faire le changement.<br></center>";
+		<br>Donnez-nous votre nouveau pseudo pour faire le changement.<br><br>
+		<form action='account_page.php' method='POST'>
+		<button>Retour</button>
+		</form></center>";
 	?>
 </body>
 </html>
