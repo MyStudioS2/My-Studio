@@ -1,11 +1,11 @@
 
 <?php
 session_start();
-require_once("./Controllers/function.php");
+/** require_once("./Controllers/function.php"); */
 set_time_zone("Europe/Amsterdam");
 if(isset($_GET['page']))
   switch($_GET['page']):
-    case 'register':
+    case 'register';
         include './Views/html_top.html';
         include './Views/navbar.php';
         include './Controllers/registration_page.php';
@@ -44,17 +44,26 @@ if(isset($_GET['page']))
         include './Controllers/playlists.php';
         break;
     case 'settings';
+        if(isset($_SESSION['type']))
         switch($_SESSION['type']):
-            case 'artist':
+            case 'artist';
                 include './Views/html_top.html';
                 include './Views/navbar.php';
                 include './Controllers/artist_settings.php';
                 break;
-            case 'auditor':
+            case 'auditor';
                 include './Views/html_top.html';
                 include './Views/navbar.php';
                 include './Controllers/auditor_settings.php';
                 break;
+            default:
+                include './error/404/404.php';
+            endswitch;
+            else {
+                include './Views/html_top.html';
+                include './Views/navbar.php';
+                include './Controllers/home.php';
+            }
     default:
         include './error/404/404.php';
   endswitch;
