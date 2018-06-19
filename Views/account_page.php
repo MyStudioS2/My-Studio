@@ -1,9 +1,7 @@
 <?php
 	session_start();
-	$_SESSION['pseudo']="Clotilde";
-	$_SESSION['pw']="chocho";
-	/*require("../Controllers/session_check.php");
-	session_check($_SESSION['pseudo']);*/
+	require("../Controllers/session_check.php");
+	session_check($_SESSION['pseudo']);
 ?>
 <!DOCTYPE HTML>
 <html>

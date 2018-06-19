@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	/*require("../Controllers/session_check.php");
-	session_check($_SESSION['pseudo']);*/
+	require("../Controllers/session_check.php");
+	session_check($_SESSION['pseudo']);
 ?>
 <!DOCTYPE HTML>
 <html>
