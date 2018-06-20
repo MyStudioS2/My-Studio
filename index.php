@@ -2,7 +2,7 @@
 <?php
 session_start();
 /** require_once("./Controllers/function.php"); */
-set_time_zone("Europe/Amsterdam");
+
 if(isset($_GET['page']))
   switch($_GET['page']):
     case 'register';
