@@ -2,8 +2,7 @@
 	session_start();
 	require("../Controllers/session_check.php");
 	session_check($_SESSION['pseudo']);
-	require('../Models/search.php');
-	require('../Models/update.php');
+	require('../Models/parameter_account.php');
 	$a=1;
 	if(empty($_POST['conf_pw']) || empty($_POST['new_pseudo']))
 	{
@@ -12,7 +11,10 @@
 	}
 	if($a==1)
 	{
-		if($_POST['conf_pw']!=$_SESSION['pw'])
+		$data['id']=$_SESSION['id'];
+		$data['pw']=$_POST['conf_pw'];
+		$b=search_pw($data);
+		if($b==0)
 		{
 			$a=0;
 			$_SESSION['erreur']="<center>Mot de passe incorrect. Veuillez réessayer.</center>";
@@ -24,8 +26,8 @@
 		}
 		else
 		{
-			//problème
-			$b=search($_POST['new_pseudo']);
+			$data['pseudo']=$_POST['new_pseudo'];
+			$b=search_pseudo($data);
 			if($b==1)
 			{		
 				$a=0;
@@ -33,13 +35,13 @@
 			}
 		}
 	}
-	if($a!=1)
+	if($a==0)
 	{
 		header("location: ../Views/changename_page.php");
 	}
 	else
 	{
-		update('username', $_POST['new_pseudo'], $_SESSION['pseudo']);
+		update($data);
 		$_SESSION['pseudo']=$_POST['new_pseudo'];
 		$_SESSION['erreur']="";
 		header("location: ../Views/changename_page2.php");
