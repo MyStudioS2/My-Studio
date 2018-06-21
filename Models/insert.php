@@ -1,15 +1,24 @@
 <?php
 function insert ($datas) {
 
-	$bdd = new PDO('mysql:host=localhost;dbname=mystudio;charset=utf8', 'root', 'isma');
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=mystudio;charset=utf8', 'root', 'isma', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	}
+		catch(Exception $e)
+	{
+		die('Erreur : '.$e->getMessage());
+	}
+	//echo $datas[0];
+	//echo $datas[1];
+	//echo $datas[2];
 
-	$req = $bdd->prepare('INSERT INTO USERS(id_user, username, pw, category) VALUES(:id_user, :username, :pw, :category)');
+	$req = $bdd->prepare('INSERT INTO USERS(id, pseudo, pw, class) VALUES(:id, :pseudo, :pw, :class)');
                 $req->execute(array(
-			'id_user' => NULL,
-                        'username' => $datas[0],
+			'id' => NULL,
+                        'pseudo' => $datas[0],
                         'pw' => $datas[2],
-			//'key' => $datas[3],
-                        'category' => $datas[1],
+                        'class' => $datas[1]
 			));
 }
 ?>

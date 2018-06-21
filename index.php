@@ -1,27 +1,27 @@
-
 <?php
 session_start();
-/** require_once("./Controllers/function.php"); */
-
-if(isset($_GET['page']))
+//require_once("./Controllers/function.php"); */
+if(isset($_GET['page'])) {
   switch($_GET['page']):
     case 'register';
-        include './Views/html_top.html';
-        include './Views/navbar.php';
-        include './Controllers/registration_page.php';
+        include 'Views/registration_page.php';
         break;
     case 'login';
-        include './Views/html_top.html';
-        include './Views/navbar.php';
-        include './Controllers/login_page.php';
+        include 'Views/login_page.php';
         break;
     case 'logout';
-        include './Controllers/logout.php';
+        include 'Controllers/logout.php';
+        include 'Views/login_page.php';
         break;
     case 'accueil_membres';
-        include './Views/html_top.html';
-        include './Views/navbar.php';
-        include './Controllers/accueil_membres.php';
+        include 'Controllers/session_check.php';
+	if(session_set($_SESSION['id']) == 0) {
+        include 'Views/login_page.php';
+	}else{
+        include 'Views/html_top.html';
+        include 'Views/navbar.php';
+        include 'Controllers/accueil_membres.php';
+	}
         break;
     case 'parcourir';
         include './Views/html_top.html';
@@ -67,10 +67,10 @@ if(isset($_GET['page']))
     default:
         include './error/404/404.php';
   endswitch;
-else {
-    include './Views/html_top.html';
-    include './Views/navbar.php';
-    include './Controllers/home.php';
+} else {
+    include "../My-Studio/Views/html_top.html";
+    //include './Views/navbar.php';
+    //include './Controllers/home.php';
 }
-include "./Views/html_bottom.php";
+    include "Views/html_bottom.html";
 ?>
