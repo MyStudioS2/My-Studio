@@ -1,7 +1,7 @@
 <?php
 function cryptage ($POST) {
 	
-	$value = $_POST['password'];
+/*
 	$a1 = str_split($value);
 	$a2 = $a1;
 	array_push($a2, ".");
@@ -19,6 +19,29 @@ function cryptage ($POST) {
 	}
 	$value = implode($a2);
 	//$value1 = implode($key);
-	return $value;
+*/ 
+$lettres = array("a", "b",  "c",  "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+//echo "<br><br><br><br><br><br>";
+$tab = str_split($_POST['password']);
+foreach($tab as $i => $val) {
+        foreach($lettres as $j => $valeur) {
+                if($tab[$i] === $valeur) {
+                        $tab[$i] = $lettres[$j+2];
+		//print_r($tab);
+			break;
+                }
+        }
+        $i++;
+}
+$a2 = [];
+$j = count($tab);
+//echo $j;
+$j=$j-1;
+foreach($tab as $i => $val) {
+	array_push($a2, $tab[$j]);
+	$j=$j-1;
+}
+$value = implode($a2);
+return $value;
 }
 ?>

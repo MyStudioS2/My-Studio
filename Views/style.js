@@ -25,8 +25,22 @@ jQuery(document).ready(function($){
         $mdp = $('#mdp'),
         $champ = $('.champ');
 
-	$champ.keyup(function(){
-		if($(this).val().length === 0 || $(this).val().length > 10){ // si la chaîne de caractères est inférieure à 5
+	$('#pseudo').keyup(function(){
+		if($(this).val().length < 5){ // si la chaîne de caractères est inférieure à 5
+		$(this).css({ // on rend le champ rouge
+		    borderColor : 'red',
+		    color : 'red'
+		});
+		}else{
+		 $(this).css({ // si tout est bon, on le rend vert
+		     borderColor : 'green',
+		     color : 'green'
+		 });
+	     }
+	});
+
+	$('#mdp').keyup(function(){
+		if($(this).val().length > 0 && $(this).val().length > 10 ){ // si la chaîne de caractères est inférieure à 5
 		$(this).css({ // on rend le champ rouge
 		    borderColor : 'red',
 		    color : 'red'
@@ -42,12 +56,12 @@ jQuery(document).ready(function($){
 	$('.verif').hide();
 	
 	$('#pseudo').keyup(function(){
-	   if($(this).val().length != 0 && $('#mdp').val().length != 0) {
+	   if($(this).val().length > 5 && $('#mdp').val().length > 0 && $('#mdp').val().length < 10) {
 		   $('.verif').show();
 		}
 	});
 	$('#mdp').keyup(function(){
-	   if($(this).val().length != 0 && $('#pseudo').val().length != 0) {
+	   if($(this).val().length > 0 && $(this).val().length < 10 && $('#pseudo').val().length > 5) {
 		   $('.verif').show();
 		}
 	});

@@ -1,9 +1,9 @@
 <?php
 function inscription ($POST) {
 
-        require_once('../Models/search_pseudo.php');
-        require_once('../Models/insert.php');
-        require_once('cryptage.php');
+        require_once('Models/search_pseudo.php');
+        require_once('Models/insert.php');
+        require_once('Controllers/cryptage.php');
 
 	if(!isset($_POST['pseudo']) || !isset($_POST['password'])) {
 		return 1;
@@ -15,11 +15,13 @@ function inscription ($POST) {
 	
 		$donnees = search_pseudo($_POST['pseudo']);
 
-		if(!empty($donnees['username'])) {
+		if(!empty($donnees['pseudo'])) {
 			return 4;
 		} else {
-		$word = cryptage($_POST['pseudo']);
+		$word = cryptage($_POST['password']);
 		//echo "<br><br><br><br><br><br><br><br>retour =".$word;
+		//echo "<br>retour =".$_POST['pseudo'];
+		//echo "<br>retour =".$_POST['type'];
 		//$data = explode(",", $word);
 		//$mdp = $data[0];
 		//$key = $data[1];

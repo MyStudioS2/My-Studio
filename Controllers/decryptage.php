@@ -1,6 +1,6 @@
 <?php
 function decryptage ($mot) {
-
+/*
 	$a1 = str_split($mot);
 	$a2 = $a1;
 	$point = false;
@@ -30,8 +30,29 @@ function decryptage ($mot) {
 	}
 
 	array_shift($a2);
-	$value = implode($a2);
-	return $value;
+*/
+$lettres = array("a", "b",  "c",  "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+
+$tab= [];
+$a2 = str_split($mot);
+$j = count($a2);
+$j=$j-1;
+foreach($a2 as $i => $val) {
+        array_push($tab, $a2[$j]);
+        $j=$j-1;
 }
 
-
+//print_r($tab);
+$i = 0;
+foreach($tab as $i => $val) {
+	foreach($lettres as $j => $valeur) {
+                if($tab[$i] === $valeur) {
+                        $tab[$i] = $lettres[$j-2];
+                        break;
+                }
+        }
+        $i++;
+}
+$value = implode($tab);
+return $value;
+}

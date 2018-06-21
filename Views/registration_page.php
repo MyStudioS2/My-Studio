@@ -1,8 +1,8 @@
 <?php
-require('../Controllers/registration.php');
+require('Controllers/registration.php');
 if(inscription($_POST['pseudo'], $_POST['password']) == 0) {
-header("refresh:6;url=login_page.php");
-echo"<center><h3>Mystudio</h3></center><br><center>L'inscription est une réussite<br>
+header("refresh:6;url=index.php?page=login");
+echo"<center><h1>Mystudio</h1></center><br><center>L'inscription est une réussite<br>
 </center><br>
 <center>Nom : ".$_POST['pseudo']."<br>Mot de passe : ".$_POST['password']."<br>Compte : ".$_POST['type']."</center>";
 } else {
@@ -13,17 +13,16 @@ Les utilisateurs doivent s’inscrire pour accéder au site.<br> Les auditeurs p
 Le site propose également des<br>suggestions d’écoutes en fonction des goûts et des<br> précédentes visites du client.</p>
 
         <form class='form' action='' method='POST'>
-        <input type='text' class='champ' id='pseudo' placeholder='Pseudo**' name='pseudo' value='".$_POST['pseudo']."'>
+        <input type='text' class='champ' id='pseudo' placeholder='Pseudo' name='pseudo' value='".$_POST['pseudo']."'>
         <br/>
-        <input type='text' class='champ' id='mdp' placeholder='Mot de passe**' name='password' value='".$_POST['password']."'>
+        <input type='password' class='champ' id='mdp' placeholder='Mot de passe' name='password' value='".$_POST['password']."'>
         <br/>
         <table><tr><td>M'inscrire en tant que:<td><td><input type='radio' name='type' value='artiste'checked>artiste</td><br>
         <td><input type='radio' name='type' value='auditeur'>auditeur<br></td></tr></table>
         <input type='submit' name='send' value='Envoyer'class='verif'>
         </form><br>
 	<p class='msg'>as tu bien completer le formulaire avant de cliquer</p>
-
-        <a class='href' href='login_page.php'>Retour à la page de connexion</a>
+        <a class='href' href='index.php?page=login'>Retour à la page de connexion</a>
         <br>";
 
 if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
@@ -41,14 +40,11 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
 <!doctype html public "-//W3C//DTD HTML 4.0 //EN">
 <html>
 <head>
-       <title>Mettre des commentaires</title>
     <title>Mystudio</title>
     <meta content='http-equiv' content-type='text/html; charset = UTF-8'/>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="../Views/CSS/login_registration.css">
-
+    <link rel="stylesheet" type="text/css" href="Views/CSS/login_registration.css">
 
 </head>
 <body>
@@ -58,15 +54,14 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
 <a class="horizontale active" href="">MyStudio</a>
 </li>
 <li class="horizontale">
-<img src='../Views/images/LOGO.jpg'width='100' height='90'>
+<img src='Views/images/LOGO.jpg'width='100' height='90'>
 </li>
 <li style="float:right">
 <a class="horizontale1" href="">MyStudio, C'est quoi ?<!--Image--></a>
 </li>
 </ul>
-
-<script src="jquery.js"></script>
-<script src="style.js"></script>
+<script src="Views/jquery.js"></script>
+<script src="Views/style.js"></script>
 
 </head>
 <body>
