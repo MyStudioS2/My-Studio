@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require("../Controllers/session_check.php");
-	session_check($_SESSION['pseudo']);
+	session_check($_SESSION['pseudo'])
 	require('../Models/parameter_account.php');
 	$a=1;
 	if(empty($_POST['conf_pw']) || empty($_POST['new_pseudo']))
@@ -37,13 +37,13 @@
 	}
 	if($a==0)
 	{
-		header("location: ../Views/changename_page.php");
+		header("location: ../index.php?page=settings&truc=un");
 	}
 	else
 	{
 		update($data);
 		$_SESSION['pseudo']=$_POST['new_pseudo'];
 		$_SESSION['erreur']="";
-		header("location: ../Views/changename_page2.php");
+		header("location: ../index.php?page=settings&truc=deux");
 	}
 ?>

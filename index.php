@@ -47,7 +47,23 @@ if(isset($_GET['page'])) {
         include './Controllers/playlists.php';
         break;
     case 'settings';
-        if(isset($_SESSION['type']))
+        if(isset($_SESSION['type'])) {
+            if(isset($_GET['truc'])) {
+                  switch($_GET['truc']):
+                case 'un';
+                    include './Views/html_top.html';
+                    include './Views/navbar.php';
+                    include './Views/changename_page.php';
+                    break;
+                case 'deux';
+                    include './Views/html_top.html';
+                    include './Views/navbar.php';
+                    include './Views/changename_page2.php';
+                    break;
+                default:
+                    include './error/404/404.php';
+                endswitch;
+            } else {
         switch($_SESSION['type']):
             case 'artist';
                 include './Views/html_top.html';
@@ -62,7 +78,8 @@ if(isset($_GET['page'])) {
             default:
                 include './error/404/404.php';
             endswitch;
-            else {
+            }
+        } else {
                 include './Views/html_top.html';
                 include './Views/navbar.php';
                 include './Controllers/home.php';
