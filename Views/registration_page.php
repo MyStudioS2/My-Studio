@@ -31,7 +31,7 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
 	echo "<center>Les champs ont mal été rempli</center>";
 
 } else if(inscription($_POST['pseudo'], $_POST['password']) == 3) {
-	echo "<center>Votre Pseudo doit contenir un minimum de 5 caractere et le mot de passe un maximum de 10 caractère</center>";
+	echo "<center>Votre Pseudo doit contenir un minimum de 5 caractères</center>";
 } else if(inscription($_POST['pseudo'], $_POST['password']) == 4) {
 	echo "<center>Votre Pseudo existe déja</center>";
 }

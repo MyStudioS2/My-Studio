@@ -3,6 +3,9 @@ session_start();
 //require_once("./Controllers/function.php"); */
 if(isset($_GET['page'])) {
   switch($_GET['page']):
+    case '';
+        include 'Views/home.php';
+        break;
     case 'register';
         include 'Views/registration_page.php';
         break;
@@ -68,8 +71,8 @@ if(isset($_GET['page'])) {
         include './error/404/404.php';
   endswitch;
 } else {
-    include "../My-Studio/Views/html_top.html";
-    //include './Views/navbar.php';
+    include "Views/html_top.html";
+    include 'Views/home.php';
     //include './Controllers/home.php';
 }
     include "Views/html_bottom.html";
