@@ -4,7 +4,7 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 0) {
 header("refresh:6;url=index.php?page=login");
 echo"<center><h1>Mystudio</h1></center><br><center>L'inscription est une réussite<br>
 </center><br>
-<center>Nom : ".$_POST['pseudo']."<br>Mot de passe : ".$_POST['password']."<br>Compte : ".$_POST['type']."</center>";
+<center>Nom : ".$_POST['pseudo']."<br>Compte : ".$_POST['type']."</center>";
 } else {
 echo"<img src='../Views/LOGO.jpg'width='100' height='90'>
 <center><br><br><br><h1>S'inscrire sur Mystudio</h1></center><p class='txt' >MyStudio est une plateforme de diffusion de<br>musique de tous genres en streaming où artistes<br>et auditeurs se croisent.<br>Elle est destinée aux auditeurs de langue française<br>qui aiment avoir toutes les informations disponibles<br>sur leurs artistes favoris, paroles, biographies, et <br>collaborateurs fréquents.<br>
@@ -17,7 +17,7 @@ Le site propose également des<br>suggestions d’écoutes en fonction des goût
         <br/>
         <input type='password' class='champ' id='mdp' placeholder='Mot de passe' name='password' value='".$_POST['password']."'>
         <br/>
-        <table><tr><td>M'inscrire en tant que:<td><td><input type='radio' name='type' value='artiste'checked>artiste</td><br>
+        <table><tr><td>M'inscrire en tant qu' : <td><td><input type='radio' name='type' value='artiste'checked>artiste</td><br>
         <td><input type='radio' name='type' value='auditeur'>auditeur<br></td></tr></table>
         <input type='submit' name='send' value='Envoyer'class='verif'>
         </form><br>

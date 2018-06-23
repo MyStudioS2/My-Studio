@@ -15,7 +15,7 @@ function inscription ($POST) {
 	
 		$donnees = search_pseudo($_POST['pseudo']);
 
-		if(!empty($donnees['pseudo'])) {
+		if(!empty($donnees['username'])) {
 			return 4;
 		} else {
 		$word = cryptage($_POST['password']);

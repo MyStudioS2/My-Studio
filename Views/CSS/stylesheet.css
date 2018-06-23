@@ -8,6 +8,50 @@ body {
     #player {page-break-after: always;}
 }
 
+.table_genre {
+   text-align:center;
+    border-collapse: collapse;
+    width:800px;
+    height:50px;
+    position: absolute;
+}
+#genre {
+    position: absolute;
+    left:300px;
+    top:90px;
+}
+.ALL {
+    background-color:DimGrey;
+    position: absolute;
+    left:300px;
+    top:200px;
+}
+.RAI {
+    background-color:DimGrey;
+    position: absolute;
+    left:300px;
+    top:200px;
+}
+.RAP {
+    background-color:DimGrey;
+    position: absolute;
+    left:300px;
+    top:200px;
+}
+.impair {
+    background-color: white;
+}
+.pair {
+    background-color: #990033;
+    color:white;
+}
+.ligne {
+   text-align:center;
+    border-collapse: collapse;
+    width:800px;
+    height:200px;
+    position: absolute;
+}
 #navbar {
     position: relative;
     margin-top: -25px;

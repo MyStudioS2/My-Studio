@@ -9,16 +9,12 @@ function insert ($datas) {
 	{
 		die('Erreur : '.$e->getMessage());
 	}
-	//echo $datas[0];
-	//echo $datas[1];
-	//echo $datas[2];
-
-	$req = $bdd->prepare('INSERT INTO USERS(id, pseudo, pw, class) VALUES(:id, :pseudo, :pw, :class)');
+	$req = $bdd->prepare('INSERT INTO USERS(id_user, username, pw, category) VALUES(:id_user, :username, :pw, :category)');
                 $req->execute(array(
-			'id' => NULL,
-                        'pseudo' => $datas[0],
+			'id_user' => NULL,
+                        'username' => $datas[0],
                         'pw' => $datas[2],
-                        'class' => $datas[1]
+                        'category' => $datas[1]
 			));
 }
 ?>

@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `mystudio`.`ALBUMS` (
   `id_album` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `album_name` VARCHAR(45) NOT NULL COMMENT '',
   `album_cover` BLOB NULL COMMENT '',
-  `release_date` YEAR NULL COMMENT '',
+  `release_date` TIMESTAMP NULL COMMENT '',
   PRIMARY KEY (`id_album`)  COMMENT '')
 ENGINE = InnoDB;
 

@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
 	});
 
 	$('#mdp').keyup(function(){
-		if($(this).val().length > 0 && $(this).val().length > 10 ){ // si la chaîne de caractères est inférieure à 5
+		if($(this).val().length = 0){ // si la chaîne de caractères est inférieure à 5
 		$(this).css({ // on rend le champ rouge
 		    borderColor : 'red',
 		    color : 'red'
@@ -56,30 +56,29 @@ jQuery(document).ready(function($){
 	$('.verif').hide();
 	
 	$('#pseudo').keyup(function(){
-	   if($(this).val().length > 5 && $('#mdp').val().length > 0 && $('#mdp').val().length < 10) {
+	   if($(this).val().length > 5 && $('#mdp').val().length > 0) {
 		   $('.verif').show();
 		}
 	});
 	$('#mdp').keyup(function(){
-	   if($(this).val().length > 0 && $(this).val().length < 10 && $('#pseudo').val().length > 5) {
+	   if($(this).val().length > 0 && $('#pseudo').val().length > 5) {
 		   $('.verif').show();
 		}
 	});
-/*
-	function verifier(champ){
-		if(champ.val() != ""){ // champ pas  vide
-			$('.verif').show();
-		}
-	}
-	verifier($pseudo);
-        //verifier($mdp);
 
-	$('.verif').hide();
-	function verifier(pseudo, mdp){
-		if(pseudo.val() != "" && mdp.val() != ""){ // champ pas  vide
-			$('.verif').show();
-		}
-	}
-*/
+	$('.RAI').hide();
+	$('.RAP').hide();
+	$('.clicRAP').click(function() {
+		$('.RAP').show();
+		$('.ALL').hide();
+		$('.RAI').hide();
+	});
+	$('.clicALL').click(function() {
+		$('.ALL').show();
+		$('.RAP').hide();
+		$('.RAI').hide();
+	});
+		
+
 });
 

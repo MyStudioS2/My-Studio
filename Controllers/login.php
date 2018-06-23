@@ -22,16 +22,15 @@ function conect ($POST) {
                 }
         } else {
         $donnees = search_pseudo($_POST['pseudo']);
-        //$mot = $donnees['pw'];
         $word = cryptage($_POST['password']);
-        if($donnees['pseudo'] == $_POST['pseudo'] && $donnees['pw'] == $word)  {
+        if($donnees['username'] == $_POST['pseudo'] && $donnees['pw'] == $word)  {
                 $_SESSION['pseudo'] = $_POST['pseudo'];
-                $_SESSION['id'] = $donnees['id'];
+                $_SESSION['id'] = $donnees['id_user'];
                 return 0;
         }else{
-                if($donnees['pseudo'] != $_POST['pseudo'] && $word != $donnees['pw']) {
+                if($donnees['username'] != $_POST['pseudo'] && $word != $donnees['pw']) {
                         return 6;
-                } else if($donnees['pseudo'] != $_POST['pseudo']) {
+                } else if($donnees['username'] != $_POST['pseudo']) {
                         return 2;
                 }else if($word != $donnees['pw']) {
                         return 5;
@@ -40,5 +39,3 @@ function conect ($POST) {
         }
 }
 ?>
-                                                                                                                                     21,12-33     Tout
-

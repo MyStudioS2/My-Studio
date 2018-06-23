@@ -32,9 +32,13 @@ if(isset($_GET['page'])) {
         include './Controllers/show.php';
         break;
     case 'nouveautes';
-        include './Views/html_top.html';;
-        include './Views/navbar.php';
-        include './Controllers/trending.php';
+        include 'Controllers/session_check.php';
+	if(session_set($_SESSION['id']) == 0) {
+        include 'Views/login_page.php';
+	}else{
+        include 'Views/html_top.html';
+        include 'Views/navbar.php';
+	}
         break;
     case 'favoris';
         include './Views/html_top.html';
