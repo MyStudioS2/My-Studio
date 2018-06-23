@@ -25,58 +25,81 @@ body {
     top:90px;
 }
 .ALL {
+    display: block;
+    height:200px;
+    overflow: scroll;
     font-Weight: Bold;
-    background-color:DimGrey;
     position: absolute;
     width:960px;
     left:300px;
     top:200px;
 }
 .RAP {
+    display: block;
+    height:200px;
+    overflow: scroll;
     font-Weight: Bold;
-    background-color:DimGrey;
     position: absolute;
+    width:960px;
     left:300px;
     top:200px;
 }
 .RAI {
     font-Weight: Bold;
-    background-color:DimGrey;
+    display: block;
+    height:200px;
+    overflow: scroll;
+    width:960px;
     position: absolute;
     left:300px;
     top:200px;
 }
 .RAGGAE {
+    display: block;
+    height:200px;
+    overflow: scroll;
     font-Weight: Bold;
-    background-color:DimGrey;
+    width:960px;
     position: absolute;
     left:300px;
     top:200px;
 }
 .RNB {
+    display: block;
+    height:200px;
+    overflow: scroll;
     font-Weight: Bold;
-    background-color:DimGrey;
+    width:960px;
     position: absolute;
     left:300px;
     top:200px;
 }
 .VARIETE {
-    background-color:DimGrey;
+    display: block;
+    height:200px;
+    overflow: scroll;
     font-Weight: Bold;
+    width:960px;
     position: absolute;
     left:300px;
     top:200px;
 }
 .JAZZ {
+    display: block;
+    height:200px;
+    overflow: scroll;
     font-Weight: Bold;
-    background-color:DimGrey;
+    width:960px;
     position: absolute;
     left:300px;
     top:200px;
 }
 .BLUES {
+    display: block;
+    height:200px;
+    overflow: scroll;
     font-Weight: Bold;
-    background-color:DimGrey;
+    width:960px;
     position: absolute;
     left:300px;
     top:200px;
@@ -89,11 +112,10 @@ body {
     color:white;
 }
 .ligne {
+    width:900px;
     font-Weight: Bold;
    text-align:center;
     border-collapse: collapse;
-    width:800px;
-    height:200px;
     position: absolute;
 }
 #navbar {
