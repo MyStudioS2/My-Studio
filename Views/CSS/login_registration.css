@@ -39,15 +39,15 @@
       ul.horizontale
       {
         list-style-type: none;
-        margin: 0;
+        margin-top: 0%;
         padding: 0;
         overflow: hidden;
         background-color: #990033;
-        /*Reste statique, même quand on défile la page
+        /*Reste statique, même quand on défile la page*/
         position: fixed;
         top: 0;
-        width: 100%;*/
-      }
+        width: 100%;      
+	}
       li.horizontale
       {
         float: left;

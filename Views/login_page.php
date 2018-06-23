@@ -39,7 +39,7 @@ if(conect($_POST['pseudo'], $_POST['password']) == 3) {
     <meta content='http-equiv' content-type='text/html; charset = UTF-8'/>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="Views/CSS/login_registration.css">
+  <link rel="stylesheet" type="text/css" href="Views/CSS/login_registration.css">
 </head>
 <body>
 <!--Barre horizontale-->
