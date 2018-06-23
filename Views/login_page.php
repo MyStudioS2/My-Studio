@@ -1,10 +1,7 @@
 <?php
 require('Controllers/login.php');
 if(conect($_POST['pseudo'], $_POST['password']) == 0) {
-        header("refresh:6;url=index.php?page=accueil_membres");
-echo"<br><br><br><br><br><br><br><br><br><br>
-<center><h3>Mystudio</h3></center><br><center>Bienvenue sur Mystudio
-	".$_SESSION['pseudo']."<br>votre connexion est un succès</center>";
+        header("Location:index.php?page=accueil_membres");
 } else {
 echo"<br><br><br><br><br><br><br><center><h3>Bienvenue sur Mystudio</h3></center><p class='txt' ><td class='case' >MyStudio est une plateforme de diffusion de<br>musique de tous genres en streaming où artistes<br>et auditeurs se croisent.<br>Elle est destinée aux auditeurs de langue française<br>qui aiment avoir toutes les informations disponibles<br>sur leurs artistes favoris, paroles, biographies, et <br>collaborateurs fréquents.<br>
 Les utilisateurs doivent s’inscrire pour accéder au site.<br> Les auditeurs peuvent écouter et apprécier les morceaux<br>de leurs artistes préférés, mais aussi profiter des paroles<br>qui sont accompagnées des traductions.<br>
@@ -42,7 +39,7 @@ if(conect($_POST['pseudo'], $_POST['password']) == 3) {
     <meta content='http-equiv' content-type='text/html; charset = UTF-8'/>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" type="text/css" href="Views/CSS/login_registration.css">-->
+    <link rel="stylesheet" type="text/css" href="Views/CSS/login_registration.css">
 </head>
 <body>
 <!--Barre horizontale-->
@@ -59,5 +56,3 @@ if(conect($_POST['pseudo'], $_POST['password']) == 3) {
 </ul>
 <script src="Views/jquery.js"></script> 
 <script src="Views/style.js"></script>
-</body>
-</html>

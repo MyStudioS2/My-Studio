@@ -43,10 +43,10 @@
         padding: 0;
         overflow: hidden;
         background-color: #990033;
-        /*Reste statique, même quand on défile la page*/
+        /*Reste statique, même quand on défile la page
         position: fixed;
         top: 0;
-        width: 100%;
+        width: 100%;*/
       }
       li.horizontale
       {

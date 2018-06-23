@@ -1,6 +1,7 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     font-size: 16px;
+    Background-Color:WhiteSmoke;
 }
 
 @media print {
@@ -9,43 +10,86 @@ body {
 }
 
 .table_genre {
+    margin-top:50px;
+    font-Weight: Bold;
    text-align:center;
     border-collapse: collapse;
-    width:800px;
+    width:960px;
     height:50px;
     position: absolute;
 }
 #genre {
+    Background-Color:Grey;
     position: absolute;
     left:300px;
     top:90px;
 }
 .ALL {
+    font-Weight: Bold;
+    background-color:DimGrey;
+    position: absolute;
+    width:960px;
+    left:300px;
+    top:200px;
+}
+.RAP {
+    font-Weight: Bold;
     background-color:DimGrey;
     position: absolute;
     left:300px;
     top:200px;
 }
 .RAI {
+    font-Weight: Bold;
     background-color:DimGrey;
     position: absolute;
     left:300px;
     top:200px;
 }
-.RAP {
+.RAGGAE {
+    font-Weight: Bold;
     background-color:DimGrey;
     position: absolute;
     left:300px;
     top:200px;
 }
-.impair {
-    background-color: white;
+.RNB {
+    font-Weight: Bold;
+    background-color:DimGrey;
+    position: absolute;
+    left:300px;
+    top:200px;
 }
-.pair {
+.VARIETE {
+    background-color:DimGrey;
+    font-Weight: Bold;
+    position: absolute;
+    left:300px;
+    top:200px;
+}
+.JAZZ {
+    font-Weight: Bold;
+    background-color:DimGrey;
+    position: absolute;
+    left:300px;
+    top:200px;
+}
+.BLUES {
+    font-Weight: Bold;
+    background-color:DimGrey;
+    position: absolute;
+    left:300px;
+    top:200px;
+}
+#impair {
+    background-color: WhiteSmoke;
+}
+#pair {
     background-color: #990033;
     color:white;
 }
 .ligne {
+    font-Weight: Bold;
    text-align:center;
     border-collapse: collapse;
     width:800px;
@@ -54,7 +98,7 @@ body {
 }
 #navbar {
     position: relative;
-    margin-top: -25px;
+    margin-top: -20px;
     margin-left: -10px;
     width: 15%;
     min-width: 250px;
@@ -127,3 +171,53 @@ h1 {
     font-size:70px;
     font-family: 'Lato', sans-serif;
 }
+     /*Barre de naviguation horizontale*/
+      ul.horizontale
+      {
+        list-style-type: none;
+        margin-top: -1%;
+        margin-left: -5%;
+        padding: 0;
+        overflow: hidden;
+        background-color: #990033;
+        /*Reste statique, même quand on défile la page
+        position: fixed;
+        top: 0;*/
+        width: 119%;
+      }
+      li.horizontale
+      {
+        float: left;
+      }
+      li a.horizontale
+      {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 44px 46px;
+        text-decoration: none;
+      }
+      li a.horizontale:hover
+      {
+        background-color: #4CAF50;
+      }
+      li a.horizontale1
+      {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 44px 46px;
+        text-decoration: none;
+      }
+      li a.horizontale1:hover
+      {
+        background-color: #4CAF50;
+      }
+      .active
+      {
+        width:120px;
+      }
+    input
+      {
+      }
+

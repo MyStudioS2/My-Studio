@@ -68,15 +68,90 @@ jQuery(document).ready(function($){
 
 	$('.RAI').hide();
 	$('.RAP').hide();
+	$('.RAGGAE').hide();
+	$('.RNB').hide();
+	$('.VARIETE').hide();
+	$('.JAZZ').hide();
+	$('.BLUES').hide();
 	$('.clicRAP').click(function() {
 		$('.RAP').show();
 		$('.ALL').hide();
 		$('.RAI').hide();
+		$('.RAGGAE').hide();
+		$('.RNB').hide();
+		$('.VARIETE').hide();
+		$('.JAZZ').hide();
+		$('.BLUES').hide();
 	});
 	$('.clicALL').click(function() {
 		$('.ALL').show();
 		$('.RAP').hide();
 		$('.RAI').hide();
+		$('.RAGGAE').hide();
+		$('.RNB').hide();
+		$('.VARIETE').hide();
+		$('.JAZZ').hide();
+		$('.BLUES').hide();
+	});
+	$('.clicRAI').click(function() {
+		$('.RAI').show();
+		$('.RAP').hide();
+		$('.ALL').hide();
+		$('.RAGGAE').hide();
+		$('.RNB').hide();
+		$('.VARIETE').hide();
+		$('.JAZZ').hide();
+		$('.BLUES').hide();
+	});
+	$('.clicRAGGAE').click(function() {
+		$('.RAGGAE').show();
+		$('.RAI').hide();
+		$('.RAP').hide();
+		$('.ALL').hide();
+		$('.RNB').hide();
+		$('.VARIETE').hide();
+		$('.JAZZ').hide();
+		$('.BLUES').hide();
+	});
+	$('.clicRNB').click(function() {
+		$('.RNB').show();
+		$('.RAI').hide();
+		$('.RAP').hide();
+		$('.ALL').hide();
+		$('.RAGGAE').hide();
+		$('.VARIETE').hide();
+		$('.JAZZ').hide();
+		$('.BLUES').hide();
+	});
+	$('.clicVARIETE').click(function() {
+		$('.VARIETE').show();
+		$('.RAP').hide();
+		$('.RAI').hide();
+		$('.ALL').hide();
+		$('.RAGGAE').hide();
+		$('.RNB').hide();
+		$('.JAZZ').hide();
+		$('.BLUES').hide();
+	});
+	$('.clicJAZZ').click(function() {
+		$('.JAZZ').show();
+		$('.RAI').hide();
+		$('.RAP').hide();
+		$('.ALL').hide();
+		$('.RAGGAE').hide();
+		$('.RNB').hide();
+		$('.VARIETE').hide();
+		$('.BLUES').hide();
+	});
+	$('.clicBLUES').click(function() {
+		$('.BLUES').show();
+		$('.JAZZ').hide();
+		$('.RAI').hide();
+		$('.RAP').hide();
+		$('.ALL').hide();
+		$('.RAGGAE').hide();
+		$('.RNB').hide();
+		$('.VARIETE').hide();
 	});
 		
 

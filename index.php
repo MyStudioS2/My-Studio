@@ -21,15 +21,17 @@ if(isset($_GET['page'])) {
 	if(session_set($_SESSION['id']) == 0) {
         include 'Views/login_page.php';
 	}else{
-        include 'Views/html_top.html';
-        include 'Views/navbar.php';
-        include 'Controllers/accueil_membres.php';
+	include 'Views/html_top.html';
+	include 'Views/barre.php';
+	include 'Views/navbar.php';
+	include 'Controllers/accueil_membres.php';
 	}
         break;
     case 'parcourir';
-        include './Views/html_top.html';
-        include './Views/navbar.php';
-        include './Controllers/show.php';
+        include 'Views/html_top.html';
+        include 'Views/barre.php';
+        include 'Views/navbar.php';
+        include 'Controllers/show.php';
         break;
     case 'nouveautes';
         include 'Controllers/session_check.php';
@@ -37,7 +39,9 @@ if(isset($_GET['page'])) {
         include 'Views/login_page.php';
 	}else{
         include 'Views/html_top.html';
+        include 'Views/barre.php';
         include 'Views/navbar.php';
+        include 'Controllers/nouveautes.php';
 	}
         break;
     case 'favoris';
