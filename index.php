@@ -28,10 +28,15 @@ if(isset($_GET['page'])) {
 	}
         break;
     case 'parcourir';
+        include 'Controllers/session_check.php';
+	if(session_set($_SESSION['id']) == 0) {
+        include 'Views/login_page.php';
+	}else{
         include 'Views/html_top.html';
         include 'Views/barre.php';
         include 'Views/navbar.php';
         include 'Controllers/show.php';
+	}
         break;
     case 'nouveautes';
         include 'Controllers/session_check.php';
@@ -45,14 +50,24 @@ if(isset($_GET['page'])) {
 	}
         break;
     case 'favoris';
+        include 'Controllers/session_check.php';
+	if(session_set($_SESSION['id']) == 0) {
+        include 'Views/login_page.php';
+	}else{
         include './Views/html_top.html';
         include './Views/navbar.php';
         include './Controllers/favorites.php';
+	}
         break;
     case 'playlists';
+        include 'Controllers/session_check.php';
+	if(session_set($_SESSION['id']) == 0) {
+        include 'Views/login_page.php';
+	}else{
         include './Views/html_top.html';
         include './Views/navbar.php';
         include './Controllers/playlists.php';
+	}
         break;
     case 'settings';
         if(isset($_SESSION['type']))
