@@ -1,7 +1,7 @@
 <?php
 require('Controllers/registration.php');
 if(inscription($_POST['pseudo'], $_POST['password']) == 0) {
-echo "<center>Linscruption est un succès<br><a href='index.php?page=login'>Retour à la page de connexion</a></center>";
+echo "<center><br><br><br><br><br><br><br>Linscruption est un succès<br><a href='index.php?page=login'>Retour à la page de connexion</a></center>";
 } else {
 echo"<img src='../Views/LOGO.jpg'width='100' height='90'>
 <center><br><br><br><h3>S'inscrire sur Mystudio</h3></center><p class='txt' >MyStudio est une plateforme de diffusion de<br>musique de tous genres en streaming où artistes<br>et auditeurs se croisent.<br>Elle est destinée aux auditeurs de langue française<br>qui aiment avoir toutes les informations disponibles<br>sur leurs artistes favoris, paroles, biographies, et <br>collaborateurs fréquents.<br>

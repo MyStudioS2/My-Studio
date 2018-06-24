@@ -9,6 +9,12 @@ body {
     #player {page-break-after: always;}
 }
 
+#tri {
+    left:19%;
+    top:19%;
+    position: absolute;
+  
+}
 .table_genre {
     margin-top:50px;
     font-Weight: Bold;
@@ -22,7 +28,7 @@ body {
     Background-Color:Grey;
     position: absolute;
     left:300px;
-    top:90px;
+    top:140px;
 }
 .ALL {
     display: block;
@@ -32,7 +38,7 @@ body {
     position: absolute;
     width:960px;
     left:300px;
-    top:200px;
+    top:250px;
 }
 .RAP {
     display: block;
@@ -42,7 +48,7 @@ body {
     position: absolute;
     width:960px;
     left:300px;
-    top:200px;
+    top:250px;
 }
 .RAI {
     font-Weight: Bold;
@@ -52,7 +58,7 @@ body {
     width:960px;
     position: absolute;
     left:300px;
-    top:200px;
+    top:250px;
 }
 .RAGGAE {
     display: block;
@@ -62,7 +68,7 @@ body {
     width:960px;
     position: absolute;
     left:300px;
-    top:200px;
+    top:250px;
 }
 .RNB {
     display: block;
@@ -72,7 +78,7 @@ body {
     width:960px;
     position: absolute;
     left:300px;
-    top:200px;
+    top:250px;
 }
 .VARIETE {
     display: block;
@@ -82,7 +88,7 @@ body {
     width:960px;
     position: absolute;
     left:300px;
-    top:200px;
+    top:250px;
 }
 .JAZZ {
     display: block;
@@ -92,7 +98,7 @@ body {
     width:960px;
     position: absolute;
     left:300px;
-    top:200px;
+    top:250px;
 }
 .BLUES {
     display: block;
@@ -102,7 +108,7 @@ body {
     width:960px;
     position: absolute;
     left:300px;
-    top:200px;
+    top:250px;
 }
 #impair {
     background-color: WhiteSmoke;

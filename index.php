@@ -22,7 +22,7 @@ if(isset($_GET['page'])) {
         include 'Controllers/nouveautes.php';
         break;
     case 'favoris';
-        include './Controllers/favorites.php';
+        include './Controllers/favoris.php';
         break;
     case 'playlists';
         include './Controllers/playlists.php';
