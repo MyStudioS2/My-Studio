@@ -3,18 +3,12 @@ session_start();
 //require_once("./Controllers/function.php"); */
 if(isset($_GET['page'])) {
   switch($_GET['page']):
-    case '';
-        include 'Views/home.php';
-        break;
     case 'register';
-        include 'Views/registration_page.php';
         break;
     case 'login';
-        include 'Views/login_page.php';
         break;
     case 'logout';
         include 'Controllers/logout.php';
-        include 'Views/login_page.php';
         break;
     case 'accueil_membres';
         include 'Controllers/session_check.php';
