@@ -24,7 +24,7 @@ CREATE TABLE USERS
     (id INT(11) NOT NULL AUTO_INCREMENT,
     pseudo varchar(12) NOT NULL,
     pw CHAR(41) NOT NULL,
-    class ENUM('artiste','utilisateur') NOT NULL,
+    class ENUM('artiste','auditeur') NOT NULL,
     PRIMARY KEY(id) );
 
 

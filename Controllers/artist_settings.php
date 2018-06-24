@@ -4,6 +4,10 @@
 	$_SESSION['id']=1; 
 	$_SESSION['pw']='chocho';
 	$_SESSION['type']='artiste';*/
+	$_SESSION['pseudo']='Michele'; 
+	$_SESSION['id']=1; 
+	$_SESSION['pw']='chocho';
+	$_SESSION['type']='artiste';
 	echo"<center><h1>Compte</h1><br>";
 	echo "Changer de nom : 
 	<form action='index.php' method='GET'>
@@ -37,9 +41,12 @@
 	echo "Modifier mes playlists : 
 	<form action='index.php' method='GET'>
 	Modifier
-	</form></center>";
+	</form><br>";
 	echo "Supprimer mon compte : 
 	<form action='index.php' method='GET'>
-	Supprimer
-	</form></center>";
+	<input type='hidden' name='page' value='settings'>
+	<input type='hidden' name='nb' value='un'>
+	<input type='hidden' name='change' value='sup'>
+	<button>Supprimer</button>
+	</form><br></center>";
 ?>

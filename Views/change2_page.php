@@ -1,20 +1,27 @@
 <?php
 	session_start();
-	echo "<center><h2>Changement de ";
-	if($_GET['change']=='nom')
+	if($_GET['change']!=='sup')
 	{
-		echo "pseudo ?</h2><br>Votre nouveau pseudo est maintenant ".$_SESSION['pseudo'].".";
+		echo "<center><h2>Changement de ";
+		if($_GET['change']=='nom')
+		{
+			echo "pseudo ?</h2><br>Votre nouveau pseudo est maintenant ".$_SESSION['pseudo'].".";
+		}
+		else if($_GET['change']=='statut')
+		{
+			echo "statut ?</h2><br>Votre nouveau statut est maintenant ".$_SESSION['type'].".";
+		}
+		else if($_GET['change']=='pw')
+		{
+			echo "mot de passe ?</h2><br>Votre nouveau mot de passe a été changé avec succès.";
+		}
+		echo "<form action='index.php?page=settings' method='GET'>
+		<input type='hidden' name='page' value='settings'>
+		<br><button>Retourner aux paramètres</button>
+		</form></center>";
 	}
-	if($_GET['change']=='statut')
+	else
 	{
-		echo "statut ?</h2><br>Votre nouveau statut est maintenant ".$_SESSION['type'].".";
+		echo "<center>Votre compte a bien été supprimé.</center>";
 	}
-	if($_GET['change']=='pw')
-	{
-		echo "mot de passe ?</h2><br>Votre nouveau mot de passe a été changé avec succès.";
-	}
-	echo "<form action='index.php?page=settings' method='GET'>
-	<input type='hidden' name='page' value='settings'>
-	<br><button>Retourner aux paramètres</button>
-	</form></center>";
 ?>

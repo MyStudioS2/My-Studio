@@ -128,8 +128,20 @@
 		/*include_once('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		//$reponse=$bdd->prepare('DELETE FROM ARTISTS, MUSICS WHERE artist_name=:pseudo AND artist_name=artist');
-		$reponse=$bdd->prepare('DELETE FROM ARTISTS WHERE artist_name=:pseudo');
-		$reponse->execute(['pseudo'=>$data['pseudo']]);
+		$reponse=$bdd->prepare('DELETE FROM ARTISTS, MUSICS WHERE id_artist=:id AND artist=id_artist');
+		$reponse->execute(['id'=>$data['id']]);
+		/*$reponse=$bdd->prepare('DELETE FROM ARTISTS WHERE artist_name=:pseudo');
+		$reponse->execute(['pseudo'=>$data['pseudo']]);*/
+	}
+/////Nouveau
+	function delete_account($data)
+	{
+		/*include_once('Models/db_connect.php');
+		$bdd = db_connect();*/
+		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$reponse=$bdd->prepare('DELETE FROM USERS, ARTISTS, MUSICS WHERE id_artist=:id AND artist=id_artist AND id_user=:ID');
+		$reponse->execute(array(
+							'id'=>$data['id'], 
+							'ID'=>$_SESSION['id']));
 	}
 ?>
