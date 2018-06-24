@@ -1,9 +1,14 @@
 <?php
 function search_pseudo ($POST) {
+	$query =
+	"SELECT id_user, username, pw, category
+	FROM users
+	WHERE username =?";
 
-	    $bdd = new PDO('mysql:host=localhost;dbname=mystudio;charset=utf8', 'root', 'isma');
-		$pwd = $bdd->prepare('SELECT id_user, username, pw, category FROM USERS WHERE username = ?');
-		$pwd->execute(array($_POST['pseudo']));
+	$query_params= array($_POST['pseudo']);
+
+		$pwd = $bdd->prepare($query);
+		$pwd->execute($query_params);
 		$donnees = $pwd->fetch();
 		return $donnees;
 }
