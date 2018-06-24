@@ -31,8 +31,10 @@
 			else
 			{
 				$data['pseudo']=$_POST['new_pseudo'];
-				$b=search_pseudo($data);
-				if($b==1)
+				$b=search_pseudo_user($data);
+//////////////////nouveau BON
+				$c=search_pseudo_art($data);
+				if($b==1 || $c==1)
 				{		
 					$a=0;
 					$_SESSION['erreur']="<center>Ce pseudo existe déjà, veuillez en choisir un autre.</center>";
@@ -45,7 +47,15 @@
 		}
 		else
 		{
-			update_pseudo($data);
+			$data['pseudo']=$_POST['new_pseudo'];
+			update_pseudo_user($data);
+			if($_SESSION['type']=='artiste')
+			{
+				$data['nom']=$_SESSION['pseudo'];
+				$data['id']=search_id_art($data);
+////////////////nouveau Problème
+				update_pseudo_art($data);
+			}
 			$_SESSION['pseudo']=$_POST['new_pseudo'];
 			$_SESSION['erreur']="";
 			header("location: ../index.php?page=settings&nb=deux&change=nom");
@@ -82,6 +92,18 @@
 		{
 			$data['statut']=$_POST['statut'];
 			update_statut($data);
+			if($_SESSION['type']=='auditeur')
+			{
+//////////////////nouveau ?
+				$data['pseudo']=$_SESSION['pseudo'];
+				insert_art($data);
+			}
+			else
+			{
+//////////////////nouveau ?
+				$data['pseudo']=$_SESSION['pseudo'];
+				delete_art($data);
+			}
 			$_SESSION['type']=$_POST['statut'];
 			$_SESSION['erreur']="";
 			header("location: ../index.php?page=settings&nb=deux&change=statut");

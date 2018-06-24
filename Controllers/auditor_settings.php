@@ -34,4 +34,8 @@
 	<form action='index.php' method='GET'>
 	Modifier
 	</form></center>";
+	echo "Supprimer mon compte : 
+	<form action='index.php' method='GET'>
+	Supprimer
+	</form></center>";
 ?>
