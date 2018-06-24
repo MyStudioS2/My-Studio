@@ -1,100 +1,73 @@
 <?php
 session_start();
-<<<<<<< HEAD
-var_dump($_SESSION);
-  if(isset($_GET['page']))
-    switch($_GET['page']):
-        case 'home';
-        include 'Controllers/home.php';
-      break;
-        case 'register';
-        include 'Controllers/registration_page.php';
-      break;
-        case 'login';
-        include 'Controllers/login.php';
-      break;
-        case 'logout';
-        include 'Controllers/logout.php';
-      break;
-        case 'Controllers/accueil_membres.php'
-      break;
-        case 'parcourir';
-        include 'Controllers/session_check.php';
-      break;
-        case 'nouveautes';
-        include 'Controllers/releases.php';
-      break;
-        case 'favoris';
-        include 'Controllers/favoris.php';
-      break;
-        case 'playlists';
-        include 'Controllers/playlists.php';
-      break;
-        case 'settings';
-        include 'Controllers/settings.php':
-      break;
-      default:
-      include 'error/404/404.php';
-    endswitch;
-  } else {
-    include "Views/html_top.html";
-    include 'Views/home.php';
-    //include './Controllers/home.php';
-  }
-  include "Views/html_bottom.html";
-=======
 //require_once("./Controllers/function.php"); */
 if(isset($_GET['page'])) {
   switch($_GET['page']):
     case 'register';
-        include 'Controllers/register.php';
+        include 'Views/registration_page.php';
         break;
     case 'login';
-        include 'Controllers/log.php';
+        include 'Views/login_page.php';
         break;
     case 'logout';
         include 'Controllers/logout.php';
+        include 'Views/login_page.php';
         break;
     case 'accueil_membres';
-	include 'Controllers/accueil_membres.php';
+        include 'Controllers/session_check.php'; 
+        if(session_set($_SESSION['id']) == 0) { 
+        include 'Views/login_page.php'; 
+        }else{
+        include 'Views/html_top.html';
+        include 'Views/navbar.php';
+        include 'Controllers/accueil_membres.php';
+        }
         break;
     case 'parcourir';
-        include 'Controllers/show.php';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
+        include './Controllers/show.php';
         break;
     case 'nouveautes';
-        include 'Controllers/nouveautes.php';
+        include './Views/html_top.html';;
+        include './Views/navbar.php';
+        include './Controllers/trending.php';
         break;
     case 'favoris';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
         include './Controllers/favorites.php';
         break;
     case 'playlists';
+        include './Views/html_top.html';
+        include './Views/navbar.php';
         include './Controllers/playlists.php';
         break;
     case 'settings';
         if(isset($_SESSION['type'])) {
-            if(isset($_GET['truc'])) {
-                  switch($_GET['truc']):
+            if(isset($_GET['nb'])) {
+                  switch($_GET['nb']):
                 case 'un';
                     include './Views/html_top.html';
                     include './Views/navbar.php';
-                    include './Views/changename_page.php';
+                    include './Views/change_page.php';
                     break;
                 case 'deux';
                     include './Views/html_top.html';
                     include './Views/navbar.php';
-                    include './Views/changename_page2.php';
+                    include './Views/change2_page.php';
                     break;
                 default:
                     include './error/404/404.php';
                 endswitch;
             } else {
         switch($_SESSION['type']):
-            case 'artist';
+            case 'artiste';
                 include './Views/html_top.html';
                 include './Views/navbar.php';
                 include './Controllers/artist_settings.php';
                 break;
-            case 'auditor';
+            case 'auditeur';
                 include './Views/html_top.html';
                 include './Views/navbar.php';
                 include './Controllers/auditor_settings.php';
@@ -102,7 +75,8 @@ if(isset($_GET['page'])) {
             default:
                 include './error/404/404.php';
             endswitch;
-            else {
+            }
+        } else {
                 include './Views/html_top.html';
                 include './Views/navbar.php';
                 include './Controllers/home.php';
@@ -111,8 +85,9 @@ if(isset($_GET['page'])) {
         include './error/404/404.php';
   endswitch;
 } else {
-    include 'Controllers/home.php';
+    include "../My-Studio/Views/html_top.html";
+    //include './Views/navbar.php';
+    //include './Controllers/home.php';
 }
     include "Views/html_bottom.html";
->>>>>>> 402eb69428fef7da8faaa3f0cc3bc308c8831673
 ?>

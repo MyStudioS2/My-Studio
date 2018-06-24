@@ -11,27 +11,27 @@
 	<input type='hidden' name='nb' value='un'>
 	<input type='hidden' name='change' value='nom'>
 	<button>Changer</button>
-	</form><br><br>";
+	</form><br>";
 	echo "Changer de statut : 
 	<form action='index.php' method='GET'>
 	<input type='hidden' name='page' value='settings'>
 	<input type='hidden' name='nb' value='un'>
 	<input type='hidden' name='change' value='statut'>
 	<button>Changer</button>
-	</form><br><br>";
+	</form><br>";
 	echo "Changer de mot de passe : 
 	<form action='index.php' method='GET'>
 	<input type='hidden' name='page' value='settings'>
 	<input type='hidden' name='nb' value='un'>
 	<input type='hidden' name='change' value='pw'>
 	<button>Changer</button>
-	</form><br><br>";
+	</form><br>";
 	echo "Modifier mes favoris : 
-	<form action='.php' method='GET'>
+	<form action='index.php' method='GET'>
 	Modifier
-	</form><br><br>";
+	</form><br>";
 	echo "Modifier mes playlists : 
-	<form action='.php' method='GET'>
+	<form action='index.php' method='GET'>
 	Modifier
 	</form></center>";
 ?>

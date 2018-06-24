@@ -2,7 +2,11 @@
 	session_start();
 	require('../Models/parameter_account.php');
 	$a=1;
-	if($_POST['change']=='nom')
+	if(isset($_POST['change'])==false)
+	{
+		header("location: ../index.php?page=settings");
+	}
+	else if($_POST['change']=='nom')
 	{
 		if(empty($_POST['conf_pw']) || empty($_POST['new_pseudo']))
 		{
