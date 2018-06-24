@@ -1,7 +1,8 @@
 <?php
 function news () {
 
-            $bdd = new PDO('mysql:host=localhost;dbname=mystudio;charset=utf8', 'root', 'isma');
+		include_once('Models/db_connect.php');
+		$bdd = db_connect();
                 $pwd = $bdd->prepare('SELECT ALBUMS.album_cover, MUSICS.title, ALBUMS.album_name, ARTISTS.artist_name,ALBUMS.release_date, STYLES.style_name FROM MUSICS JOIN ALBUMS JOIN ARTISTS JOIN STYLES WHERE ALBUMS.id_album = MUSICS.album AND ARTISTS.id_artist = MUSICS.artist AND EXTRACT(MONTH FROM ALBUMS.release_date) = ? AND EXTRACT(YEAR FROM ALBUMS.release_date) = ? AND STYLES.id_style = MUSICS.style ' );
                 //$pwd = $bdd->query('SELECT MUSICS.title, ALBUMS.album_name, ARTISTS.artist_name,ALBUMS.release_date FROM MUSICS JOIN ALBUMS JOIN ARTISTS WHERE ALBUMS.id_album = MUSICS.album AND ARTISTS.id_artist = MUSICS.artist');
                 $pwd->execute(array(date("m"),

@@ -1,14 +1,9 @@
 <?php
 function insert ($datas) {
 
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=mystudio;charset=utf8', 'root', 'isma', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-	}
-		catch(Exception $e)
-	{
-		die('Erreur : '.$e->getMessage());
-	}
+	include_once('Models/db_connect.php');
+	$bdd = db_connect();
+
 	$req = $bdd->prepare('INSERT INTO USERS(id_user, username, pw, category) VALUES(:id_user, :username, :pw, :category)');
                 $req->execute(array(
 			'id_user' => NULL,

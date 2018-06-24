@@ -19,12 +19,6 @@ function inscription ($POST) {
 			return 4;
 		} else {
 		$word = cryptage($_POST['password']);
-		//echo "<br><br><br><br><br><br><br><br>retour =".$word;
-		//echo "<br>retour =".$_POST['pseudo'];
-		//echo "<br>retour =".$_POST['type'];
-		//$data = explode(",", $word);
-		//$mdp = $data[0];
-		//$key = $data[1];
 		$datas = array($_POST['pseudo'],$_POST['type'],$word);
 		insert($datas);
 			return 0;

@@ -1,10 +1,10 @@
 <?php
 require('Controllers/registration.php');
 if(inscription($_POST['pseudo'], $_POST['password']) == 0) {
-header("Location:index.php?page=login");
+echo "<center>Linscruption est un succès<br><a href='index.php?page=login'>Retour à la page de connexion</a></center>";
 } else {
 echo"<img src='../Views/LOGO.jpg'width='100' height='90'>
-<center><br><br><br><h1>S'inscrire sur Mystudio</h1></center><p class='txt' >MyStudio est une plateforme de diffusion de<br>musique de tous genres en streaming où artistes<br>et auditeurs se croisent.<br>Elle est destinée aux auditeurs de langue française<br>qui aiment avoir toutes les informations disponibles<br>sur leurs artistes favoris, paroles, biographies, et <br>collaborateurs fréquents.<br>
+<center><br><br><br><h3>S'inscrire sur Mystudio</h3></center><p class='txt' >MyStudio est une plateforme de diffusion de<br>musique de tous genres en streaming où artistes<br>et auditeurs se croisent.<br>Elle est destinée aux auditeurs de langue française<br>qui aiment avoir toutes les informations disponibles<br>sur leurs artistes favoris, paroles, biographies, et <br>collaborateurs fréquents.<br>
 Les utilisateurs doivent s’inscrire pour accéder au site.<br> Les auditeurs peuvent écouter et apprécier les morceaux<br>de leurs artistes préférés, mais aussi profiter des paroles<br>qui sont accompagnées des traductions.<br>
     Lors de la création d’un compte utilisateur, il est possible<br>de s’enregistrer en tant qu’artiste et ainsi de diffuser ses<br>créations ou de créer un compte auditeur qui permet<br>simplement d’écouter.
 Le site propose également des<br>suggestions d’écoutes en fonction des goûts et des<br> précédentes visites du client.</p>
@@ -34,31 +34,17 @@ if(inscription($_POST['pseudo'], $_POST['password']) == 1) {
 }
 }
 ?>
-<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
-<html>
-<head>
-    <title>Mystudio</title>
-    <meta content='http-equiv' content-type='text/html; charset = UTF-8'/>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="Views/CSS/login_registration.css">
-
-</head>
-<body>
 <!--Barre horizontale-->
-<ul class="horizontale">
-<li class="horizontale">
-<a class="horizontale active" href="">MyStudio</a>
+<ul class="hori">
+<li class="hori">
+<a class="hori active" href="">MyStudio</a>
 </li>
-<li class="horizontale">
+<li class="hori">
 <img src='Views/images/LOGO.jpg'width='100' height='90'>
 </li>
 <li style="float:right">
-<a class="horizontale1" href="">MyStudio, C'est quoi ?<!--Image--></a>
+<a class="hori1" href="">MyStudio, C'est quoi ?<!--Image--></a>
 </li>
 </ul>
 <script src="Views/jquery.js"></script>
 <script src="Views/style.js"></script>
-
-</head>
-<body>

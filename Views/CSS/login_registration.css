@@ -36,7 +36,7 @@
 
         }
      /*Barre de naviguation horizontale*/
-      ul.horizontale
+      ul.hori
       {
         list-style-type: none;
         margin-top: 0%;
@@ -48,11 +48,11 @@
         top: 0;
         width: 100%;      
 	}
-      li.horizontale
+      li.hori
       {
         float: left;
       }
-      li a.horizontale
+      li a.hori
       {
         display: block;
         color: white;
@@ -60,11 +60,11 @@
         padding: 44px 46px;
         text-decoration: none;
       }
-      li a.horizontale:hover
+      li a.hori:hover
       {
         background-color: #4CAF50;
       }
-      li a.horizontale1
+      li a.hori1
       {
         display: block;
         color: white;
@@ -72,7 +72,7 @@
         padding: 44px 46px;
         text-decoration: none;
       }
-      li a.horizontale1:hover
+      li a.hori1:hover
       {
         background-color: #4CAF50;
       }
