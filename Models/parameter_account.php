@@ -77,7 +77,6 @@
 							'pseudo'=>$data['pseudo'], 
 							'id'=>$_SESSION['id']));
 	}
-///////////////////////////////////Problème
 	function update_pseudo_art($data)
 	{
 		/*include_once('Models/db_connect.php');
@@ -87,7 +86,7 @@
 								SET artist_name=:pseudo 
 								WHERE id_artist=:id');
 		$reponse->execute(array(
-							'artist_name'=>$data['pseudo'], 
+							'pseudo'=>$data['pseudo'], 
 							'id'=>$data['id']));
 	}
 	function update_statut($data)
@@ -114,25 +113,23 @@
 							'new_pw'=>$data['new_pw'], 
 							'id'=>$_SESSION['id']));
 	}
-//////////////////////Nouveau
 	function insert_art($data)
 	{
 		/*include_once('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$reponse=$bdd->prepare('INSERT INTO ARTISTS(id_artist, artist_name, category) VALUES(:id, :pseudo, :type)');
+		$reponse=$bdd->prepare('INSERT INTO ARTISTS(id_artist, artist_name, category) VALUES(:id, :pseudo, "amateur")');
 		$reponse->execute(array(
 							'id'=>NULL,
-							'pseudo'=>$datas['pseudo'],
-							'type'=>$datas['type']));
+							'pseudo'=>$data['pseudo']));
 	}
-//////////////////////Nouveau
 	function delete_art($data)
 	{
 		/*include_once('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$reponse=$bdd->prepare('DELETE* FROM ARTISTS WHERE artist_name=:pseudo');
+		//$reponse=$bdd->prepare('DELETE FROM ARTISTS, MUSICS WHERE artist_name=:pseudo AND artist_name=artist');
+		$reponse=$bdd->prepare('DELETE FROM ARTISTS WHERE artist_name=:pseudo');
 		$reponse->execute(['pseudo'=>$data['pseudo']]);
 	}
 ?>

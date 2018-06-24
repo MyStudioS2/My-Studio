@@ -32,7 +32,6 @@
 			{
 				$data['pseudo']=$_POST['new_pseudo'];
 				$b=search_pseudo_user($data);
-//////////////////nouveau BON
 				$c=search_pseudo_art($data);
 				if($b==1 || $c==1)
 				{		
@@ -53,7 +52,6 @@
 			{
 				$data['nom']=$_SESSION['pseudo'];
 				$data['id']=search_id_art($data);
-////////////////nouveau Problème
 				update_pseudo_art($data);
 			}
 			$_SESSION['pseudo']=$_POST['new_pseudo'];
@@ -92,16 +90,14 @@
 		{
 			$data['statut']=$_POST['statut'];
 			update_statut($data);
+			$data['pseudo']=$_SESSION['pseudo'];
 			if($_SESSION['type']=='auditeur')
 			{
-//////////////////nouveau ?
-				$data['pseudo']=$_SESSION['pseudo'];
 				insert_art($data);
 			}
 			else
 			{
-//////////////////nouveau ?
-				$data['pseudo']=$_SESSION['pseudo'];
+////////////////En cours
 				delete_art($data);
 			}
 			$_SESSION['type']=$_POST['statut'];
@@ -119,6 +115,8 @@
 		if($a==1)
 		{
 			$data['id']=$_SESSION['id'];
+			/*require_once('../Controllers/cryptage.php');
+			$data['pw']=cryptage($_POST['conf_pw']);*/
 			$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
@@ -138,6 +136,8 @@
 		}
 		else
 		{
+			/*require_once('../Controllers/cryptage.php');
+			$data['new_pw']=cryptage($_POST['new_pw']);*/
 			$data['new_pw']=$_POST['new_pw'];
 			update_pw($data);
 			$_SESSION['pw']=$_POST['new_pw'];
