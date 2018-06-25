@@ -1,9 +1,5 @@
 <?php
 	session_start();
-	/*$_SESSION['pseudo']='Clotilde'; 
-	$_SESSION['id']=1; 
-	$_SESSION['pw']='chocho';
-	$_SESSION['type']='artiste';*/
 	echo"<center><h1>Compte</h1><br>";
 	echo "Changer de nom : 
 	<form action='index.php' method='GET'>
