@@ -125,7 +125,6 @@
 	}
 	function delete_art($data)
 	{
-/////////Problème
 		/*include_once('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -133,12 +132,9 @@
 		$reponse->execute(['id'=>$data['id']]);
 		$reponse=$bdd->prepare('DELETE FROM MUSICS WHERE artist=:id');
 		$reponse->execute(['id'=>$data['id']]);
-		/*$reponse=$bdd->prepare('DELETE FROM ARTISTS WHERE artist_name=:pseudo');
-		$reponse->execute(['pseudo'=>$data['pseudo']]);*/
 	}
 	function delete_account($data)
 	{
-/////////Problème
 		/*include_once('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));

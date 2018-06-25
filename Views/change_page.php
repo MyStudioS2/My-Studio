@@ -34,7 +34,7 @@
 			<input type='password' placeholder='Nouveau mot de passe' name='verif_pw'><br>
 			<input type='password' placeholder='Ancien mot de passe' name='conf_pw'><br><br>";
 		}
-		echo "<br><button>Envoyer</button>";
+		echo "<br><button>Envoyer</button><br><br>";
 		if(isset($_SESSION['erreur']) && empty($_SESSION['erreur'])==false)
 		{
 			echo $_SESSION['erreur'];

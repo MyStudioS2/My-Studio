@@ -69,6 +69,7 @@
 		if($a==1)
 		{
 			$data['id']=$_SESSION['id'];
+/////////////cryptage
 			/*require('../Controllers/cryptage.php');
 			$data['pw']=cryptage($_POST['conf_pw']);*/
 			$data['pw']=$_POST['conf_pw'];
@@ -101,7 +102,6 @@
 			{
 				$data['nom']=$_SESSION['pseudo'];
 				$data['id']=search_id_art($data);
-////////////////Problème
 				delete_art($data);
 			}
 			$_SESSION['type']=$_POST['statut'];
@@ -119,6 +119,7 @@
 		if($a==1)
 		{
 			$data['id']=$_SESSION['id'];
+/////////////cryptage
 			/*require('../Controllers/cryptage.php');
 			$data['pw']=cryptage($_POST['conf_pw']);*/
 			$data['pw']=$_POST['conf_pw'];
@@ -140,7 +141,7 @@
 		}
 		else
 		{
-			
+/////////////cryptage
 			//$data['new_pw']=cryptage($_POST['new_pw']);
 			$data['new_pw']=$_POST['new_pw'];
 			update_pw($data);
@@ -159,6 +160,7 @@
 		if($a==1)
 		{
 			$data['id']=$_SESSION['id'];
+/////////////cryptage
 			/*require('../Controllers/cryptage.php');
 			$data['pw']=cryptage($_POST['conf_pw']);*/
 			$data['pw']=$_POST['conf_pw'];
@@ -175,12 +177,11 @@
 		}
 		else
 		{
-			/*$data['nom']=$_SESSION['pseudo'];
+			$data['nom']=$_SESSION['pseudo'];
 			$data['id']=search_id_art($data);
-////////////Problème
-			delete_account($data);*/
-			//require('../Controllers/logout.php');
-			header("location: ../index.php?page=settings&nb=deux&change=sup");
+			delete_account($data);
+			include('../Controllers/logout.php');
+			//header("location: ../index.php?page=settings&nb=deux&change=sup");
 		}
 	}
 ?>
