@@ -70,8 +70,8 @@
 		{
 			$data['id']=$_SESSION['id'];
 /////////////cryptage
-			/*require('../Controllers/cryptage.php');
-			$data['pw']=cryptage($_POST['conf_pw']);*/
+			require('../Controllers/cryptage.php');
+			$data['pw']=cryptage($_POST['conf_pw']);
 			$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
@@ -120,8 +120,8 @@
 		{
 			$data['id']=$_SESSION['id'];
 /////////////cryptage
-			/*require('../Controllers/cryptage.php');
-			$data['pw']=cryptage($_POST['conf_pw']);*/
+			require('../Controllers/cryptage.php');
+			$data['pw']=cryptage($_POST['conf_pw']);
 			$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
@@ -142,7 +142,7 @@
 		else
 		{
 /////////////cryptage
-			//$data['new_pw']=cryptage($_POST['new_pw']);
+			$data['new_pw']=cryptage($_POST['new_pw']);
 			$data['new_pw']=$_POST['new_pw'];
 			update_pw($data);
 			$_SESSION['pw']=$_POST['new_pw'];
@@ -161,8 +161,8 @@
 		{
 			$data['id']=$_SESSION['id'];
 /////////////cryptage
-			/*require('../Controllers/cryptage.php');
-			$data['pw']=cryptage($_POST['conf_pw']);*/
+			require('../Controllers/cryptage.php');
+			$data['pw']=cryptage($_POST['conf_pw']);
 			$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
