@@ -1,7 +1,7 @@
 <?php
 	function search_pw($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('SELECT* FROM USERS WHERE id_user=:id');
@@ -18,7 +18,7 @@
 	}
 	function search_id_art($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('SELECT* FROM ARTISTS WHERE artist_name=:pseudo');
@@ -35,7 +35,7 @@
 	}
 	function search_pseudo_user($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->query('SELECT* FROM USERS');
@@ -51,7 +51,7 @@
 	}
 	function search_pseudo_art($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->query('SELECT* FROM ARTISTS');
@@ -67,7 +67,7 @@
 	}
 	function update_pseudo_user($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('UPDATE USERS 
@@ -79,7 +79,7 @@
 	}
 	function update_pseudo_art($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('UPDATE ARTISTS
@@ -91,7 +91,7 @@
 	}
 	function update_statut($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('UPDATE USERS 
@@ -103,7 +103,7 @@
 	}
 	function update_pw($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('UPDATE USERS 
@@ -115,7 +115,7 @@
 	}
 	function insert_art($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('INSERT INTO ARTISTS(id_artist, artist_name, category) VALUES(:id, :pseudo, "amateur")');
@@ -125,7 +125,7 @@
 	}
 	function delete_art($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('DELETE FROM ARTISTS WHERE id_artist=:id');
@@ -135,7 +135,7 @@
 	}
 	function delete_account($data)
 	{
-		include_once('Models/db_connect.php');
+		include('Models/db_connect.php');
 		$bdd = db_connect();
 		//$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('DELETE FROM USERS WHERE id_user=:id');
