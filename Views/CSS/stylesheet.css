@@ -30,6 +30,16 @@ body {
     left:300px;
     top:140px;
 }
+.recherche {
+    display: block;
+    height:400%;
+    overflow: scroll;
+    font-Weight: Bold;
+    position: absolute;
+    width:20%;
+    left:80%;
+    top:24%;
+}
 .ALL {
     display: block;
     height:200px;

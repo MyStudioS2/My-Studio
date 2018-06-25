@@ -11,7 +11,6 @@ include 'Controllers/session_check.php';
 		if(isset($_POST['delete_fav'])) {
 			include 'Models/delete_fav.php';
 			delete_fav($_POST['delete_fav']);
-		//var_dump($_POST);
 		}
                 include 'Views/html_top.html';
                 include 'Views/barre.php';

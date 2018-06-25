@@ -1,6 +1,6 @@
 <?php
 session_start();
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 var_dump($_SESSION);
   if(isset($_GET['page']))
     switch($_GET['page']):
@@ -43,7 +43,7 @@ var_dump($_SESSION);
   }
   include "Views/html_bottom.html";
 =======
-//require_once("./Controllers/function.php"); */
+require_once("./Controllers/function.php"); */
 if(isset($_GET['page'])) {
   switch($_GET['page']):
     case 'register';
@@ -59,7 +59,7 @@ if(isset($_GET['page'])) {
 	include 'Controllers/accueil_membres.php';
         break;
     case 'parcourir';
-        include 'Controllers/show.php';
+        include 'Controllers/parcourir.php';
         break;
     case 'nouveautes';
         include 'Controllers/nouveautes.php';
@@ -98,5 +98,5 @@ if(isset($_GET['page'])) {
     include 'Controllers/home.php';
 }
     include "Views/html_bottom.html";
->>>>>>> 402eb69428fef7da8faaa3f0cc3bc308c8831673
+//>>>>>>> 402eb69428fef7da8faaa3f0cc3bc308c8831673
 ?>
