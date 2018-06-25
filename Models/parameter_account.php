@@ -14,7 +14,7 @@
 	    		$a=1;
 	    	}
 		}
-		return $a;	
+		return $a;
 	}
 	function search_id_art($data)
 	{
