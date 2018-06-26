@@ -59,7 +59,19 @@ if(isset($_GET['page'])) {
 	include 'Controllers/accueil_membres.php';
         break;
     case 'parcourir';
-        include 'Controllers/parcourir.php';
+	switch($_GET['request']):
+	    case 'musics';
+		include 'Controllers/parcourir_m.php';
+		break;
+	    case 'albums';
+		include 'Controllers/parcourir_al.php';
+		break;
+	    case 'artists';
+		include 'Controllers/parcourir_ar.php';
+		break;
+            default:
+                include './error/404/404.php';
+            endswitch;
         break;
     case 'nouveautes';
         include 'Controllers/nouveautes.php';

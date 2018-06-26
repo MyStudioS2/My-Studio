@@ -15,6 +15,13 @@ body {
     position: absolute;
   
 }
+.logo {
+    width:120px;
+    height:120px;
+    top:-1%;
+    left:1%;
+    position: absolute;
+}
 .table_genre {
     margin-top:50px;
     font-Weight: Bold;
@@ -39,6 +46,26 @@ body {
     width:20%;
     left:80%;
     top:24%;
+}
+.artists {
+    display: block;
+    height:200px;
+    overflow: scroll;
+    font-Weight: Bold;
+    position: absolute;
+    width:960px;
+    left:300px;
+    top:250px;
+}
+.albums {
+    display: block;
+    height:200px;
+    overflow: scroll;
+    font-Weight: Bold;
+    position: absolute;
+    width:960px;
+    left:300px;
+    top:250px;
 }
 .ALL {
     display: block;
@@ -130,7 +157,7 @@ body {
 .ligne {
     width:900px;
     font-Weight: Bold;
-   text-align:center;
+    text-align:center;
     border-collapse: collapse;
     position: absolute;
 }
@@ -138,14 +165,25 @@ body {
     position: relative;
     margin-top: -20px;
     margin-left: -10px;
-    width: 15%;
+    width: 17%;
     min-width: 250px;
-    min-height: 300px;
+    min-height: 400px;
     background-color: #990033;
-    height: 75%;
+    height: 95%;
     font-family: 'Titillium Web', sans-serif;
     overflow-y:hidden;
     overflow-x:hidden;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3),
+                0 3px 5px rgba(0, 0, 0, .2),
+                0 5px 10px rgba(0, 0, 0, .2),
+                0 20px 20px rgba(0, 0, 0, .15);
+}
+ul li ul li {
+display: none;
+}
+ul li:hover ul li{
+display: block;
 }
 #search_form {
     margin-top:12px;
@@ -209,53 +247,3 @@ h1 {
     font-size:70px;
     font-family: 'Lato', sans-serif;
 }
-     /*Barre de naviguation horizontale*/
-      ul.horizontale
-      {
-        list-style-type: none;
-        margin-top: -1%;
-        margin-left: -5%;
-        padding: 0;
-        overflow: hidden;
-        background-color: #990033;
-        /*Reste statique, même quand on défile la page
-        position: fixed;
-        top: 0;*/
-        width: 119%;
-      }
-      li.horizontale
-      {
-        float: left;
-      }
-      li a.horizontale
-      {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 44px 46px;
-        text-decoration: none;
-      }
-      li a.horizontale:hover
-      {
-        background-color: #4CAF50;
-      }
-      li a.horizontale1
-      {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 44px 46px;
-        text-decoration: none;
-      }
-      li a.horizontale1:hover
-      {
-        background-color: #4CAF50;
-      }
-      .active
-      {
-        width:120px;
-      }
-    input
-      {
-      }
-

@@ -13,7 +13,6 @@ include 'Controllers/session_check.php';
 			delete_fav($_POST['delete_fav']);
 		}
                 include 'Views/html_top.html';
-                include 'Views/barre.php';
                 include 'Views/navbar.php';
 		include('Models/new_songs.php');
 		include('Controllers/display_songs.php');
