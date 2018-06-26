@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	/*if($_GET['change']!=='sup')
-	{*/
+	if($_GET['change']!=='sup')
+	{
 		echo "<center><h2>Changement de ";
 		if($_GET['change']=='nom')
 		{
@@ -19,9 +19,9 @@
 		<input type='hidden' name='page' value='settings'>
 		<br><button>Retourner aux paramètres</button>
 		</form></center>";
-	/*}
+	}
 	else
 	{
 		echo "<center>Votre compte a bien été supprimé.</center>";
-	}*/
+	}
 ?>
