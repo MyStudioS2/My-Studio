@@ -29,12 +29,12 @@
 				case 'artiste';
 					include './Views/html_top.html';
 					include './Views/navbar.php';
-					include './Controllers/artist_settings_page.php';
+					include './Views/artist_settings_page.php';
 					break;
 				case 'auditeur';
 					include './Views/html_top.html';
 					include './Views/navbar.php';
-					include './Controllers/auditor_settings_page.php';
+					include './Views/auditor_settings_page.php';
 					break;
 				default:
 					include './error/404/404.php';
