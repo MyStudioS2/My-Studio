@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	/*$_SESSION['pseudo']='Michele'; 
-	$_SESSION['id']=3;
+	$_SESSION['id']=2;
 	$_SESSION['type']='auditeur';*/
 	echo"<center><h1>Compte</h1><br>";
 	echo "Changer de nom : 

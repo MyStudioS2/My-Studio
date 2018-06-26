@@ -24,7 +24,9 @@
 	</form><br>";
 	echo "Modifier mes musiques : 
 	<form action='index.php' method='GET'>
-	Modifier
+	<button>Modifier</button>
+	<input type='hidden' name='page' value='settings'>
+	<input type='hidden' name='nb' value='trois'>
 	</form><br>";
 	echo "Modifier mes favoris : 
 	<form action='index.php' method='GET'>

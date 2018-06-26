@@ -14,6 +14,11 @@
 					include './Views/navbar.php';
 					include './Views/change2_page.php';
 					break;
+				case 'trois';
+					include './Views/html_top.html';
+					include './Views/navbar.php';
+					include './Views/artist_add_music_page.php';
+					break;
 				default:
 					include './error/404/404.php';
 				endswitch;
@@ -24,12 +29,12 @@
 				case 'artiste';
 					include './Views/html_top.html';
 					include './Views/navbar.php';
-					include './Controllers/artist_settings.php';
+					include './Controllers/artist_settings_page.php';
 					break;
 				case 'auditeur';
 					include './Views/html_top.html';
 					include './Views/navbar.php';
-					include './Controllers/auditor_settings.php';
+					include './Controllers/auditor_settings_page.php';
 					break;
 				default:
 					include './error/404/404.php';
