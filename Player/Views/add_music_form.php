@@ -1,4 +1,3 @@
-
 <!doctype html>
 <head>
   <meta charset="utf-8">
@@ -8,19 +7,16 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <body>
-<div class="container" style ="max-width: 150px">
+<div class="container" style ="max-width: 250px">
     <form action="../Controllers/add_music.php" method="post" enctype="multipart/form-data">
-        Titre : </br>
-        <input type ="text" name ="title"><br>
-        Featuring :<br>
-        <input type ="text" name ="feat">
-        <br>
-        Album :<br>
-        <input type ="text" name ="album">
-        <br>
-        Date :
-        <input type="text" id="datepicker" ma="" name="release_date">
-        <input type="file" name ="audioFile"/><br>
+        <table><tr><th>Titre :</th><th>Featuring :</th><th>Fichier :</th></tr>
+          <?php for($i=0; $i< intval($_POST['track_amount']);$i++){
+            echo "<tr><td>Titre : </br>
+            <input type ='text' name ='title{$i}'></td><td>Featuring :<br>
+            <input type ='text' name ='feat{$i}'></td><td>input type="file" name ='audioFile{$i}'/></td></tr>";
+          }
+          ?>
+        </table>
         <center><input type="submit" name = "upload" value = "upload"></center>
     </form>
 </div>
