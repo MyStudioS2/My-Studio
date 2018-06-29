@@ -17,7 +17,7 @@
 				case 'trois';
 					include './Views/html_top.html';
 					include './Views/navbar.php';
-					include './Views/artist_add_music_page.php';
+					include './Views/artist_my_musics_page.php';
 					break;
 				default:
 					include './error/404/404.php';
