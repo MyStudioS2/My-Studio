@@ -1,26 +1,32 @@
 <?php
 	session_start();
-	if(isset($_GET['change'])==false)
+	if(isset($_POST['change'])==false)
 	{
 		header("location: ../index.php?page=settings");
 	}
-	else if($_GET['change']=='sup' || $_GET['change']=='mod')
+	else
 	{
-		if(isset($_GET['id'])==false)
+		if($_POST['change']=='sup')
 		{
-			header("location: ../index.php?page=settings");
+			if(isset($_POST['id'])==false)
+			{
+				header("location: ../index.php?page=settings");
+			}
+			else
+			{
+				
+			}
 		}
-		else if($_GET['change']=='sup')
+		else if($_POST['change']=='add')
 		{
-			
+				if($_POST['table']=='song')
+				{
+					# code...
+				}
+				else if($_POST['table']=='album')
+				{
+					# code...
+				}
 		}
-		else
-		{
-
-		}
-	}
-	else if($_GET['change']=='add')
-	{
-		
 	}
 ?>

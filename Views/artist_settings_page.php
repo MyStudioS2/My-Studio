@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	/*$_SESSION['pseudo']='Michele'; 
+	$_SESSION['id']=3;
+	$_SESSION['type']='artiste';*/
 	echo"<center><h1>Compte</h1><br>";
 	echo "Changer de nom : 
 	<form action='index.php' method='GET'>
@@ -22,15 +25,11 @@
 	<input type='hidden' name='change' value='pw'>
 	<button>Changer</button>
 	</form><br>";
-	echo "Modifier mes musiques : 
+	echo "Gérer mes musiques : 
 	<form action='index.php' method='GET'>
-	<button>Modifier</button>
 	<input type='hidden' name='page' value='settings'>
 	<input type='hidden' name='nb' value='trois'>
-	</form><br>";
-	echo "Modifier mes favoris : 
-	<form action='index.php' method='GET'>
-	Modifier
+	<button>Modifier</button>
 	</form><br>";
 	echo "Modifier mes playlists : 
 	<form action='index.php' method='GET'>
