@@ -4,7 +4,7 @@
 		/*include('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$reponse=$bdd->prepare('SELECT id_music, title, album_name
+		$reponse=$bdd->prepare('SELECT id_music, title, album_name, album_cover
 								FROM artists, musics, albums
 								WHERE id_artist=:id AND artist_id=id_artist AND album_id=id_album');
 		$reponse->execute(['id'=>$data['id']]);
@@ -38,5 +38,20 @@
 	    	$i++;
 		}
 		return $data;
+	}
+/////Nouveau
+	function delete_album($data)
+	{
+		/*include('Models/db_connect.php');
+		$bdd = db_connect();*/
+		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$reponse=$bdd->prepare('DELETE
+								FROM albums
+								WHERE id_album=:id');
+		$reponse->execute(['id'=>$data['ID']]);
+		$reponse=$bdd->prepare('DELETE
+								FROM musics
+								WHERE album_id=:id');
+		$reponse->execute(['id'=>$data['ID']]);
 	}
 ?>

@@ -16,7 +16,7 @@
 				$a=0;
 				$_SESSION['erreur']="<center>Tous les champs ne sont pas remplis. Veuillez réessayer.</center>";
 			}
-			if($a==1)
+			else
 			{
 				$data['id']=$_SESSION['id'];
 	/////////////cryptage

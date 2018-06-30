@@ -7,10 +7,10 @@
 	$data['id']=search_id_art($data);
 	$song=search_id_song($data);
 	echo "<center><table border=1>
-		<tr><th>Musique<th>Album<th>Image</tr>";
+		<tr><th>Nom de la musique<th>Nom de l'album<th>Image de l'album</tr>";
 	for($i=0;$i<sizeof($song)-3;$i++)
 	{
-		echo "<tr><td>".$song[1][$i]."<td>".$song[2][$i]."<td><img src=".$song[3][$i]."/></tr>";
+		echo "<tr><td>".$song[1][$i]."<td>".$song[2][$i]."<td><img src='".$song[3][$i]."' width='150' height='150'></tr>";
 	}
 	echo "<tr><td><form action='./index.php' method='GET'>
 	<input type='hidden' name='page' value='settings'>
@@ -26,7 +26,7 @@
 	<input type='hidden' name='table' value='album'>
 	<button>Ajouter un album</button>
 	</form>";
-	////A vérifier
+/////Nouveau
 	if(empty($song)==false)
 	{
 		echo "<td><form action='index.php' method='GET'>

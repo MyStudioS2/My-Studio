@@ -13,7 +13,7 @@
 		{
 			$data['pseudo']=$_SESSION['pseudo'];
 			$album=search_album($data);
-			echo "<h2> Quel album voulez-vous supprimer ?</h2><br>";
+			echo "<h2>Quel album voulez-vous supprimer ?</h2><br>";
 			echo "<form action='./Controllers/change_song.php' method='POST'>
 			<select name='nom'>";
 			for($i=0;$i<sizeof($album)-2;$i++)
@@ -33,7 +33,6 @@
 			}
 			echo "<br><button>Oui</button>";
 			echo "<input type='hidden' name='change' value='".$_GET['change']."'>
-			<input type='hidden' name='table' value='".$_GET['table']."'>
 			</form>";
 			echo "<form action='index.php?page=settings' method='GET'>
 			<input type='hidden' name='page' value='settings'>
@@ -56,6 +55,8 @@
 					<input type='text' name='featuring' placeholder='Partenaire' value='";if(isset($_SESSION['test2'])){echo $_SESSION['test2'];} echo "'><br>
 					<textarea name=lyrics rows='50' cols='100'>".$_SESSION['test3']."</textarea><br>
 					<textarea name=trans rows='50' cols='100'>".$_SESSION['test4']."</textarea><br><br>
+					<input type='hidden' name='change' value='".$_GET['change']."'>
+					<input type='hidden' name='table' value='".$_GET['table']."'>
 					<button>Envoyer</button>
 				</form>";
 			}
@@ -66,6 +67,8 @@
 				Image de couverture : <input type='file' name='album_cover'><br>
 					<input type='text' name='album_name' placeholder='Titre' value='";if(isset($_SESSION['test5'])){echo $_SESSION['test5'];} echo "'><br>
 					<input type='text' name='release_date' placeholder='Date de sortie' value='";if(isset($_SESSION['test6'])){echo $_SESSION['test6'];} echo "'><br><br>
+					<input type='hidden' name='change' value='".$_GET['change']."'>
+					<input type='hidden' name='table' value='".$_GET['table']."'>
 					<button>Envoyer</button>
 				</form>";
 			}
