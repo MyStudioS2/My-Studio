@@ -14,31 +14,23 @@
 			if(isset($_POST['id']))
 			{
 				$a=1;
-				if(empty($_POST['conf_pw']))
+				$data['id']=$_SESSION['id'];
+/////////////////cryptage
+				//$data['pw']=cryptage($_POST['conf_pw']);
+				$data['pw']=$_POST['conf_pw'];
+				$b=search_pw($data);
+				if($b==0)
 				{
 					$a=0;
-					$_SESSION['erreur']="<center>Le champ Mot de passe n'est pas rempli. Veuillez réessayer.</center>";
+					$_SESSION['erreur']="<center>Mot de passe incorrect. Veuillez réessayer.</center>";
 				}
 				else
 				{
-					$data['id']=$_SESSION['id'];
-/////////////////////cryptage
-					//$data['pw']=cryptage($_POST['conf_pw']);
-					$data['pw']=$_POST['conf_pw'];
-					$b=search_pw($data);
-					if($b==0)
-					{
-						$a=0;
-						$_SESSION['erreur']="<center>Mot de passe incorrect. Veuillez réessayer.</center>";
-					}
-					else
-					{
-						$data['ID']=$_POST['id'];
-/////////////////////////Problème
-						$_SESSION['erreur']="<center>".$data['ID']."</center>";
-						//delete_album($data);
-						header("location: ../index.php?page=settings&nb=cinq&change=sup");
-					}
+					$data['ID']=$_POST['id'];
+/////////////////////Problème
+					$_SESSION['erreur']="<center>".$data['ID']."</center>";
+					//delete_album($data);
+					header("location: ../index.php?page=settings&nb=cinq&change=sup");
 				}
 			}
 			else
@@ -54,7 +46,7 @@
 		{
 			if($_POST['table']=='song')
 			{
-				if(isset($_SESSION['test1'])==false || isset($_SESSION['test2'])==false || isset($_SESSION['test3'])=false || isset($_SESSION['test4'])==false)
+				if(isset($_POST['music_path'])==false || isset($_POST['titre'])==false)
 				{
 					header("location: ../index.php?page=settings");
 				}
@@ -69,17 +61,18 @@
 			}
 			else if($_POST['table']=='album')
 			{
-				if(isset($_SESSION['test5'])==false || isset($_SESSION['test6'])==false)
+				if(isset($_POST['album_cover'])==false || isset($_POST['album_name'])==false || isset($_POST['release_date'])==false)
 				{
 					header("location: ../index.php?page=settings");
 				}
 				else
 				{
 					$a=1;
+					
 				}
 				if($a==0)
 				{
-					header("location: ../index.php?page=settings&nb=quatre&change=add&table=song");
+					header("location: ../index.php?page=settings&nb=quatre&change=add&table=album");
 				}
 			}
 		}

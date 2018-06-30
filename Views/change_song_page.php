@@ -21,7 +21,7 @@
 				echo "<option value='".$album[0][$i]."'>".$album[1][$i]."</option>";
 			}
     		echo "</select><br>";
-			echo "<input type='password' placeholder='Mot de passe' name='conf_pw'><br><br>";
+			echo "<input type='password' placeholder='Mot de passe' name='conf_pw' required><br><br>";
 			if(isset($_SESSION['erreur']) && empty($_SESSION['erreur'])==false)
 			{
 				echo $_SESSION['erreur'];
@@ -51,8 +51,8 @@
 				}
 				echo "<h2>Ajouter une musique</h2><br>
 				<form action='./Controllers/change_song.php' method='POST'>
-				Lien du fichier : <input type='file' name='music_path'><br>
-					<input type='text' name='title' placeholder='Titre' value='";if(isset($_SESSION['test1'])){echo $_SESSION['test1'];} echo "'><br>
+				Lien du fichier : <input type='file' name='music_path' accept='audio/mp3' required><br>
+					<input type='text' name='title' placeholder='Titre' required value='";if(isset($_SESSION['test1'])){echo $_SESSION['test1'];} echo "'><br>
 					<input type='text' name='featuring' placeholder='Partenaire' value='";if(isset($_SESSION['test2'])){echo $_SESSION['test2'];} echo "'><br>
 					<textarea name=lyrics rows='50' cols='100'>".$_SESSION['test3']."</textarea><br>
 					<textarea name=trans rows='50' cols='100'>".$_SESSION['test4']."</textarea><br><br>
@@ -72,9 +72,9 @@
 			{
 				echo "<h2>Ajouter un album</h2><br>
 				<form action='./Controllers/change_song.php' method='POST'>
-				Image de couverture : <input type='file' name='album_cover'><br>
-					<input type='text' name='album_name' placeholder='Titre' value='";if(isset($_SESSION['test5'])){echo $_SESSION['test5'];} echo "'><br>
-					<input type='text' name='release_date' placeholder='Date de sortie' value='";if(isset($_SESSION['test6'])){echo $_SESSION['test6'];} echo "'><br><br>
+				Image de couverture : <input type='file' name='album_cover' accept='image/png, image/jpeg' required><br>
+					<input type='text' name='album_name' placeholder='Titre' required value='";if(isset($_SESSION['test5'])){echo $_SESSION['test5'];} echo "'><br>
+					<input type='text' name='release_date' placeholder='Date de sortie' required value='";if(isset($_SESSION['test6'])){echo $_SESSION['test6'];} echo "'><br><br>
 					<input type='hidden' name='change' value='".$_GET['change']."'>
 					<input type='hidden' name='table' value='".$_GET['table']."'>
 					<button>Envoyer</button>

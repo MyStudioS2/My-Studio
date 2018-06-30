@@ -25,20 +25,20 @@
 			<form action='Controllers/change.php' method='POST'>";
 			if($_GET['change']=='nom')
 			{
-				echo "<input type='text' placeholder='Pseudo' name='new_pseudo'><br>
-				<input type='password' placeholder='Mot de passe' name='conf_pw'><br><br>";
+				echo "<input type='text' placeholder='Pseudo' name='new_pseudo' required><br>
+				<input type='password' placeholder='Mot de passe' name='conf_pw' required><br><br>";
 			}
 			else if($_GET['change']=='statut')
 			{
 				echo "<input type='radio' name='statut' value='artiste'>Artiste
 				<input type='radio' name='statut' value='auditeur'>Auditeur<br>
-				<input type='password' placeholder='Mot de passe' name='conf_pw'><br><br>";
+				<input type='password' placeholder='Mot de passe' name='conf_pw' required><br><br>";
 			}
 			else if($_GET['change']=='pw')
 			{
-				echo "<input type='password' placeholder='Nouveau mot de passe' name='new_pw'><br>
-				<input type='password' placeholder='Nouveau mot de passe' name='verif_pw'><br>
-				<input type='password' placeholder='Ancien mot de passe' name='conf_pw'><br><br>";
+				echo "<input type='password' placeholder='Nouveau mot de passe' name='new_pw' required><br>
+				<input type='password' placeholder='Nouveau mot de passe' name='verif_pw' required><br>
+				<input type='password' placeholder='Ancien mot de passe' name='conf_pw' required><br><br>";
 			}
 			echo "<br><button>Envoyer</button><br><br>";
 			if(isset($_SESSION['erreur']) && empty($_SESSION['erreur'])==false)
@@ -61,7 +61,7 @@
 		{
 			echo "<center><h2>Êtes-vous sûr(e) de vouloir supprimer votre compte ?</h2>";
 			echo "<form action='Controllers/change.php' method='POST'>
-			<input type='password' placeholder='Mot de passe' name='conf_pw'><br><br>";
+			<input type='password' placeholder='Mot de passe' name='conf_pw' required><br><br>";
 			if(isset($_SESSION['erreur']) && empty($_SESSION['erreur'])==false)
 			{
 				echo $_SESSION['erreur'];
