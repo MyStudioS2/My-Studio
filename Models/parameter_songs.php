@@ -33,13 +33,13 @@
 		$i=0;
 		while($donnees=$reponse->fetch())
 	    {
-	    	$data[O][$i]=$donnees['id_album'];
+	    	$data[0][$i]=$donnees['id_album'];
 	   		$data[1][$i]=$donnees['album_name'];
 	    	$i++;
 		}
 		return $data;
 	}
-/////Nouveau
+/////Problème
 	function delete_album($data)
 	{
 		/*include('Models/db_connect.php');
@@ -47,11 +47,11 @@
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$reponse=$bdd->prepare('DELETE
 								FROM albums
-								WHERE id_album=:id');
-		$reponse->execute(['id'=>$data['ID']]);
+								WHERE id_album=:ID');
+		$reponse->execute(['ID'=>$data['ID']]);
 		$reponse=$bdd->prepare('DELETE
 								FROM musics
-								WHERE album_id=:id');
-		$reponse->execute(['id'=>$data['ID']]);
+								WHERE album_id=:ID');
+		$reponse->execute(['ID'=>$data['ID']]);
 	}
 ?>

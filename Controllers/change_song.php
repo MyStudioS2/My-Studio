@@ -11,7 +11,7 @@
 	{
 		if($_POST['change']=='sup')
 		{
-			if(isset($_POST['nom']))
+			if(isset($_POST['id']))
 			{
 				$a=1;
 				if(empty($_POST['conf_pw']))
@@ -33,9 +33,10 @@
 					}
 					else
 					{
-						$data['ID']=$_POST['nom'];
-/////////////////////////Nouveau
-						delete_album($data);
+						$data['ID']=$_POST['id'];
+/////////////////////////Problème
+						$_SESSION['erreur']="<center>".$data['ID']."</center>";
+						//delete_album($data);
 						header("location: ../index.php?page=settings&nb=cinq&change=sup");
 					}
 				}
@@ -53,11 +54,33 @@
 		{
 			if($_POST['table']=='song')
 			{
-				# code...
+				if(isset($_SESSION['test1'])==false || isset($_SESSION['test2'])==false || isset($_SESSION['test3'])=false || isset($_SESSION['test4'])==false)
+				{
+					header("location: ../index.php?page=settings");
+				}
+				else
+				{
+					$a=1;
+				}
+				if($a==0)
+				{
+					header("location: ../index.php?page=settings&nb=quatre&change=add&table=song");
+				}
 			}
 			else if($_POST['table']=='album')
 			{
-				# code...
+				if(isset($_SESSION['test5'])==false || isset($_SESSION['test6'])==false)
+				{
+					header("location: ../index.php?page=settings");
+				}
+				else
+				{
+					$a=1;
+				}
+				if($a==0)
+				{
+					header("location: ../index.php?page=settings&nb=quatre&change=add&table=song");
+				}
 			}
 		}
 	}

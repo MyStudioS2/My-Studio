@@ -15,7 +15,7 @@
 			$album=search_album($data);
 			echo "<h2>Quel album voulez-vous supprimer ?</h2><br>";
 			echo "<form action='./Controllers/change_song.php' method='POST'>
-			<select name='nom'>";
+			<select name='id'>";
 			for($i=0;$i<sizeof($album)-2;$i++)
 			{
 				echo "<option value='".$album[0][$i]."'>".$album[1][$i]."</option>";
@@ -36,6 +36,7 @@
 			</form>";
 			echo "<form action='index.php?page=settings' method='GET'>
 			<input type='hidden' name='page' value='settings'>
+			<input type='hidden' name='nb' value='trois'>
 			<br><button>Non</button>
 			</form></center>";
 		}
@@ -59,6 +60,13 @@
 					<input type='hidden' name='table' value='".$_GET['table']."'>
 					<button>Envoyer</button>
 				</form>";
+				if(isset($_SESSION['test1']) || isset($_SESSION['test2']) || isset($_SESSION['test3']) || isset($_SESSION['test4']))
+				{
+					$_SESSION['test1']="";
+					$_SESSION['test2']="";
+					$_SESSION['test3']="";
+					$_SESSION['test4']="";
+				}
 			}
 			else if($_GET['table']=='album')
 			{
@@ -71,6 +79,11 @@
 					<input type='hidden' name='table' value='".$_GET['table']."'>
 					<button>Envoyer</button>
 				</form>";
+				if(isset($_SESSION['test5']) || isset($_SESSION['test6']))
+				{
+					$_SESSION['test5']="";
+					$_SESSION['test6']="";
+				}
 			}
 			if(isset($_SESSION['erreur']) && empty($_SESSION['erreur'])==false)
 			{
@@ -83,7 +96,8 @@
 			}
 			echo "<form action='index.php?page=settings' method='GET'>
 			<input type='hidden' name='page' value='settings'>
-			<br><button>Retourner aux paramètres</button>
+			<input type='hidden' name='nb' value='trois'>
+			<br><button>Retour</button>
 			</form></center>";
 		}
 		else

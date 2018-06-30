@@ -36,6 +36,10 @@
 		<button>Supprimer un album</button>
 		</form>";
 	}
+	else
+	{
+		echo "<td>&nbsp;";
+	}
 	echo "</tr>";
 	echo "</table>";
 	echo "<form action='index.php?page=settings' method='GET'>
