@@ -24,9 +24,14 @@
 					include './Views/navbar.php';
 					include './Views/change_song_page.php';
 					break;
+				case 'cinq';
+					include './Views/html_top.html';
+					include './Views/navbar.php';
+					include './Views/change2_song_page.php';
+					break;
 				default:
 					include './error/404/404.php';
-				endswitch;
+			endswitch;
 		}
 		else
 		{
