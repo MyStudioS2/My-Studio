@@ -144,7 +144,7 @@
 								WHERE artist_id=:id');
 		$reponse->execute(['id'=>$data['id']]);
 	}
-	function delete_account($data)
+	function delete_account($data; $datas)
 	{
 		/*include('Models/db_connect.php');
 		$bdd = db_connect();*/
@@ -161,6 +161,13 @@
 								FROM musics
 								WHERE artist_id=:id');
 		$reponse->execute(['id'=>$data['id']]);
-		//album
+//////////Nouveau
+		for($i=0;$i<sizeof($datas);$i++)
+		{
+			$reponse=$bdd->prepare('DELETE 
+									FROM albums 
+									WHERE id_album=:id');
+			$reponse->execute(['id'=>$datas[$i]]);
+		}
 	}
 ?>
