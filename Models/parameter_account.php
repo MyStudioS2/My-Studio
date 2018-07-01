@@ -144,7 +144,7 @@
 								WHERE artist_id=:id');
 		$reponse->execute(['id'=>$data['id']]);
 	}
-	function delete_account($data; $datas)
+	function delete_account($data, $datas)
 	{
 		/*include('Models/db_connect.php');
 		$bdd = db_connect();*/

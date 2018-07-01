@@ -11,7 +11,6 @@
 		$reponse->execute(['id'=>$data['id']]);
 		$data=array();
 		$i=0;
-		//Problème 0 musique/album
 		while($donnees=$reponse->fetch())
 	    {
 		    $data[0][$i]=$donnees['title'];
