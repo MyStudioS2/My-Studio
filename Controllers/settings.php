@@ -54,7 +54,7 @@
 	else
 	{
 		include './Views/html_top.html';
-		include './Views/navbar.php';
+		include './xViews/navbar.php';
 		include './Controllers/home.php';
 	}
 ?>
