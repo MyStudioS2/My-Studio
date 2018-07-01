@@ -1,5 +1,4 @@
 <?php
-/////Problème ?
 	function search_id_song($data)
 	{
 		/*include('Models/db_connect.php');
@@ -17,6 +16,7 @@
 		    $data[1][$i]=$donnees['album_name'];
 		    $data[2][$i]=$donnees['album_cover'];
 		    $i++;
+		    $data[3][0]=$i;
 		}
 		return $data;
 	}
@@ -25,7 +25,7 @@
 		/*include('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$reponse=$bdd->prepare('SELECT id_album, album_name
+		$reponse=$bdd->prepare('SELECT DISTINCT id_album, album_name
 								FROM artists, musics, albums
 								WHERE artist_name=:pseudo AND id_artist=artist_id AND album_id=id_album');
 		$reponse->execute(['pseudo'=>$data['pseudo']]);
@@ -35,6 +35,7 @@
 	    	$data[0][$i]=$donnees['id_album'];
 	   		$data[1][$i]=$donnees['album_name'];
 	    	$i++;
+	    	$data[3][0]=$i;
 		}
 		return $data;
 	}

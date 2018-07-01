@@ -8,7 +8,7 @@
 	$song=search_id_song($data);
 	echo "<center><table border=1>
 	<tr><th>Nom de la musique<th>Nom de l'album<th>Image de l'album</tr>";
-	for($i=0;$i<sizeof($song)-2;$i++)
+	for($i=0;$i<$song[3][0];$i++)
 	{
 		echo "<tr><td>".$song[0][$i]."<td>".$song[1][$i]."<td><img src='".$song[2][$i]."' width='150' height='150'></tr>";
 	}
