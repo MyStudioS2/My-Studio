@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	/*$_SESSION['pseudo']='Stephane'; 
+	$_SESSION['id']=5;
+	$_SESSION['type']='auditeur';*/
 	echo"<center><h1>Compte</h1><br>";
 	echo "Changer de nom : 
 	<form action='index.php' method='GET'>

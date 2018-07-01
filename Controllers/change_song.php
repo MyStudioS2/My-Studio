@@ -27,9 +27,7 @@
 				else
 				{
 					$data['ID']=$_POST['id'];
-/////////////////////Problème
-					$_SESSION['erreur']="<center>".$data['ID']."</center>";
-					//delete_album($data);
+					delete_album($data['ID']);
 					header("location: ../index.php?page=settings&nb=cinq&change=sup");
 				}
 			}

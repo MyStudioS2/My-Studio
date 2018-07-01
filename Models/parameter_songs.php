@@ -39,19 +39,18 @@
 		}
 		return $data;
 	}
-/////Problème
-	function delete_album($data)
+	function delete_album($id)
 	{
 		/*include('Models/db_connect.php');
 		$bdd = db_connect();*/
 		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$reponse=$bdd->prepare('DELETE
-								FROM albums
-								WHERE id_album=:ID');
-		$reponse->execute(['ID'=>$data['ID']]);
-		$reponse=$bdd->prepare('DELETE
-								FROM musics
-								WHERE album_id=:ID');
-		$reponse->execute(['ID'=>$data['ID']]);
+		$reponse=$bdd->prepare('DELETE 
+								FROM musics 
+								WHERE album_id=:id');
+		$reponse->execute(['id'=>$id]);
+		$reponse=$bdd->prepare('DELETE 
+								FROM albums 
+								WHERE id_album=:id');
+		$reponse->execute(['id'=>$id]);
 	}
 ?>

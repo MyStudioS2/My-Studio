@@ -147,8 +147,9 @@
 			}
 			else
 			{
-				$data['nom']=$_SESSION['pseudo'];
+				require_once('../Models/parameter_songs.php');
 				$data['id']=search_id_art($data);
+				$data['ID']=
 				delete_account($data);
 				//include('../Controllers/logout.php');
 				header("location: ../index.php?page=settings&nb=deux&change=sup");

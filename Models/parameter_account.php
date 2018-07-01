@@ -161,5 +161,6 @@
 								FROM musics
 								WHERE artist_id=:id');
 		$reponse->execute(['id'=>$data['id']]);
+		//album
 	}
 ?>
