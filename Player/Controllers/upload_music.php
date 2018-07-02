@@ -8,8 +8,14 @@ switch(isset($_POST)):
     $album = htmlspecialchars(trim($_POST['album']), ENT_QUOTES, 'UTF-8');
     $date = $_POST['release_date'];
     $feat = htmlspecialchars(trim($_POST['feat']), ENT_QUOTES, 'UTF-8');
+    
+    /** Création du répertoire de l'album */
+    try {
+        mkdir('../musics/'.$artist.'/'.$album);
+    } finaly{}
 
-    $dir='D:/Applications_code/wamp64/bin/mysql/mysql5.7.21/data/mystudio/musics/';
+    /** Path pour l'upload */
+    $dir='../musics/'.$artist.'/'.$album;
     $audio_path=$dir.basename($_FILES['audioFile']['name']);
     if(move_uploaded_file($_FILES['audioFile']['tmp_name'],$audio_path)){
         echo 'upload successfull<br>';
