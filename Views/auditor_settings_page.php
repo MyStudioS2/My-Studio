@@ -22,6 +22,7 @@
 	<input type='hidden' name='change' value='pw'>
 	<button>Changer</button>
 	</form><br>";
+	echo "EN CONSTRUCTION<br>";
 	echo "Modifier mes playlists : 
 	<form action='index.php' method='GET'>
 	Modifier

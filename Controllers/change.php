@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require('../Models/parameter_account.php');
-	//require('../Controllers/cryptage.php');
+	require('../Controllers/cryptage.php');
 	if(isset($_POST['change'])==false)
 	{
 		header("location: ../index.php?page=settings");
@@ -13,8 +13,8 @@
 		{
 			$data['id']=$_SESSION['id'];
 	/////////cryptage
-			//$data['pw']=cryptage($_POST['conf_pw']);
-			$data['pw']=$_POST['conf_pw'];
+			$data['pw']=cryptage($_POST['conf_pw']);
+			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
 			{
@@ -60,8 +60,8 @@
 		{
 			$data['id']=$_SESSION['id'];
 	/////////cryptage
-			//$data['pw']=cryptage($_POST['conf_pw']);
-			$data['pw']=$_POST['conf_pw'];
+			$data['pw']=cryptage($_POST['conf_pw']);
+			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
 			{
@@ -101,8 +101,8 @@
 		{
 			$data['id']=$_SESSION['id'];
 	/////////cryptage
-			//$data['pw']=cryptage($_POST['conf_pw']);
-			$data['pw']=$_POST['conf_pw'];
+			$data['pw']=cryptage($_POST['conf_pw']);
+			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
 			{
@@ -121,8 +121,8 @@
 			else
 			{
 	/////////////cryptage
-				//$data['new_pw']=cryptage($_POST['new_pw']);
-				$data['new_pw']=$_POST['new_pw'];
+				$data['new_pw']=cryptage($_POST['new_pw']);
+				//$data['new_pw']=$_POST['new_pw'];
 				update_pw($data);
 				$_SESSION['pw']=$_POST['new_pw'];
 				$_SESSION['erreur']="";
@@ -133,8 +133,8 @@
 		{
 			$data['id']=$_SESSION['id'];
 	/////////cryptage
-			//$data['pw']=cryptage($_POST['conf_pw']);
-			$data['pw']=$_POST['conf_pw'];
+			$data['pw']=cryptage($_POST['conf_pw']);
+			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
 			if($b==0)
 			{
@@ -153,8 +153,8 @@
 				$data['id']=search_id_art($data);
 				$datas=search_album($data);
 				delete_account($data, $datas);
-				//include('../Controllers/logout.php');
-				header("location: ../index.php?page=settings&nb=deux&change=sup");
+				include('../Controllers/logout.php');
+				//header("location: ../index.php?page=settings&nb=deux&change=sup");
 			}
 		}
 	}

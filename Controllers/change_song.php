@@ -2,7 +2,7 @@
 	session_start();
 	require('../Models/parameter_account.php');
 	require('../Models/parameter_songs.php');
-	//require('../Controllers/cryptage.php');
+	require('../Controllers/cryptage.php');
 	if(isset($_POST['change'])==false)
 	{
 		header("location: ../index.php?page=settings");
@@ -16,8 +16,8 @@
 				$a=1;
 				$data['id']=$_SESSION['id'];
 /////////////////cryptage
-				//$data['pw']=cryptage($_POST['conf_pw']);
-				$data['pw']=$_POST['conf_pw'];
+				$data['pw']=cryptage($_POST['conf_pw']);
+				//$data['pw']=$_POST['conf_pw'];
 				$b=search_pw($data);
 				if($b==0)
 				{

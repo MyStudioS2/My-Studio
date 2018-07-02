@@ -49,6 +49,7 @@
 					$_SESSION['test3']="Paroles...";
 					$_SESSION['test4']="Traduction des paroles...";
 				}
+				echo "EN CONSTRUCTION<br>";
 				echo "<h2>Ajouter une musique</h2><br>
 				<form enctype='multipart/form-data' action='./Controllers/change_song.php' method='POST'>
 				Lien du fichier : <input type='file' name='song' accept='audio/mp3' required><br>
@@ -72,6 +73,7 @@
 			}
 			else if($_GET['table']=='album')
 			{
+				echo "EN CONSTRUCTION<br>";
 				echo "<h2>Ajouter un album</h2><br>
 				<form enctype='multipart/form-data action='./Controllers/change_song.php' method='POST'>
 				Image de couverture : <input type='file' name='picture' accept='image/jpeg, image/png, image/jpg' required><br>
