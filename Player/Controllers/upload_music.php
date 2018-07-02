@@ -12,7 +12,9 @@ switch(isset($_POST)):
     /** Création du répertoire de l'album */
     try {
         mkdir('../musics/'.$artist.'/'.$album);
-    } finaly{}
+    } finaly{
+        $successmsg = 'Le dossier a bien été créé';
+    }
 
     /** Path pour l'upload */
     $dir='../musics/'.$artist.'/'.$album;
