@@ -21,7 +21,7 @@
 				}
 				else if($_GET['table']=='album')
 				{
-					echo " album</h2><br>L'ajout de cet album.";
+					echo " album</h2><br>L'ajout de cet album a été un succès.";
 				}
 				echo "<form action='index.php?page=settings' method='GET'>
 				<input type='hidden' name='page' value='settings'>

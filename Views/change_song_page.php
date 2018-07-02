@@ -51,8 +51,7 @@
 				}
 				echo "<h2>Ajouter une musique</h2><br>
 				<form enctype='multipart/form-data' action='./Controllers/change_song.php' method='POST'>
-				<input type='hidden' name='MAX_FILE_SIZE' value='20000'>
-				Lien du fichier : <input type='file' name='monfichier' accept='audio/mp3' required><br>
+				Lien du fichier : <input type='file' name='song' accept='audio/mp3' required><br>
 					<input type='text' name='title' placeholder='Titre' required value='";if(isset($_SESSION['test1'])){echo $_SESSION['test1'];} echo "'><br>
 					<input type='text' name='featuring' placeholder='Partenaire' value='";if(isset($_SESSION['test2'])){echo $_SESSION['test2'];} echo "'><br>
 					Seuls les fichiers audios.mp3 sont acceptés.<br>
@@ -75,11 +74,10 @@
 			{
 				echo "<h2>Ajouter un album</h2><br>
 				<form enctype='multipart/form-data action='./Controllers/change_song.php' method='POST'>
-				<input type='hidden' name='MAX_FILE_SIZE' value='20000'>
-				Image de couverture : <input type='file' name='monfichier' accept='image/jpeg, image/png, image/jpg' required><br>
+				Image de couverture : <input type='file' name='picture' accept='image/jpeg, image/png, image/jpg' required><br>
 					<input type='text' name='album_name' placeholder='Titre' required value='";if(isset($_SESSION['test5'])){echo $_SESSION['test5'];} echo "'><br>
 					<input type='text' name='release_date' placeholder='Date de sortie' required value='";if(isset($_SESSION['test6'])){echo $_SESSION['test6'];} echo "'><br>
-					Seules les images.png et images.jpeg sont acceptées.<br><br>
+					Seules les images.png, images.jpg et images.jpeg sont acceptées.<br><br>
 					<input type='hidden' name='change' value='".$_GET['change']."'>
 					<input type='hidden' name='table' value='".$_GET['table']."'>";
 					//echo "Envoyer
