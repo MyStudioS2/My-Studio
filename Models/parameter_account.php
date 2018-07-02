@@ -154,20 +154,19 @@
 								WHERE id_user=:id');
 		$reponse->execute(['id'=>$_SESSION['id']]);
 		$reponse=$bdd->prepare('DELETE
-								FROM artists
-								WHERE id_artist=:id');
-		$reponse->execute(['id'=>$data['id']]);
-		$reponse=$bdd->prepare('DELETE
 								FROM musics
 								WHERE artist_id=:id');
 		$reponse->execute(['id'=>$data['id']]);
-//////////Nouveau
-		for($i=0;$i<sizeof($datas);$i++)
+		for($i=0;$i<$datas[2][0];$i++)
 		{
 			$reponse=$bdd->prepare('DELETE 
 									FROM albums 
 									WHERE id_album=:id');
-			$reponse->execute(['id'=>$datas[$i]]);
+			$reponse->execute(['id'=>$datas[0][$i]]);
 		}
+		$reponse=$bdd->prepare('DELETE
+								FROM artists
+								WHERE id_artist=:id');
+		$reponse->execute(['id'=>$data['id']]);
 	}
 ?>

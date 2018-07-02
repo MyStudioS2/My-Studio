@@ -16,7 +16,7 @@
 			echo "<h2>Quel album voulez-vous supprimer ?</h2><br>";
 			echo "<form action='./Controllers/change_song.php' method='POST'>
 			<select name='id'>";
-			for($i=0;$i<$album[3][0];$i++)
+			for($i=0;$i<$album[2][0];$i++)
 			{
 				echo "<option value='".$album[0][$i]."'>".$album[1][$i]."</option>";
 			}

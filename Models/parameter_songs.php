@@ -35,24 +35,7 @@
 	    	$data[0][$i]=$donnees['id_album'];
 	   		$data[1][$i]=$donnees['album_name'];
 	    	$i++;
-	    	$data[3][0]=$i;
-		}
-		return $data;
-	}
-/////Nouveau
-	function search_album_id($data)
-	{
-		/*include('Models/db_connect.php');
-		$bdd = db_connect();*/
-		$bdd=new PDO('mysql:host=localhost;dbname=mystudio;charset=UTF8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$reponse=$bdd->prepare('SELECT id_album
-								FROM artists, musics, albums
-								WHERE artist_name=:pseudo AND id_artist=artist_id AND album_id=id_album');
-		$reponse->execute(['pseudo'=>$data['pseudo']]);
-		while($donnees=$reponse->fetch())
-	    {
-	    	$data[$i]=$donnees['id_album'];
-	    	$i++;
+	    	$data[2][0]=$i;
 		}
 		return $data;
 	}

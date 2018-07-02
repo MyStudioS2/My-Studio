@@ -59,7 +59,7 @@
 		}
 		else
 		{
-			echo "<center><h2>Êtes-vous sûr(e) de vouloir supprimer votre compte ?</h2>";
+			echo "<center><h2>Êtes-vous sûr(e) de vouloir supprimer votre compte, ".$_SESSION['pseudo']." ?</h2>";
 			echo "<form action='Controllers/change.php' method='POST'>
 			<input type='password' placeholder='Mot de passe' name='conf_pw' required><br><br>";
 			if(isset($_SESSION['erreur']) && empty($_SESSION['erreur'])==false)
