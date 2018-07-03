@@ -15,13 +15,13 @@
   </style>
   <body>
     <center><div class="container" style ="max-width: 250px; text-align:center">
-      <form action="" method="GET" name="album_choice">
+      <form action="../Controllers/upload_music.php" method="POST" name="album_choice">
         Titre de l'album :<br>
         <input type="text" style ="text-align:center" name="album" placeholder="Nom de l'album"><br>
         Nombre de pistes :<br>
         <input type="number" style ="width:35px " min ="1" max="30" step="1" name="track_count"value="1"><br>
         Date :<br>
-        <input type="" max="-1" id="datepicker" style="width:70px" name="release_date"><br>
+        <input type="text" id="datepicker" style="width:70px" name="release_date"><br>
         <input type="submit" name="confirmer" value="Confirmer">
       </form>
     </div></center>

@@ -8,9 +8,12 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <body>
 <div class="container" style ="max-width: 250px">
-    <form action="../Controllers/add_music.php" method="post" enctype="multipart/form-data">
+    <form action="../Controllers/upload_music.php" method="post" enctype="multipart/form-data">
         <table><tr><th>Titre :</th><th>Featuring :</th><th>Fichier :</th></tr>
-          <?php for($i=0; $i< intval($_POST['track_amount']);$i++){
+          <?php echo $tracks_amount;
+          echo $album_name;
+          echo '<br>';
+          for($i=0; $i<$tracks_amount;$i++){
             echo "<tr><td>Titre : </br>
             <input type ='text' name ='title{$i}'></td><td>Featuring :<br>
             <input type ='text' name ='feat{$i}'></td><td>input type="file" name ='audioFile{$i}'/></td></tr>";
@@ -24,7 +27,7 @@
 <?php if(isset($row)){
   for($i=0;$i<count($row);$i++){
     if(!empty($row[$i]['music_path'])){
-      echo "<source src='./{$row[$i]['music_path']}' type='audio/mpeg'>";
+      echo "<source src='../{$row[$i]['music_path']}' type='audio/mpeg'>";
     }
   }
 }?>

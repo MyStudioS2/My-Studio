@@ -1,9 +1,14 @@
 <?php
-include_once("../Models/db_connect.php");
 var_dump($_POST);
 var_dump($_FILES);
 switch(isset($_POST)):
-    case(!empty($_POST['title'])):
+    case(isset($_POST['album'])):
+    $album_name=$_POST['album'];
+    $tracks_amount = intval($_POST['track_count']);
+
+    include("../Views/add_music_form.php");
+    break;
+    case(isset($_POST['title'])):
     $title = htmlspecialchars(trim($_POST['title']), ENT_QUOTES, 'UTF-8');
     $album = htmlspecialchars(trim($_POST['album']), ENT_QUOTES, 'UTF-8');
     $date = $_POST['release_date'];
@@ -11,8 +16,9 @@ switch(isset($_POST)):
     
     /** Création du répertoire de l'album */
     try {
-        mkdir('../musics/'.$artist.'/'.$album);
-    } finaly{
+        mkdir('../')
+        mkdir('../musics/'.$artist.'/'.$album.'');
+    } finally{
         $successmsg = 'Le dossier a bien été créé';
     }
 
@@ -30,6 +36,6 @@ switch(isset($_POST)):
 
         break;
         default:
-        include('../Views/upload_music.php');
+        include('../Views/choose_amount.php');
     endswitch;
 ?>
