@@ -15,7 +15,7 @@
   </style>
   <body>
     <center><div class="container" style ="max-width: 250px; text-align:center">
-      <form action="../Controllers/upload_music.php" method="POST" name="album_choice">
+      <form action="../Controllers/upload_music.php" method="POST" name="album_choice" enctype="multipart/form-data">
         Titre de l'album :<br>
         <input type="text" style ="text-align:center" name="album" placeholder="Nom de l'album"><br>
         Nombre de pistes :<br>

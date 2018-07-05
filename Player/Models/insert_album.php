@@ -12,7 +12,7 @@
         // Security measures
     $query_params = array(
         ':ID' => NULL,
-        ':album_name' => $album_title,
+        ':album_name' => $album_name,
         ':cover_path' => $cover_path,
         ':release_date' =>$date);
     try {
