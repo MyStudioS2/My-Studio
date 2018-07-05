@@ -1,6 +1,7 @@
 <?php
 var_dump($_POST);
 var_dump($_FILES);
+
 switch(isset($_POST)):
     case(isset($_POST['album'])):
     $album_name=$_POST['album'];
@@ -8,7 +9,9 @@ switch(isset($_POST)):
     $tracks_amount = intval($_POST['track_count']);
     $artist = "Joey Bad4$$";
     include("../Views/add_music_form.php");
+
     /** Création du répertoire de l'album */
+    
         if(!is_dir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist)){
         mkdir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'');
         }
@@ -16,7 +19,6 @@ switch(isset($_POST)):
         mkdir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'');
         }
         $successmsg = 'Le dossier a bien été créé';
-        echo $successmsg;
     break;
     
     case(isset($_POST['upload'])):

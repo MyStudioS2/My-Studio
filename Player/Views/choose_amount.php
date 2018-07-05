@@ -22,6 +22,8 @@
         <input type="number" style ="width:35px " min ="1" max="30" step="1" name="track_count"value="1"><br>
         Date :<br>
         <input type="text" id="datepicker" style="width:70px" name="release_date"><br>
+        Cover : <br>
+        <input type='file' name ='coverFile' enctype="multipart/form-data"/>
         <input type="submit" name="confirmer" value="Confirmer">
       </form>
     </div></center>
