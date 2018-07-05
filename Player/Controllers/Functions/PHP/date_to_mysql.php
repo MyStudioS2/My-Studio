@@ -4,3 +4,4 @@
         $date = $album_date[2].'-'.$album_date[1].'-'.$album_date[0];
         return $date;
     }
+?>
