@@ -16,7 +16,7 @@
           for($i=0; $i<$tracks_amount;$i++){
             echo "<tr><td>Titre : </br>
             <input type ='text' name ='title{$i}'></td><td>Featuring :<br>
-            <input type ='text' name ='feat{$i}'></td><td>input type="file" name ='audioFile{$i}'/></td></tr>";
+            <input type ='text' name ='feat{$i}'></td><td><input type='file' name ='audioFile{$i}'/></td></tr>";
           }
           ?>
         </table>
