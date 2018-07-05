@@ -1,23 +1,18 @@
 <?php
 	session_start();
 	require('../Models/parameter_account.php');
-	$a=1;
+	require('../Controllers/cryptage.php');
 	if(isset($_POST['change'])==false)
 	{
 		header("location: ../index.php?page=settings");
 	}
-	else if($_POST['change']=='nom')
+	else
 	{
-		if(empty($_POST['conf_pw']) || empty($_POST['new_pseudo']))
-		{
-			$a=0;
-			$_SESSION['erreur']="<center>Tous les champs ne sont pas remplis. Veuillez réessayer.</center>";
-		}
-		if($a==1)
+		$a=1;
+		if($_POST['change']=='nom')
 		{
 			$data['id']=$_SESSION['id'];
-/////////////cryptage
-			require('../Controllers/cryptage.php');
+	/////////cryptage
 			$data['pw']=cryptage($_POST['conf_pw']);
 			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
@@ -42,38 +37,29 @@
 					$_SESSION['erreur']="<center>Ce pseudo existe déjà, veuillez en choisir un autre.</center>";
 				}
 			}
-		}
-		if($a==0)
-		{
-			header("location: ../index.php?page=settings&nb=un&change=nom");
-		}
-		else
-		{
-			$data['pseudo']=$_POST['new_pseudo'];
-			update_pseudo_user($data);
-			if($_SESSION['type']=='artiste')
+			if($a==0)
 			{
-				$data['nom']=$_SESSION['pseudo'];
-				$data['id']=search_id_art($data);
-				update_pseudo_art($data);
+				header("location: ../index.php?page=settings&nb=un&change=nom");
 			}
-			$_SESSION['pseudo']=$_POST['new_pseudo'];
-			$_SESSION['erreur']="";
-			header("location: ../index.php?page=settings&nb=deux&change=nom");
+			else
+			{
+				$data['pseudo']=$_POST['new_pseudo'];
+				update_pseudo_user($data);
+				if($_SESSION['type']=='artiste')
+				{
+					$data['nom']=$_SESSION['pseudo'];
+					$data['id']=search_id_art($data);
+					update_pseudo_art($data);
+				}
+				$_SESSION['pseudo']=$_POST['new_pseudo'];
+				$_SESSION['erreur']="";
+				header("location: ../index.php?page=settings&nb=deux&change=nom");
+			}
 		}
-	}
-	else if($_POST['change']=='statut')
-	{
-		if(empty($_POST['conf_pw']) || empty($_POST['statut']))
-		{
-			$a=0;
-			$_SESSION['erreur']="<center>Tous les champs ne sont pas remplis. Veuillez réessayer.</center>";
-		}
-		if($a==1)
+		else if($_POST['change']=='statut')
 		{
 			$data['id']=$_SESSION['id'];
-/////////////cryptage
-			require('../Controllers/cryptage.php');
+	/////////cryptage
 			$data['pw']=cryptage($_POST['conf_pw']);
 			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
@@ -87,43 +73,34 @@
 				$a=0;
 				$_SESSION['erreur']="<center>Vous possédez déjà ce statut.</center>";
 			}
-		}
-		if($a==0)
-		{
-			header("location: ../index.php?page=settings&nb=un&change=statut");
-		}
-		else
-		{
-			$data['statut']=$_POST['statut'];
-			update_statut($data);
-			$data['pseudo']=$_SESSION['pseudo'];
-			if($_SESSION['type']=='auditeur')
+			if($a==0)
 			{
-				insert_art($data);
+				header("location: ../index.php?page=settings&nb=un&change=statut");
 			}
 			else
 			{
-				$data['nom']=$_SESSION['pseudo'];
-				$data['id']=search_id_art($data);
-				delete_art($data);
+				$data['statut']=$_POST['statut'];
+				update_statut($data);
+				$data['pseudo']=$_SESSION['pseudo'];
+				if($_SESSION['type']=='auditeur')
+				{
+					insert_art($data);
+				}
+				else
+				{
+					$data['nom']=$_SESSION['pseudo'];
+					$data['id']=search_id_art($data);
+					delete_art($data);
+				}
+				$_SESSION['type']=$_POST['statut'];
+				$_SESSION['erreur']="";
+				header("location: ../index.php?page=settings&nb=deux&change=statut");
 			}
-			$_SESSION['type']=$_POST['statut'];
-			$_SESSION['erreur']="";
-			header("location: ../index.php?page=settings&nb=deux&change=statut");
 		}
-	}
-	else if($_POST['change']=='pw')
-	{
-		if(empty($_POST['conf_pw']) || empty($_POST['new_pw']) || empty($_POST['verif_pw']))
-		{
-			$a=0;
-			$_SESSION['erreur']="<center>Tous les champs ne sont pas remplis. Veuillez réessayer.</center>";
-		}
-		if($a==1)
+		else if($_POST['change']=='pw')
 		{
 			$data['id']=$_SESSION['id'];
-/////////////cryptage
-			require('../Controllers/cryptage.php');
+	/////////cryptage
 			$data['pw']=cryptage($_POST['conf_pw']);
 			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
@@ -137,35 +114,25 @@
 				$a=0;
 				$_SESSION['erreur']="<center>Divergence des entrées du nouveau mot de passe. Veuillez réessayer.</center>";
 			}
+			if($a==0)
+			{
+				header("location: ../index.php?page=settings&nb=un&change=pw");
+			}
+			else
+			{
+	/////////////cryptage
+				$data['new_pw']=cryptage($_POST['new_pw']);
+				//$data['new_pw']=$_POST['new_pw'];
+				update_pw($data);
+				$_SESSION['pw']=$_POST['new_pw'];
+				$_SESSION['erreur']="";
+				header("location: ../index.php?page=settings&nb=deux&change=pw");
+			}
 		}
-		if($a==0)
-		{
-			header("location: ../index.php?page=settings&nb=un&change=pw");
-		}
-		else
-		{
-/////////////cryptage
-			require('../Controllers/cryptage.php');
-			$data['new_pw']=cryptage($_POST['new_pw']);
-			//$data['new_pw']=$_POST['new_pw'];
-			update_pw($data);
-			$_SESSION['pw']=$_POST['new_pw'];
-			$_SESSION['erreur']="";
-			header("location: ../index.php?page=settings&nb=deux&change=pw");
-		}
-	}
-	else if($_POST['change']=='sup')
-	{
-		if(empty($_POST['conf_pw']))
-		{
-			$a=0;
-			$_SESSION['erreur']="<center>Le champ n'est pas rempli. Veuillez réessayer.</center>";
-		}
-		if($a==1)
+		else if($_POST['change']=='sup')
 		{
 			$data['id']=$_SESSION['id'];
-/////////////cryptage
-			require('../Controllers/cryptage.php');
+	/////////cryptage
 			$data['pw']=cryptage($_POST['conf_pw']);
 			//$data['pw']=$_POST['conf_pw'];
 			$b=search_pw($data);
@@ -174,18 +141,21 @@
 				$a=0;
 				$_SESSION['erreur']="<center>Mot de passe incorrect. Veuillez réessayer.</center>";
 			}
-		}
-		if($a==0)
-		{
-			header("location: ../index.php?page=settings&nb=un&change=sup");
-		}
-		else
-		{
-			$data['nom']=$_SESSION['pseudo'];
-			$data['id']=search_id_art($data);
-			delete_account($data);
-			include('../Controllers/logout.php');
-			//header("location: ../index.php?page=settings&nb=deux&change=sup");
+			if($a==0)
+			{
+				header("location: ../index.php?page=settings&nb=un&change=sup");
+			}
+			else
+			{
+				require_once('../Models/parameter_songs.php');
+				$data['nom']=$_SESSION['pseudo'];
+				$data['pseudo']=$_SESSION['pseudo'];
+				$data['id']=search_id_art($data);
+				$datas=search_album($data);
+				delete_account($data, $datas);
+				include('../Controllers/logout.php');
+				//header("location: ../index.php?page=settings&nb=deux&change=sup");
+			}
 		}
 	}
 ?>

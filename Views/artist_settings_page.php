@@ -22,14 +22,13 @@
 	<input type='hidden' name='change' value='pw'>
 	<button>Changer</button>
 	</form><br>";
-	echo "Modifier mes musiques : 
+	echo "Gérer mes musiques : 
 	<form action='index.php' method='GET'>
-	Modifier
+	<input type='hidden' name='page' value='settings'>
+	<input type='hidden' name='nb' value='trois'>
+	<button>Modifier</button>
 	</form><br>";
-	echo "Modifier mes favoris : 
-	<form action='index.php' method='GET'>
-	Modifier
-	</form><br>";
+	echo "EN CONSTRUCTION<br>";
 	echo "Modifier mes playlists : 
 	<form action='index.php' method='GET'>
 	Modifier
