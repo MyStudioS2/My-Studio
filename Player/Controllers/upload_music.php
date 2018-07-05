@@ -4,6 +4,7 @@ var_dump($_FILES);
 switch(isset($_POST)):
     case(isset($_POST['album'])):
     $album_name=$_POST['album'];
+    $date = $_POST['release_date'];
     $tracks_amount = intval($_POST['track_count']);
     $artist = "Joey Bad4$$";
     include("../Views/add_music_form.php");
@@ -19,13 +20,14 @@ switch(isset($_POST)):
     break;
     
     case(isset($_POST['upload'])):
-    echo 'ouioui';
-    var_dump($_FILES);
-    $title = htmlspecialchars(trim($_POST['title']), ENT_QUOTES, 'UTF-8');
+    $i = 0;
+    while($i < count($_POST[0]['title'])) {
+    $title = htmlspecialchars(trim($_POST[0]['title'][$i]), ENT_QUOTES, 'UTF-8');
     $album = htmlspecialchars(trim($_POST['album']), ENT_QUOTES, 'UTF-8');
-    $date = $_POST['release_date'];
-    $feat = htmlspecialchars(trim($_POST['feat']), ENT_QUOTES, 'UTF-8');
-    
+    $feat = htmlspecialchars(trim($_POST[0]['feat'][$i]), ENT_QUOTES, 'UTF-8');
+
+    $i++
+    }
 
     /** Path pour l'upload */
     $dir='../musics/'.$artist.'/'.$album;
