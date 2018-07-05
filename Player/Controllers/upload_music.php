@@ -35,7 +35,6 @@ switch(isset($_POST)):
         while($i < count($_POST['title'])) {
             $title = htmlspecialchars(trim($_POST['title'][$i]), ENT_QUOTES, 'UTF-8');
             $feat = htmlspecialchars(trim($_POST['feat'][$i]), ENT_QUOTES, 'UTF-8');
-            echo $title.$album.$feat.'<br>';
             $dir='C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album.'/';
             $audio_path=$dir.basename($_FILES['audioFile']['name'][$i]);
             if(move_uploaded_file($_FILES['audioFile']['tmp_name'][$i],$audio_path)){
