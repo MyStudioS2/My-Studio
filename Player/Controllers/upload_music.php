@@ -8,17 +8,14 @@ switch(isset($_POST)):
     $artist = "Joey Bad4$$";
     include("../Views/add_music_form.php");
     /** Création du répertoire de l'album */
-    try {
         if(!is_dir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist)){
         mkdir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'');
         }
         if(!is_dir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'')){
         mkdir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'');
         }
-    } finally{
         $successmsg = 'Le dossier a bien été créé';
         echo $successmsg;
-    }
     break;
     
     case(isset($_POST['upload'])):
