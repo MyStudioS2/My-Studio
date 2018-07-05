@@ -20,17 +20,19 @@ switch(isset($_POST)):
     break;
     
     case(isset($_POST['upload'])):
+
     $i = 0;
     while($i < count($_POST[0]['title'])) {
     $title = htmlspecialchars(trim($_POST[0]['title'][$i]), ENT_QUOTES, 'UTF-8');
     $album = htmlspecialchars(trim($_POST['album']), ENT_QUOTES, 'UTF-8');
     $feat = htmlspecialchars(trim($_POST[0]['feat'][$i]), ENT_QUOTES, 'UTF-8');
+    echo $title.$album.$feat.'<br>';
 
-    $i++
+    $i++;
     }
 
     /** Path pour l'upload */
-    $dir='../musics/'.$artist.'/'.$album;
+    $dir='C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album;
     $audio_path=$dir.basename($_FILES['audioFile']['name']);
     if(move_uploaded_file($_FILES['audioFile']['tmp_name'],$audio_path)){
         echo 'upload successfull<br>';
@@ -39,7 +41,8 @@ switch(isset($_POST)):
 
     include('../Models/get_music.php');
     $row = $stmt->fetchAll();
-    include('../Views/upload_music.php');
+    include('../Views/choose_amount.php');
+    echo "Bien joué connard";
 
         break;
         default:
