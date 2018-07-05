@@ -21,7 +21,9 @@ switch(isset($_POST)):
     }
     break;
     
-    case(isset($_POST['title'])):
+    case(isset($_POST['upload'])):
+    echo 'ouioui';
+    var_dump($_FILES);
     $title = htmlspecialchars(trim($_POST['title']), ENT_QUOTES, 'UTF-8');
     $album = htmlspecialchars(trim($_POST['album']), ENT_QUOTES, 'UTF-8');
     $date = $_POST['release_date'];
