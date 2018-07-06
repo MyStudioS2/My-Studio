@@ -9,44 +9,33 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../Controllers/Functions/JS/img_preview.js"></script>
+<script type="text/javascript" src="../Controllers/Functions/JS/datepicker.js"></script>
 <style>
   body {
     font-family: 'Encode Sans Condensed', sans-serif;
   }
 </style>
 <body>
-  <center><div class="container" style ="max-width: 450px; text-align:center">
+  <center><div class="container" style ="max-width: 350px; text-align:center">
     <form action="../Controllers/upload_music.php" method="POST" name="album_choice" enctype="multipart/form-data">
       Titre de l'album :<br>
       <input type="text" style ="text-align:center" name="album" placeholder="Nom de l'album"><br>
       Nombre de pistes :<br>
       <input type="number" style ="width:35px " min ="1" max="30" step="1" name="track_count"value="1"><br>
-      Date :<br>
-      <input type="text" id="datepicker" style="width:70px" name="release_date"><br>
+      Date (jj/mm/aaaa) :<br>
+      <input type="date" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
+      <div class="container" style="display:inline-block; text-align:center">
       Cover : <br>
       <input type='file' name ='coverFile' onchange="readURL(this);" />
-      <img id="blah" style="max-width:190px; max-height:150px" alt="Preview" /><br>
+      <img id="blah" style="max-width:100px; max-height:150px;vertical-align:middle; position:relative;opacity: 0.75;filter: alpha(opacity=50)" alt="Preview" />
+      </div><br>
       <input type="submit" name="confirmer" value="Confirmer">
     </form>
   </div></center>
 </body>
 </html>
 <script>
-$( function() {
-  $( "#datepicker" ).datepicker({maxDate: "-1"});
-  } );
+datepicker();
 </script>
-<script>
-  function readURL(input) {
-      if (input.files && input.files[0]) {
-          var reader = new FileReader();
 
-          reader.onload = function (e) {
-              $('#blah')
-                  .attr('src', e.target.result);
-          };
-
-          reader.readAsDataURL(input.files[0]);
-      }
-  }
-</script>

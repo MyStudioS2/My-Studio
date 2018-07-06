@@ -9,7 +9,7 @@ switch(isset($_POST)):
     $album_name=$_POST['album'];
     $album_date = $_POST['release_date'];
     $tracks_amount = intval($_POST['track_count']);
-    $date = date_to_mysql($album_date);
+    $date = $album_date;
     $artist = "Joey Bad4$$"; 
     /** Création du répertoire de l'album */
     if(!is_dir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist)){
@@ -17,7 +17,7 @@ switch(isset($_POST)):
     }
     if(!is_dir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'')){
         mkdir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'');
-    }
+    } 
     $successmsg = 'Le dossier a bien été créé';
     /** Path pour l'upload */
     $dir='C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'/';
