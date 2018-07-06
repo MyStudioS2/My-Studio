@@ -62,11 +62,13 @@ switch(isset($_POST)):
         default:
         include('../Models/get_music.php');
         $row = $stmt->fetchAll();
+        echo "<div>";
         for($i=0; $i< count($row); $i++){
             if(!empty($row[$i]['music_path'])){
               echo "<a href='file:///".$row[$i]['music_path']."'>".$row[$i]['title']."</a><br>";
             }
         }
+        echo "</div>";
         include('../Views/choose_amount.php');
     endswitch;
 ?>
