@@ -1,9 +1,9 @@
 <?php
-    $query = "
-    SELECT
+    $query = 
+    "SELECT
     title, featuring, music_path
     FROM musics
-    ORDER BY title ASC";
+    ORDER BY RAND()";
         $query_params = null;
         try {
             $stmt = $db->prepare($query);

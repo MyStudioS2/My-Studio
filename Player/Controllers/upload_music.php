@@ -60,6 +60,13 @@ switch(isset($_POST)):
         /** Path pour l'upload */
         break;
         default:
+        include('../Models/get_music.php');
+        $row = $stmt->fetchAll();
+        for($i=0; $i< count($row); $i++){
+            if(!empty($row[$i]['music_path'])){
+              echo "<a href='file:///".$row[$i]['music_path']."'>".$row[$i]['title']."</a><br>";
+            }
+        }
         include('../Views/choose_amount.php');
     endswitch;
 ?>

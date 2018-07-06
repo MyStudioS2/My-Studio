@@ -33,6 +33,16 @@
       <input type="submit" name="confirmer" value="Confirmer">
     </form>
   </div></center>
+  <audio controls>
+<?php if(isset($row)){
+  var_dump($row);
+  for($i=0;$i<count($row);$i++){
+    if(!empty($row[$i]['music_path'])){
+      echo "<source src='".$row[0]['music_path']."' type='audio/mpeg'>";
+    }
+  }
+}?>
+</audio>
 </body>
 </html>
 <script>
