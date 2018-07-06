@@ -1,6 +1,7 @@
 <?php
     include('../Models/db_connect.php');
     require_once('../Controllers/Functions/PHP/kill_all_files.php');
+    /* Suppresses an artist from the database */
     $query[0] = 
     "SELECT artist_name
     FROM artists
@@ -18,7 +19,7 @@
     FROM artists
     WHERE id_artist = :artist_id";
 
-    for($i=0; $i< count($query); $i++){
+    for($i=0; $i < 4; $i++){
         $query_params[$i] = array(":artist_id" => 5);
         try {
             $stmt = $db->prepare($query[$i]);
@@ -33,5 +34,6 @@
         }
     }
     $dir('../../../data/mystudio/musics/'.$artist_row[0]['artist_name']);
+    /* Suppresses all files and directories an artist have in our servers */
     kill_all_files($dir);
 ?>
