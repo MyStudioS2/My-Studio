@@ -17,7 +17,18 @@ switch(isset($_POST)):
     }
     if(!is_dir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'')){
         mkdir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'');
-    } 
+    } else {
+        unset($_POST);
+        include('../Views/choose_amount.php');
+        header("refresh:15;url=../Controllers/upload_music.php");
+        die("<center><div class='container' style='border:0;
+        border-radius: 6px;
+        border-color: #decba4;
+        color:#3333333; 
+        font-size:20px; 
+        background-color:#E73E01; 
+        width:345px; height:60px'>Vous avez déjà ajouter cet album.<br> Souhaitez-vous le modifier?</p></div></center>");
+    }
     $successmsg = 'Le dossier a bien été créé';
     /** Path pour l'upload */
     $dir='C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'/';
