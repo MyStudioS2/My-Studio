@@ -1,6 +1,6 @@
 <?php
     include('../Models/db_connect.php');
-    require_once('../Controllers/Functions/PHP/fill_all_files.php');
+    require_once('../Controllers/Functions/PHP/kill_all_files.php');
     $query[0] = 
     "SELECT artist_name
     FROM artists
