@@ -22,14 +22,18 @@
   }
   div {
     float:right;
+    font-family: 'Encode Sans Condensed', sans-serif;
   }
    a {
     color: #decba4;
+    font-family: 'Encode Sans Condensed', sans-serif;
   }
   source {
     color: #333333;
+    font-family: 'Encode Sans Condensed', sans-serif;
   }
-  input {
+  input, button {
+    font-family: 'Encode Sans Condensed', sans-serif;
     color: #333333;
     width : 170px;
     height: 35px;
@@ -59,21 +63,17 @@
     </div>
   </center>
 <div class="audio" style="position: relative; margin-right:81%; float: bottom">
-  <audio controls>
-    <?php if(isset($row)){
-      var_dump($row);
-      for($i=0;$i<count($row);$i++){
-        if(!empty($row[$i]['music_path'])){
-          echo "<source src='".$row[0]['music_path']."' type='audio/mpeg'>";
-        }
-      }
-    }?>
+  <audio controls id="myaudio">
+    
   </audio>
   </div>
 </body>
 <script>
 body_load();
 datepicker();
+function myFunction() {
+    location.reload();
+}
 </script>
 </html>
 

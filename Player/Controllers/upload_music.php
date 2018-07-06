@@ -62,13 +62,16 @@ switch(isset($_POST)):
         default:
         include('../Models/get_music.php');
         $row = $stmt->fetchAll();
-        echo "<div>";
+
+        echo "<div style='display:none'>";
         for($i=0; $i< count($row); $i++){
             if(!empty($row[$i]['music_path'])){
-              echo "<a href='file:///".$row[$i]['music_path']."'>".$row[$i]['title']."</a><br>";
+            echo "<a href='file://".$row[$i]['music_path']."'>".$row[$i]['title']."</a><br>";
             }
         }
+        echo '<button onclick="myFunction()">Nouvelle liste aléatoire</button>';
         echo "</div>";
+
         include('../Views/choose_amount.php');
     endswitch;
 ?>
