@@ -28,10 +28,10 @@
             die("Failed to run query: " . $ex->getMessage());
         }
         if($i == 0){
-        $artist_row = $stmt -> fetchAll();
+            $artist_row = $stmt -> fetchAll();
+            $dir = '../../../data/mystudio/musics/'.$artist_row[$i]['artist_name'];
         }
     }
-    $dir('../../../data/mystudio/musics/'.$artist_row[0]['artist_name']);
     /* Suppresses all files and directories an artist have in our servers */
     kill_all_files($dir);
 ?>
