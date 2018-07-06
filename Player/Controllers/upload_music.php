@@ -16,7 +16,6 @@ switch(isset($_POST)):
     if(!is_dir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'')){
         mkdir('C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'');
     } else {
-        unset($_POST);
         include('../Views/choose_amount.php');
         header("refresh:15;url=../Controllers/upload_music.php");
         die("<center><div class='container' style='border:0;
@@ -32,7 +31,6 @@ switch(isset($_POST)):
     $dir='C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album_name.'/';
     $cover_path=$dir.basename($_FILES['coverFile']['name']);
     if(move_uploaded_file($_FILES['coverFile']['tmp_name'],$cover_path)){
-        echo 'upload successfull<br>';
     }
     include('../Models/insert_album.php');
     include("../Views/add_music_form.php");
@@ -60,6 +58,7 @@ switch(isset($_POST)):
         /** Path pour l'upload */
         break;
         default:
+        include('../Views/choose_amount.php');
         include('../Models/get_music.php');
         $row = $stmt->fetchAll();
 
@@ -72,6 +71,5 @@ switch(isset($_POST)):
         echo '<button onclick="myFunction()">Nouvelle liste aléatoire</button>';
         echo "</div>";
 
-        include('../Views/choose_amount.php');
     endswitch;
 ?>

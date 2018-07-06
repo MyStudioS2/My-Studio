@@ -13,27 +13,60 @@
   <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
   <style>
     body {
-      font-family: 'Encode Sans Condensed', sans-serif;
-      background-color :#C71585;
-    }
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 18px;
+    color: #decba4;
+    background-color :#C71585;
+  }
+  div {
+    float:right;
+    font-family: 'Encode Sans Condensed', sans-serif;
+  }
+   a {
+    color: #decba4;
+    font-family: 'Encode Sans Condensed', sans-serif;
+  }
+  audio {
+    color: #333333;
+    font-family: 'Encode Sans Condensed', sans-serif;
+  }
+  div.container1{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+  div.container{
+    position:relative;
+    left:0px;
+  }
+  input, button {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    color: #333333;
+    width : 170px;
+    height: 35px;
+    margin-top: 20px;
+    border:0;
+    border-radius: 6px;
+    border-color: #decba4;
+}
   </style>
 <body>
-  <div class="container" style ="max-width: 250px">
+  <div class="container" style ="max-width: 250px;position:relative; margin-left:0px">
       <form action="../Controllers/upload_music.php" method="Post" name="musics" enctype="multipart/form-data">
           <table><tr><th>Titre :</th><th>Featuring :</th><th>Fichier :</th></tr>
-            <?php echo $tracks_amount;
-            echo $album_name;
-            echo '<br>';
+            <?php
             for($i=0; $i<$tracks_amount;$i++){
               echo "<tr><td>Titre : </br>
               <input type ='text' name ='title[]'><input type='hidden' name='album_name' value='".$album_name."'/></td><td>Featuring :<br>
-              <input type ='text' name ='feat[]' value=' '></td><td><input type='file' style='vertical-align: middle; padding-top:20px' name ='audioFile[]'/></td></tr>";
+              <input type ='text' name ='feat[]' value=' '></td><td><input type='file' style='vertical-align: middle; padding-top:8px' name ='audioFile[]'/></td></tr>";
             }
             ?>
           </table>
-          <center><input type="submit" name = "upload" value = "upload"></center>
+          <center><input type="submit" name = "upload" value = "Télécharger"></center>
       </form>
   </div>
+  <br>
+  <div class="container1">
   <audio controls>
     <?php if(isset($row)){
       for($i=0;$i<count($row);$i++){
@@ -43,6 +76,7 @@
       }
     }?>
   </audio>
+  </div>
 <script>
   datepicker();
   body_load();
