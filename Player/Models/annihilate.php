@@ -24,8 +24,6 @@
         try {
             $stmt = $db->prepare($query[$i]);
             $result = $stmt->execute($query_params[$i]);
-            echo $query[$i];
-            
         }catch(PDOException $ex){
             die("Failed to run query: " . $ex->getMessage());
         }

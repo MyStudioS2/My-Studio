@@ -8,7 +8,7 @@
             $new_dir[$i] = $filename.'/*';
             $rm_dir[] = $filename;
             foreach(glob($new_dir[$i]) as $files) {
-                /* Suppress each file in a dir */
+                /* Kill each file in a dir */
                 unlink($files);
             }
             $i++;
@@ -18,14 +18,14 @@
             $i = count($rm_dir);
             while($i > 0){
                 if(is_dir($rm_dir[$i])){
-                    /* Suppress each album directory */
+                    /* Kills each album directory */
                     rmdir($rm_dir[$i]);
                 }
                 $i -= 1;
             }
         }
         if(is_dir($dir)){
-            /*  Suppress artist directory */
+            /*  Kills artist directory */
             rmdir($dir);
         }
     }
