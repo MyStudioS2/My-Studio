@@ -17,7 +17,6 @@
     "DELETE
     FROM artists
     WHERE id_artist = :artist_id";
-    var_dump($query);
 
     for($i=0; $i< count($query); $i++){
         $query_params[$i] = array(":artist_id" => 5);
@@ -31,9 +30,8 @@
         }
         if($i == 0){
         $artist_row = $stmt -> fetchAll();
-        var_dump($artist_row);
         }
     }
-    $dir('../../../data/mystudio/musics/Joey Bad4$$');
+    $dir('../../../data/mystudio/musics/'.$artist_row[0]['artist_name']);
     kill_all_files($dir);
 ?>

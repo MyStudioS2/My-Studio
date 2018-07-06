@@ -24,5 +24,4 @@
             rmdir($dir);
         }
     }
-    kill_all_files($dir);
 ?>
