@@ -47,9 +47,10 @@
     color: #decba4;
     font-family: 'Encode Sans Condensed', sans-serif;
   }
-  source {
-    color: #333333;
-    font-family: 'Encode Sans Condensed', sans-serif;
+  audio{
+    font-size: 18px;
+    color: #decba4;
+    background-color :#C71585;
   }
   input, button {
     font-family: 'Encode Sans Condensed', sans-serif;

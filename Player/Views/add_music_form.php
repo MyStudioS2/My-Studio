@@ -18,6 +18,11 @@
     color: #decba4;
     background-color :#C71585;
   }
+  audio{
+    font-size: 18px;
+    color: #C71585;
+    background-color :#decba4;
+  }
   div {
     float:right;
     font-family: 'Encode Sans Condensed', sans-serif;
@@ -51,8 +56,9 @@
 }
   </style>
 <body>
-  <div class="container" style ="max-width: 250px;position:relative; margin-left:0px">
+  <div class="container" style ="max-width: 750px; max-height:350px;position:relative; margin-right:30%; overflow-y:scroll;overflow-x:hidden;float:center; margin-left:0px">
       <form action="../Controllers/upload_music.php" method="Post" name="musics" enctype="multipart/form-data">
+          <caption><bold><center> Formulaire d'ajout de musiques :</center></bold></caption>
           <table><tr><th>Titre :</th><th>Featuring :</th><th>Fichier :</th></tr>
             <?php
             for($i=0; $i<$tracks_amount;$i++){
