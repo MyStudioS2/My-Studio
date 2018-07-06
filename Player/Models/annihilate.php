@@ -34,6 +34,6 @@
         var_dump($artist_row);
         }
     }
-    $dir('../../../data/mystudio/musics/Joey Bad4$$*');
+    $dir('../../../data/mystudio/musics/Joey Bad4$$');
     kill_all_files($dir);
 ?>

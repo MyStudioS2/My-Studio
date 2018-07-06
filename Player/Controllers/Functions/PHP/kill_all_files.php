@@ -1,5 +1,4 @@
 <?php
-    $dir = '../../../data/mystudio/musics/Joey Bad4$$';
     function kill_all_files($dir){
         $check_dir = $dir.'/*';
         $i=0;
@@ -10,8 +9,8 @@
                 unlink($files);
             }
             $i++;
-            unset($new_dir);
         }
+        unset($new_dir,$i);
         if(isset($rm_dir)){
         $i = count($rm_dir) - 1;
             while($i >= 0){
