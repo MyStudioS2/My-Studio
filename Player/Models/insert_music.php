@@ -13,7 +13,7 @@
             :featuring,
             :music_path,
             (SELECT id_style FROM styles WHERE style_name = :style),
-            (SELECT id_album FROM albums WHERE album_name = :album),
+            (SELECT id_album FROM albums WHERE album_name = :album LIMIT 1),
             (SELECT id_artist FROM artists WHERE artist_name = :artist))";
         // Security measures
     $query_params = array(

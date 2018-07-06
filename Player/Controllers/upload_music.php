@@ -1,7 +1,5 @@
 <?php
 session_start();
-var_dump($_POST);
-var_dump($_FILES);
 include('../Models/db_connect.php');
 require_once('../Controllers/Functions/PHP/date_to_mysql.php');
 switch(isset($_POST)):
@@ -49,7 +47,7 @@ switch(isset($_POST)):
             $dir='C:/Code/bin/mysql/mysql5.7.21/data/mystudio/musics/'.$artist.'/'.$album.'/';
             $audio_path=$dir.basename($_FILES['audioFile']['name'][$i]);
             if(move_uploaded_file($_FILES['audioFile']['tmp_name'][$i],$audio_path)){
-                echo 'upload successfull<br>';
+                echo "L'upload du titre numéro ".($i+1)." a réussi.<br>";
             }
             /** Insertion des musiques dans la BDD */
             include('../Models/insert_music.php');
