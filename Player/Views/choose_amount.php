@@ -14,14 +14,33 @@
   <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
 <style>
   body {
+    max-width:100%;
+    margin-left:500px;
     display: none;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-size: 18px;
     color: #decba4;
     background-color :#C71585;
   }
+  .parent{
+  width: 200px;
+  height: 90px;
+  margin-top:-32%;
+  border: 2px solid #decba4;
+  border-radius:6px;
+  overflow: hidden;
+  background-color: #333333;
+}
+.child{
+  height: 100%;
+  margin-right: -50px; /* maximum width of scrollbar */
+  padding-right: 50px; /* maximum width of scrollbar */
+  overflow-y: scroll;
+  background-color: #333333;
+}
   div {
     float:right;
+    margin-top:10px;
     font-family: 'Encode Sans Condensed', sans-serif;
   }
    a {

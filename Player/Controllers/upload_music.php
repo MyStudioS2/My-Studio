@@ -24,7 +24,7 @@ switch(isset($_POST)):
         color:#3333333; 
         font-size:20px; 
         background-color:#E73E01; 
-        width:345px; height:60px'>Vous avez déjà ajouter cet album.<br> Souhaitez-vous le modifier?</p></div></center>");
+        width:345px; height:60px; cursor:pointer'>Vous avez déjà ajouter cet album.<br> Souhaitez-vous le modifier?</p></div></center>");
     }
     $successmsg = 'Le dossier a bien été créé';
     /** Path pour l'upload */
@@ -54,22 +54,26 @@ switch(isset($_POST)):
         include('../Models/get_music.php');
         $row = $stmt->fetchAll();
         include('../Views/choose_amount.php');
-        echo "Bien joué connard";
         /** Path pour l'upload */
         break;
         default:
         include('../Views/choose_amount.php');
         include('../Models/get_music.php');
         $row = $stmt->fetchAll();
+        if(!empty($row)){
+            echo '<div class ="parent" style="text-align:center;height:200px">';
+            echo '<center>Playlist en cours :</center>';
 
-        echo "<div style='display:none'>";
+        echo "<div class='child' style='float:right; margin-top: -32%; max-height:100%;overflow-y:scroll'>";
         for($i=0; $i< count($row); $i++){
             if(!empty($row[$i]['music_path'])){
-            echo "<a href='file://".$row[$i]['music_path']."'>".$row[$i]['title']."</a><br>";
+                echo "<img src='".$row[$i]['cover']."' height='50px' width ='50px'><a href='file:///".$row[$i]['music_path']."'>".$row[$i]['title']."</a><br>";
             }
         }
-        echo '<button onclick="myFunction()">Nouvelle liste aléatoire</button>';
+        echo '<div><p><form method="POST" action="">
+        <button type="submit" accesskey="n" style="margin-bottom:20px;margin-top:-20px;">Nouvelle liste aléatoire</button></form></p></div>';
         echo "</div>";
-
+        echo "</div>";
+        }
     endswitch;
 ?>

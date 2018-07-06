@@ -39,7 +39,7 @@
     position:relative;
     left:0px;
   }
-  input, button {
+  input {
     font-family: 'Encode Sans Condensed', sans-serif;
     color: #333333;
     width : 170px;
