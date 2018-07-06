@@ -11,12 +11,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="../Controllers/Functions/JS/img_preview.js"></script>
 <script type="text/javascript" src="../Controllers/Functions/JS/datepicker.js"></script>
+<script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
 <style>
   body {
     font-family: 'Encode Sans Condensed', sans-serif;
+    display: none;
   }
 </style>
-<body>
+<body onload="">
   <center><div class="container" style ="max-width: 350px; text-align:center">
     <form action="../Controllers/upload_music.php" method="POST" name="album_choice" enctype="multipart/form-data">
       Titre de l'album :<br>
@@ -46,6 +48,7 @@
 </body>
 </html>
 <script>
+body_load();
 datepicker();
 </script>
 
