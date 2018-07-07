@@ -61,7 +61,7 @@ switch(isset($_POST)):
         include('../Models/get_music.php');
         $row = $stmt->fetchAll();
         if(!empty($row)){
-            echo '<div class ="parent" style="text-align:center;height:250px;width:300px">';
+            echo '<div class ="parent" style="float:right;display:block;text-align:center;height:250px;width:300px">';
             echo '<center>Playlist en cours :</center>';
 
         echo "<div class='child' style='float:right;width:95%; margin-top:0; max-height:100%;overflow-y:scroll'>";

@@ -2,16 +2,14 @@
     function kill_all_files($dir){
         /* Set root dir of an artist */
         $check_dir = $dir.'/*';
-        $i=0;
         foreach(glob($check_dir) as $filename) {
             /* Gathering albums dirs */
-            $new_dir[$i] = $filename.'/*';
+            $new_dir[] = $filename.'/*';
             $rm_dir[] = $filename;
             foreach(glob($new_dir[$i]) as $files) {
                 /* Kill each file in a dir */
                 unlink($files);
             }
-            $i++;
         }
         unset($new_dir,$i);
         if(isset($rm_dir)){
