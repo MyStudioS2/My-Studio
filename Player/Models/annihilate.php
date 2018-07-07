@@ -1,4 +1,5 @@
 <?php
+
     include('../Models/db_connect.php');
     require_once('../Controllers/Functions/PHP/kill_all_files.php');
     /* Suppresses an artist from the database */
