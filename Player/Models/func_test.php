@@ -1,6 +1,5 @@
 <?php
-    include('./db_connect.php');
-    include('./actual_date.php');
-    $lol = get_date($db);
-    echo $lol;
+    include('../Models/actual_date.php');
+    include('../Models/db_connect.php');
+    echo get_date($db);
 ?>
