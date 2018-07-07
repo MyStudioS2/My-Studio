@@ -12,5 +12,4 @@ function search_pseudo ($POST) {
 		$donnees = $pwd->fetch();
 		return $donnees;
 }
-
 ?>

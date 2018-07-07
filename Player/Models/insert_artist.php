@@ -12,8 +12,8 @@
         // Security measures
     $query_params = array(
         ':ID' => NULL,
-        ':artist_name' => 'Mick Jenkins',
-        ':artist_picture' => $pic_dir;
+        ':artist_name' => 'Joey Bad4$$',
+        ':artist_picture' => ' ';
         ':category' => 'pro');
         try {
             $stmt = $db->prepare($query);
