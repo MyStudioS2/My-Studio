@@ -11,7 +11,7 @@
         die("Failed to run query: " . $ex->getMessage());
     }
 
-    $artist_row = $stmt->fetchAll();
+    $current_date= $stmt->fetchAll();
     $db = NULL;
-    var_dump($artist_row);
+    echo $current_date[0]['MONTHNAME(CURRENT_TIMESTAMP())'];
 ?>

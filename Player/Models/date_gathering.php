@@ -1,7 +1,8 @@
 <?php
     include('./db_connect.php');
-    $query = "SELECT MONTHNAME(CURRENT_TIMESTAMP())";
-    $query_params = NULL;
+    function date_gathering($_POST){
+        $query = "SELECT MONTHNAME(:date)";
+        $query_params = array(':date' => $date);
 
         try {
             $stmt = $db->prepare($query);
@@ -10,4 +11,6 @@
             die("Failed to run query: " . $ex->getMessage());
         }
         $row = $stmt -> fetchAll();
+        return $row;
+    }
 ?>
