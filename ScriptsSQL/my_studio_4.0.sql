@@ -12,6 +12,10 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+CREATE SCHEMA `mystudio`;
+
+USE mystudio;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,14 +34,14 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `albums`;
 CREATE TABLE IF NOT EXISTS `albums` (
-  `id_album` int(11) NOT NULL AUTO_INCREMENT,
+  `album_ID` int(11) NOT NULL AUTO_INCREMENT,
   `album_name` varchar(45) NOT NULL,
   `album_cover` varchar(255) DEFAULT NULL,
   `release_date` timestamp NULL DEFAULT NULL,
-  `artist_id` int(11) NOT NULL,
-  PRIMARY KEY (`id_album`),
-  KEY `artist_id` (`artist_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+  `artist_ID` int(11) NOT NULL,
+  PRIMARY KEY (`album_ID`),
+  KEY `artist_ID` (`artist_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -47,22 +51,16 @@ CREATE TABLE IF NOT EXISTS `albums` (
 
 DROP TABLE IF EXISTS `artists`;
 CREATE TABLE IF NOT EXISTS `artists` (
-  `id_artist` int(11) NOT NULL AUTO_INCREMENT,
+  `artist_ID` int(11) NOT NULL AUTO_INCREMENT,
   `artist_name` varchar(50) NOT NULL,
   `artist_picture` varchar(255) NOT NULL,
   `category` enum('amateur','pro') NOT NULL,
-  PRIMARY KEY (`id_artist`),
-  UNIQUE KEY `id_artist_UNIQUE` (`id_artist`),
+  PRIMARY KEY (`artist_ID`),
+  UNIQUE KEY `artist_ID_UNIQUE` (`artist_ID`),
   UNIQUE KEY `artist_name` (`artist_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table `artists`
---
 
-INSERT INTO `artists` (`id_artist`, `artist_name`, `artist_picture`, `category`) VALUES
-(9, 'Joey Bad4$$', '', 'pro'),
-(10, 'Lomepal', '', 'pro');
 
 -- --------------------------------------------------------
 
@@ -74,10 +72,10 @@ DROP TABLE IF EXISTS `fav_by`;
 CREATE TABLE IF NOT EXISTS `fav_by` (
   `username` int(11) NOT NULL,
   `music` int(11) NOT NULL,
-  `id_fav` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id_fav`),
-  KEY `music_idx` (`music`),
-  KEY `username_idx` (`username`)
+  `fav_ID` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`fav_ID`),
+  KEY `music_IDx` (`music`),
+  KEY `username_IDx` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -88,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `fav_by` (
 
 DROP TABLE IF EXISTS `musics`;
 CREATE TABLE IF NOT EXISTS `musics` (
-  `id_music` int(11) NOT NULL AUTO_INCREMENT,
+  `music_ID` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `featuring` varchar(45) NOT NULL,
   `music_path` varchar(255) NOT NULL,
@@ -98,11 +96,11 @@ CREATE TABLE IF NOT EXISTS `musics` (
   `style` int(11) NOT NULL DEFAULT '0',
   `album` int(11) NOT NULL,
   `artist` int(11) NOT NULL,
-  PRIMARY KEY (`id_music`),
-  KEY `artist_idx` (`artist`),
-  KEY `style_idx` (`style`),
-  KEY `album_idx` (`album`)
-) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`music_ID`),
+  KEY `artist_IDx` (`artist`),
+  KEY `style_IDx` (`style`),
+  KEY `album_IDx` (`album`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -112,12 +110,12 @@ CREATE TABLE IF NOT EXISTS `musics` (
 
 DROP TABLE IF EXISTS `playlists`;
 CREATE TABLE IF NOT EXISTS `playlists` (
-  `id_playlist` int(11) NOT NULL AUTO_INCREMENT,
+  `playlist_ID` int(11) NOT NULL AUTO_INCREMENT,
   `play_title` varchar(45) NOT NULL,
   `birthdate` date NOT NULL,
   `users` int(11) NOT NULL,
-  PRIMARY KEY (`id_playlist`),
-  KEY `users_idx` (`users`)
+  PRIMARY KEY (`playlist_ID`),
+  KEY `users_IDx` (`users`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -128,11 +126,11 @@ CREATE TABLE IF NOT EXISTS `playlists` (
 
 DROP TABLE IF EXISTS `registered_in`;
 CREATE TABLE IF NOT EXISTS `registered_in` (
-  `id_play` int(11) NOT NULL AUTO_INCREMENT,
+  `play_ID` int(11) NOT NULL AUTO_INCREMENT,
   `music` int(11) NOT NULL,
   `playlist` int(11) NOT NULL,
-  PRIMARY KEY (`id_play`),
-  KEY `music_idx` (`music`)
+  PRIMARY KEY (`play_ID`),
+  KEY `music_IDx` (`music`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -143,17 +141,17 @@ CREATE TABLE IF NOT EXISTS `registered_in` (
 
 DROP TABLE IF EXISTS `styles`;
 CREATE TABLE IF NOT EXISTS `styles` (
-  `id_style` int(11) NOT NULL AUTO_INCREMENT,
+  `style_ID` int(11) NOT NULL AUTO_INCREMENT,
   `style_name` varchar(12) NOT NULL,
-  PRIMARY KEY (`id_style`),
-  UNIQUE KEY `idtable1_UNIQUE` (`id_style`)
+  PRIMARY KEY (`style_ID`),
+  UNIQUE KEY `IDtable1_UNIQUE` (`style_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `styles`
 --
 
-INSERT INTO `styles` (`id_style`, `style_name`) VALUES
+INSERT INTO `styles` (`style_ID`, `style_name`) VALUES
 (1, 'Rap');
 
 -- --------------------------------------------------------
@@ -164,11 +162,11 @@ INSERT INTO `styles` (`id_style`, `style_name`) VALUES
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `user_ID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(15) NOT NULL,
   `pw` varchar(25) NOT NULL,
   `category` enum('artiste','auditeur') NOT NULL,
-  PRIMARY KEY (`id_user`)
+  PRIMARY KEY (`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -179,24 +177,29 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Contraintes pour la table `musics`
 --
 ALTER TABLE `musics`
-  ADD CONSTRAINT `album` FOREIGN KEY (`album`) REFERENCES `albums` (`id_album`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `artist` FOREIGN KEY (`artist`) REFERENCES `artists` (`id_artist`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `style` FOREIGN KEY (`style`) REFERENCES `styles` (`id_style`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `album` FOREIGN KEY (`album`) REFERENCES `albums` (`album_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `artist` FOREIGN KEY (`artist`) REFERENCES `artists` (`artist_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `style` FOREIGN KEY (`style`) REFERENCES `styles` (`style_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `playlists`
 --
 ALTER TABLE `playlists`
-  ADD CONSTRAINT `users` FOREIGN KEY (`users`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `users` FOREIGN KEY (`users`) REFERENCES `users` (`user_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `registered_in`
 --
 ALTER TABLE `registered_in`
-  ADD CONSTRAINT `music` FOREIGN KEY (`music`) REFERENCES `musics` (`id_music`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `playlist` FOREIGN KEY (`id_play`) REFERENCES `playlists` (`id_playlist`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `music` FOREIGN KEY (`music`) REFERENCES `musics` (`music_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `playlist` FOREIGN KEY (`play_ID`) REFERENCES `playlists` (`playlist_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+
