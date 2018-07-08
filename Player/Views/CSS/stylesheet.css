@@ -91,7 +91,7 @@ span .options{
     vertical-align:baseline;
     position:absolute;
     display: inline-block;
-    margin-top:19px;
+    margin-top:12px;
 }
 @media only screen and (max-width: 800px) {
     #show_hide {
@@ -119,6 +119,6 @@ span .hello_text {
 .search-form:optional,
 input[type=search]:invalid{
     background:none;
-    color:#decba4;
+    color:#FFFFF5;
     border-color:white;
 }

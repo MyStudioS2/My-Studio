@@ -1,24 +1,26 @@
 <!doctype>
 
 <html>
-
-<head>
     
-    <title>MyStudio, admin</title>
-    <meta content='http-equiv' content-type='text/html'/>
-    <meta charset="UTF-8">
-    <link type="text/CSS" rel="stylesheet" href="../Player/Views/CSS/stylesheet.css">
+    <head>
+        
+        <title>MyStudio, admin</title>
+        <meta content='http-equiv' content-type='text/html'/>
+        <meta charset="UTF-8">
+        <link type="text/CSS" rel="stylesheet" href="../Player/Views/CSS/stylesheet.css">
+        <script type="text/javascript" src="../Controllers/Functions/JS/startTime.js"></script>
     <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
     
 </head>
-<body style="width:98%">
+<body style="width:98%" onload="startTime()">
     
     <table style="width:102.1%;height:95%;margin-left:-0.8%;margin-top:-10px">
         <tr style="width:100%;height:60px">
             <td><a href="../Player/index.php?page=administration">
             <img src="../Player/Views/icons/icons8-cat-profile-96.svg" alt="Kitten" width="50px" height ="50px" class ="kitten_icon"></a>
-            <div class="hello"><span class="hello_text">Bonjour Admin [id]  Nous sommes le <?php echo $actual_date; ?>.</span> </div></td>
+            <div class="hello"><span class="hello_text">Bonjour Admin [id]  Nous sommes le <?php echo $actual_date; ?>.
+            <br>Il est <span id="txt"></span>. Amusez-vous bien !</span> </div></td>
 
             <td style="text-align:left">
                 <div id="show_hide" style="margin-top:-46px;margin-left:-85px;position:absolute">
@@ -73,9 +75,21 @@
 <script>
     search();
     body_load();
-    $("#search_in").bind("keypress",function(e) {
-        $("#search_in").CSS({"color":"#FFFFF5"});
-    });
+    function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
 </script>
 <?php var_dump($_POST); ?>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
