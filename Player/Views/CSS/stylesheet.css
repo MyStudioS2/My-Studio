@@ -30,10 +30,31 @@ ul {
     margin-right:9px;
 
 }
-input {
+
+.button1 {
 
     background: none;
     color:#decba4;
+    width : 170px;
+    height: 35px;
+    margin-top: 25px;
+    margin-right: 10%;
+    position:relative;
+    border:0;
+    border-radius: 6px;
+    border-color: #decba4;
+    cursor: pointer;
+    transition: 
+    background 250ms ease-in-out, 
+    transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+}
+.button2 {
+
+    background: none;
+    color:#a2ab58;
     width : 170px;
     height: 35px;
     margin-top: 25px;
@@ -54,7 +75,7 @@ input {
 .button_choice {
 
     margin-bottom: -15px;
-    color:hsla(199, 19%, 29%, 0.815);
+    color:#a2ab58;
 
 }
 
@@ -74,13 +95,14 @@ span .options{
 
 .options_choice{
 
-    color: #decba4;
+    color: #FF8C00;
 }
 
 .options_choice:hover,
 .options_choice:active{
 
-    color: #FFFFF5;
+    color: #FF8C00;
+    cursor:default;
 }
 .kiten_icon {
     vertical-align:middle;
@@ -103,9 +125,8 @@ span .options{
 }
 input[type=search], .search-form{
     background:none;
-    color:#FFFFF5;
+    color:#fffbd5;
     border:none;
-    border-color:none;
 }
 
 input[type=search]:active{
@@ -121,4 +142,19 @@ input[type=search]:invalid{
     background:none;
     color:#FFFFF5;
     border-color:white;
+}
+/* simple css-based tooltip */
+.tooltip {
+    background-color:#000;
+    border:1px solid #fff;
+    padding:10px 15px;
+    width:200px;
+    display:none;
+    color:#fff;
+    text-align:left;
+    font-size:12px;
+ 
+    /* outline radius for mozilla/firefox only */
+    -moz-box-shadow:0 0 10px #000;
+    -webkit-box-shadow:0 0 10px #000;
 }
