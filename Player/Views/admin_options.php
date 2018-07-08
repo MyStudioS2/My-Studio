@@ -13,7 +13,7 @@
     <link type="text/CSS" rel="stylesheet" href="../Player/Views/CSS/stylesheet.css">
 </head>
 <body style="width:98%">
-    <table style="width:101.45%;height:95%"><thead style="width:100%;height:8%"><tr><td colspan="2"style="float:right;text-align:center;vertical-align:top">Bienvenue à toi jeune éphèbe</td></tr></thead>
+    <table style="width:101.45%;height:95%"><thead style="width:100%;height:8%"><tr><td colspan="2"style="float:right;text-align:center;vertical-align:top">Bonjour Admin °[id]</td></tr></thead>
     <tr style="height:10%"><td class="body_zone"style="text-align:center;float:middle">Lorem Ipsum Dolor Sit Amet</td>
     <td class="options_zone" rowspan="2"style="text-align:center;width:12%;height:auto">
         <form action="../Player/index.php?page=administration" name="options" method="POST">

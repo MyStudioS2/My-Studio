@@ -24,4 +24,5 @@
             unset($row);
             return $actual_date;
     }
+    
 ?>

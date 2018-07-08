@@ -1,6 +1,7 @@
 <?php
     include('./db_connect.php');
-    function date_gathering($_POST){
+
+    function date_gathering($db,$_POST){
         $query = "SELECT MONTHNAME(:date)";
         $query_params = array(':date' => $date);
 
