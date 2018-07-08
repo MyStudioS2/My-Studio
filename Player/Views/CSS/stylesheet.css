@@ -1,15 +1,19 @@
 body {
+
     font-family: 'Raleway', sans-serif;
-    /* background: #a71717;*/
-    color:hsla(199, 19%, 29%, 0.815);
+    background: hsla(199, 19%, 29%, 0.815);
+    color:#decba4;
+
 }
 table{
+
     font-size:16px;
     left:-3%;
-    color:hsla(199, 19%, 29%, 0.815);
+    color:#decba4;
     /* color: #FFFFF5;*/
 }
 .options_zone{
+
     font-weight:bold;
     color:#decba4;
     border:0px;
@@ -22,15 +26,20 @@ table{
     
     border-collapse: collapse;
     left:-15px;
+
 }
+
 ul {
+
     list-style-type:none;
     margin-top: -50px;
     margin-right:9px;
+
 }
 input {
-    background: #decba4;
-    color:hsla(199, 19%, 29%, 0.815);
+
+    background: none;
+    color:#decba4;
     width : 170px;
     height: 35px;
     margin-top: 25px;
@@ -40,18 +49,37 @@ input {
     border-radius: 6px;
     border-color: #decba4;
     cursor: pointer;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
+    transition: 
+    background 250ms ease-in-out, 
+    transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+
 }
+
 .button_choice {
+
     margin-bottom: -15px;
     color:hsla(199, 19%, 29%, 0.815);
+
 }
+
 input:hover,
 input:active {
-    background:#3d5504;
-    color: #decba4;
+
+    background:#decba4;
+    color: #333333;
+
+}
+
+span .options{
+
+    color:#333333;
+    
+}
+
+.options_choice{
+    
+    color: #FFFFF5;
 }
             

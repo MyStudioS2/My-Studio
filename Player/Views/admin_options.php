@@ -18,7 +18,7 @@
     <td class="options_zone" rowspan="2"style="text-align:center;width:12%;height:auto">
         <form action="../Player/index.php?page=administration" name="options" method="POST">
         <ul ss-container style="padding:5px">
-            <li><div class="button_choice">Vos options :</div></li>
+            <li><div class="options_choice">Vos options :</div></li>
             <li><div class="button_choice"><input class = "button" type="submit" name="add_style" value="Ajouter un Genre"></div></li>
             <li><div class="button_choice"><input class = "button" type="submit" name="add_lyrics" value="Ajouter des Paroles"></div></li>
             <li><div class="button_choice"><input class = "button" type="submit" name="add_artist" value="Nouvel Artiste"></div></li>
