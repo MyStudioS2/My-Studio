@@ -5,13 +5,6 @@ body {
     color:#decba4;
 
 }
-table{
-
-    font-size:16px;
-    left:-3%;
-    color:#decba4;
-    /* color: #FFFFF5;*/
-}
 .options_zone{
 
     font-weight:bold;
@@ -67,7 +60,7 @@ input {
 input:hover,
 input:active {
 
-    background:#decba4;
+    background:#FFFFF5;
     color: #333333;
 
 }
@@ -80,9 +73,29 @@ span .options{
 
 .options_choice{
 
+    color: #decba4;
+}
+
+.options_choice::hover,
+.options_choice::active{
+
     color: #FFFFF5;
 }
-.hello{
-    margin-left:20px;
+.kiten_icon {
+    vertical-align:middle;
+    display:inline-block;
+    padding-top:15px;
 }
-            
+.hello{
+    vertical-align:baseline;
+    position:fixed;
+    display: inline;
+    margin-top:10px;
+}
+@media only screen and (max-width: 800px) {
+    #show_hide {
+        display: none;
+    }
+.corpse {
+    margin-top:20px;
+}
