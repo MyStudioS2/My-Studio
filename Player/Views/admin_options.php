@@ -21,11 +21,11 @@
     <table style="width:102.1%;height:95%;margin-left:-0.8%;margin-top:-10px">
         <tr style="width:100%;height:60px">
             <td><a href="../Player/index.php?page=administration">
-            <img src="../Player/Views/icons/icons8-cat-profile-96.svg" alt="Kitten" width="40px" height ="40px" class ="kitten_icon"></a>
+            <img src="../Player/Views/icons/icons8-cat-profile-96.svg" alt="Kitten" width="50px" height ="50px" class ="kitten_icon"></a>
             <div class="hello"> Bonjour Admin [id]  Nous sommes le <?php echo $actual_date; ?>. </div></td>
 
             <td style="text-align:left">
-            <div id="show_hide" style="margin-top:-42px;margin-left:-85px;position:absolute">
+            <div id="show_hide" style="margin-top:-46px;margin-left:-85px;position:absolute">
                 <div class="search_form" style="position:relative;padding-right:15px">
                     <input type="search" autofocus id="search" onkeypress="return runScript(event);" style="border-radius:2px;background:color=white" placeholder="Rechercher un artiste..."/>
                 </div>
