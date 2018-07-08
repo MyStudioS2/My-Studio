@@ -6,5 +6,6 @@ function body_load() {
         $("div").fadeIn(100);
         $("input").fadeIn(100);
         $("span").fadeIn(100);
+        $("#txt").fadeIn(100);
     });
 }
