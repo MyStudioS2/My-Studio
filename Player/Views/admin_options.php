@@ -8,7 +8,7 @@
         <meta content='http-equiv' content-type='text/html'/>
         <meta charset="UTF-8">
         <link type="text/CSS" rel="stylesheet" href="../Player/Views/CSS/stylesheet.css">
-        <script type="text/javascript" src="../Controllers/Functions/JS/startTime.js"></script>
+        <script type="text/javascript" src="../Controllers/Functions/JS/startTime().js"></script>
     <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
     
@@ -91,7 +91,6 @@
         return i;
     }
 </script>
-<?php var_dump($_POST); ?>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
