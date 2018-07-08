@@ -22,9 +22,9 @@
 
             <td style="text-align:left">
                 <div id="show_hide" style="margin-top:-46px;margin-left:-85px;position:absolute">
-                    <div class="search_form" style="position:relative;padding-right:15px">
-                        <form action="../Player/index.php?page=administration" id="target"name="search_form" method="POST">
-                        <input type="search" autofocus id="search" class = "search" results="5" required style="border-radius:2px;background:color=white"name="search" placeholder="Rechercher un artiste..."/>
+                    <div class="search_form" style="position:relative;padding-right:25px">
+                        <form action="../Player/index.php?page=administration" class="search-form" id="target"name="search_form" method="POST">
+                        <input type="search" autofocus id="search_in" class = "search" optional results="5" size="40"style="border-radius:2px;background-color:none;margin-left:-50px;width:auto"name="search" placeholder="Rechercher un artiste, un album..."/>
                     </form>    
             </div>
         </div>
@@ -73,6 +73,9 @@
 <script>
     search();
     body_load();
+    $("#search_in").bind("keypress",function(e) {
+        $("#search_in").CSS({"color":"#FFFFF5"});
+    });
 </script>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

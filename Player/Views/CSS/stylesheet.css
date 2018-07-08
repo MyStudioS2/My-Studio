@@ -1,4 +1,5 @@
-body {
+
+    body {
 
     font-family: 'Raleway', sans-serif;
     background:hsla(199, 19%, 29%, 0.815);
@@ -76,8 +77,8 @@ span .options{
     color: #decba4;
 }
 
-.options_choice::hover,
-.options_choice::active{
+.options_choice:hover,
+.options_choice:active{
 
     color: #FFFFF5;
 }
@@ -89,26 +90,35 @@ span .options{
 .hello{
     vertical-align:baseline;
     position:absolute;
-    display: inline;
+    display: inline-block;
     margin-top:19px;
 }
 @media only screen and (max-width: 800px) {
     #show_hide {
         display: none;
     }
+}
 .corpse {
     margin-top:20px;
 }
-input[type=search]{
-    background:hsla(199, 19%, 29%, 0.815);
+input[type=search], .search-form{
+    background:none;
+    color:#FFFFF5;
+    border:none;
+    border-color:none;
 }
-.input[type=search]::hover,
-.input[type=search]::active{
 
-    background:hsla(199, 19%, 29%, 0.815);
+input[type=search]:active{
+    color:#FFFFF5;
+    background:none;
 }
 span .hello_text {
-    display:inline-block;
     float:left;
     margin-top: 50px;
+}
+.search-form:optional,
+input[type=search]:invalid{
+    background:none;
+    color:#decba4;
+    border-color:white;
 }
