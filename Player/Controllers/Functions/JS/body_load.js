@@ -4,5 +4,6 @@ function body_load() {
         $("body").fadeIn(100);
         $("body").CSS("background-color","hsla(199, 19%, 29%, 0.815)");
         $("div").fadeIn(100);
+        $("input").fadeIn(100);
     });
 }

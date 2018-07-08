@@ -77,7 +77,7 @@
         $("#search_in").CSS({"color":"#FFFFF5"});
     });
 </script>
-
+<?php var_dump($_POST); ?>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
