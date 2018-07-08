@@ -88,9 +88,9 @@ span .options{
 }
 .hello{
     vertical-align:baseline;
-    position:relative;
-    display: inline-block;
-    margin-top:17px;
+    position:absolute;
+    display: inline;
+    margin-top:19px;
 }
 @media only screen and (max-width: 800px) {
     #show_hide {
@@ -106,4 +106,9 @@ input[type=search]{
 .input[type=search]::active{
 
     background:hsla(199, 19%, 29%, 0.815);
+}
+span .hello_text {
+    display:inline-block;
+    float:left;
+    margin-top: 50px;
 }
