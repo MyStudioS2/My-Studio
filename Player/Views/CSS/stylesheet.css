@@ -1,7 +1,7 @@
 body {
 
     font-family: 'Raleway', sans-serif;
-    background: hsla(199, 19%, 29%, 0.815);
+    background:hsla(199, 19%, 29%, 0.815);
     color:#decba4;
 
 }
@@ -88,8 +88,8 @@ span .options{
 }
 .hello{
     vertical-align:baseline;
-    position:fixed;
-    display: inline;
+    position:relative;
+    display: inline-block;
     margin-top:17px;
 }
 @media only screen and (max-width: 800px) {
@@ -98,4 +98,12 @@ span .options{
     }
 .corpse {
     margin-top:20px;
+}
+input[type=search]{
+    background:hsla(199, 19%, 29%, 0.815);
+}
+.input[type=search]::hover,
+.input[type=search]::active{
+
+    background:hsla(199, 19%, 29%, 0.815);
 }

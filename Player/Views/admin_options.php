@@ -11,8 +11,10 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="../Controllers/Functions/JS/img_preview.js"></script>
     <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
+    <script type="text/javascript" src="../Controllers/Functions/JS/search.js"></script>
     <link type="text/CSS" rel="stylesheet" href="../Player/Views/CSS/stylesheet.css">
 
 </head>
@@ -27,8 +29,10 @@
             <td style="text-align:left">
             <div id="show_hide" style="margin-top:-46px;margin-left:-85px;position:absolute">
                 <div class="search_form" style="position:relative;padding-right:15px">
-                    <input type="search" autofocus id="search" onkeypress="return runScript(event);" style="border-radius:2px;background:color=white" placeholder="Rechercher un artiste..."/>
-                </div>
+                <form action="../Player/index.php?page=administration" id="target"name="search_form" method="POST">
+                <input type="search" autofocus id="search" class = "search" results=5 required style="border-radius:2px;background:color=white"name="search" placeholder="Rechercher un artiste..."/>
+</form>    
+            </div>
             </div>
             <div id="show_hide" style="margin-top:-20px;position:absolute">
                 <a href="../Player/index.php?page=administration">
@@ -73,15 +77,6 @@
 </html>
 
 <script>
-    window.runScript = function(e) {
-    
-        if (e.keyCode == 13) {
-            alert('Search launched');
-            return false;
-        }
-        else {
-
-            return true;
-        }
-    }
+    search();
+         
 </script>
