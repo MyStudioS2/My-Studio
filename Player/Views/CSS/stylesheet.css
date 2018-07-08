@@ -39,6 +39,7 @@ ul {
     height: 35px;
     margin-top: 25px;
     margin-right: 10%;
+    margin-bottom:-25px;
     position:relative;
     border:0;
     border-radius: 6px;
@@ -58,7 +59,8 @@ ul {
     width : 170px;
     height: 35px;
     margin-top: 25px;
-    margin-right: 10%;
+    margin-right: 5%;
+    margin-bottom:-25px;
     position:relative;
     border:0;
     border-radius: 6px;
@@ -74,7 +76,7 @@ ul {
 
 .button_choice {
 
-    margin-bottom: -15px;
+    margin-bottom: -5px;
     color:#a2ab58;
 
 }
@@ -96,6 +98,7 @@ span .options{
 .options_choice{
 
     color: #FF8C00;
+    margin-bottom:5px;
 
 }
 
