@@ -88,16 +88,22 @@ ul {
 
 }
 
-span .options{
+.options{
 
-    color:#333333;
+    position:static;
+    text-align:justify;
+    color: #FF8C00;
+    margin-bottom:2px;
     
 }
 
 .options_choice{
-
-    color: #FF8C00;
     margin-bottom:5px;
+    
+}
+.options_choice1 {
+    margin-left:10px;
+    margin-bottom:0px;
 
 }
 
@@ -114,9 +120,10 @@ span .options{
 }
 .hello{
     vertical-align:baseline;
-    position:absolute;
+    position:static;
     display: inline-block;
     margin-top:8px;
+    margin-left:50px;
     max-height:39px;
     overflow:hidden;
 }

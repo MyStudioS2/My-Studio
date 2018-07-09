@@ -24,9 +24,9 @@
     <table style="width:102.1%;height:95%;margin-left:-0.8%;margin-top:-10px">
             <tr style="width:100%;height:60px">
                 <td>
-                    <a href="../Player/index.php?page=administration" title="Retour à l'accueil"style="margin-top:-2px">
+                    <a href="../Player/index.php?page=administration" title="Retour à l'accueil"style="margin-top:2px;position:fixed">
                     <img src="../Player/Views/icons/icons8-cat-profile-96.svg" alt="Kitten" width="50px" height ="50px" class ="kitten_icon" ></a>
-                        <div class="hello" id="hello"><span class="hello_text" id="hello_text">Bonjour Utilisateur! Nous sommes le <?php echo $actual_date; ?>.
+                        <div class="hello" style="position:static"id="hello"><span class="hello_text" id="hello_text">Bonjour Utilisateur! Nous sommes le <?php echo $actual_date; ?>.
                             <br>Il est <span id="txt" on load="startTime()"style="color:#a2ab58"></span>. Amusez-vous bien !</span> 
                         </div>
                 </td>
@@ -35,21 +35,21 @@
                     <div id="show_hide" style="margin-top:-46px;margin-left:-85px;position:absolute">
                         <div class="search_form" style="position:relative;padding-right:25px">
                             <form action="../Player/index.php?page=administration" class="search-form" id="target"name="search_form" method="POST">
-                                <input type="search" autofocus id="search_in" class = "search" optional results="5" size="40"style="margin-left:-95px;margin-top:40px;width:250px;height:25px"name="search"title="Appuyez sur Entrée pour lancer la requête" placeholder="Rechercher un artiste, un album..."/>
+                                <input type="search" autofocus id="search_in" class = "search" optional results="5" size="40"style="margin-left:-95px;margin-top:20px;width:250px;height:25px;position:fixed;"name="search"title="Appuyez sur Entrée pour lancer la requête" placeholder="Rechercher un artiste, un album..."/>
                             </form>    
                     </div>
                 </div>
                 <div id="show_hide" style="margin-top:-20px;position:absolute">
-                    <a href="../Player/index.php?page=administration">
+                    <a href="../Player/index.php?page=administration" style="position:fixed;margin-left:35px">
                         <img src="../Player/Views/icons/cogs-solid.svg" alt="Kitten" width="40px" height ="40px" style="margin-left:90px" class ="kitten_icon"></a>
-                    <a href="../Player/index.php?page=administration" >
+                    <a href="../Player/index.php?page=administration"  style="position:fixed; margin-left:85px">
                         <img src="../Player/Views/icons/address-book-solid.svg" alt="Kitten" width="35px" height ="35px" class ="kitten_icon">
                     </a>
                 </div>
             </td>
         </tr>
 
-        <tr style="height:10%">
+        <tr style="height:10%;width:100%">
             <td class="body_zone" colspan="2"style="margin-top:10%;text-align:center;float:middle;height:auto">
                 <div class="cop" style="width:380px;margin-left:150px;margin-right:10%;margin-top:15px;background-color:#780206;padding-right:1px;float:center;border-radius:6px;overflow-x:hidden">
                     <div style="border-color:#decba4">        
@@ -85,14 +85,14 @@
                 </div>
             </td>
             <td class="options_zone" rowspan="2"style="text-align:center;width:11%;margin:left:10px;height:auto">
-                <form action="../Player/index.php?page=administration" name="options" method="POST">
-                    <ul ss-container style="padding:0px;margin-top:-275px;background-color:#3C3B3F;height:310px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
+                <form action="../Player/index.php?page=administration"style="margin-right:170px;" name="options" method="POST">
+                    <ul ss-container style="padding:0px;position:fixed;float:right;margin-top:-275px;margin-right:50px;background-color:#3C3B3F;height:313px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
                         <div class="options_choice"style="margin-top:5px">
                                 <li>
-                                    <div class="option_choice">
+                                    <div class="option_choice1">
                                         <br>
                                             <span class="options">
-                                                Vos options :
+                                                Vos options:
                                             </span>
                                     </div>
                                 </li>
