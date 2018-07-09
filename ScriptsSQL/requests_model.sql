@@ -8,3 +8,5 @@ INSERT INTO ALBUMS('album_name','album_cover','release_date') VALUES ('keyboard'
 
 INSERT INTO ALBUMS('album_name','album_cover','release_date') VALUES ('$_POST['album_name']','$_FILE['album_cover']','$_POST['date']'); //** Pour artiste amateur **//
 
+SELECT style_name FROM styles ORDER BY RAND() limit 1;
+
