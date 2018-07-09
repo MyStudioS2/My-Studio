@@ -12,13 +12,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <link type="text/CSS" rel="stylesheet" href="../Player/Views/CSS/stylesheet.css">
-        <script type="text/javascript" src="../Controllers/Functions/JS/startTime.js"></script>
-        <script type="text/javascript" src="../Controllers/Functions/JS/datepicker.js"></script>
-        <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
+        <script type="text/javascript" src="../Player/Controllers/Functions/JS/startTime.js"></script>
+        <script type="text/javascript" src="../Player/Controllers/Functions/JS/datepicker.js"></script>
+        <script type="text/javascript" src="../Player/Controllers/Functions/JS/body_load.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
         
 </head>
-<body style="width:98%;overflow-x:hidden" onLoad="startTime()">
+<body style="width:98%;overflow-x:hidden" onLoad="startTime();datepicker()">
     
     <table style="width:102.1%;height:95%;margin-left:-0.8%;margin-top:-10px">
             <tr style="width:100%;height:60px">
@@ -147,11 +147,11 @@
         Nombre de pistes :<br>
         <input type="number" class="album_form"style ="width:50px; text-align:center " min ="1" max="30" step="1" name="track_count"value="1"><br>
         Date (jj/mm/aaaa) :<br>
-        <input type="date" class ="noselect" class="album_form" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
+        <input type="date" class="album_form" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
         <div class="container" class="album_form" style="display:inline-block; text-align:center">
         Cover : <br>
-        <input type='file' class="album_form_file" name ='coverFile' onchange="readURL(this);" />
-        <img id="blah" style="max-width:100px; max-height:150px;vertical-align:middle; position:relative;opacity: 0.75;filter: alpha(opacity=50)" alt="Preview" />
+        <input type='file' class="album_form_file" name ='coverFile' onchange="readURL(this);" /><br>
+        <img id="blah" style="max-width:100px; max-height:100px;vertical-align:middle; position:relative;opacity: 0.75;filter: alpha(opacity=50)" alt="Preview" />
         </div><br>
         <input type="submit" class="album_form" name="confirmer" value="Confirmer">
       </form>
@@ -196,11 +196,6 @@ player</div></d
         return i;
     }
 </script>
-<script>
-    datepicker();
-    function myFunction() {
-    location.reload();
-}
-</script>
-<script type="text/javascript" src="../Controllers/Functions/JS/img_preview.js"></script>
-<script type="text/javascript" src="../Controllers/Functions/JS/search.js"></script>
+
+<script type="text/javascript" src="../Player/Controllers/Functions/JS/img_preview.js"></script>
+<script type="text/javascript" src="../Player/Controllers/Functions/JS/search.js"></script>
