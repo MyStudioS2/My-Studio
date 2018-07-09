@@ -127,6 +127,9 @@ span .options{
     display: inline-block;
     margin-top:8px;
 }
+#show_hide {
+    
+}
 @media only screen and (max-width: 800px) {
 
     #show_hide,
@@ -266,10 +269,10 @@ audio{
 }
  
 .album_form:focus, textarea:focus {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  box-shadow: 0 0 5px #ffe259;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
-  border: 3px solid rgba(81, 203, 238, 1);
+  border: 3px solid #decba4;
 }
 .album_form_file, textarea {
     -webkit-transition: all 0.30s ease-in-out;

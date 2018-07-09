@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
         
 </head>
-<body style="width:98%;overflow-x:hidden" onLoad="startTime()">
+<body style="width:98%;overflow-x:hidden" onload="datepicker()">
     
     <table style="width:102.1%;height:95%;margin-left:-0.8%;margin-top:-10px">
             <tr style="width:100%;height:60px">
@@ -84,9 +84,9 @@
                 </div>
 </div>
             </td>
-            <td class="options_zone" colspan ="2"rowspan="2"style="text-align:center;width:11%;margin:left:10px;height:auto">
+            <td class="options_zone" rowspan="2"style="text-align:center;width:11%;margin:left:10px;height:auto">
                 <form action="../Player/index.php?page=administration" name="options" method="POST">
-                    <ul ss-container style="padding:0px;margin-top:25px;background-color:#3C3B3F;height:310px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
+                    <ul ss-container style="padding:0px;margin-top:-275px;background-color:#3C3B3F;height:310px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
                         <div class="options_choice"style="margin-top:5px">
                                 <li>
                                     <div class="option_choice">
@@ -137,30 +137,30 @@
         </td>
     </tr>
     <tr>
+        <td><div class="container" style ="float:left; margin-left:30%; margin-top:10px ; display: inline;max-width: 350px; text-align:center">
+                <br>
+            <form action="../Controllers/upload_music.php" style="margin-top:50px" method="POST" name="album_choice" enctype="multipart/form-data">
+                Titre de l'album :<br>
+                <input type="text" class="album_form" style ="text-align:center" required name="album" placeholder="Nom de l'album"><br>
+                Nombre de pistes :<br>
+                <input type="number" class="album_form"style ="width:50px; text-align:center " required min ="1" max="30" step="1" name="track_count" placeholder="0"><br>
+                Date (jj/mm/aaaa) :<br>
+                <input type="date" class="album_form" onclick="datepicker()" id="datepicker" required style="width:70px" name="release_date"><br>
+                <div class="container" class="album_form" style="display:inline-block; text-align:center">
+                Cover : <br>
+                <input type='file' class="album_form_file" name ='coverFile' optional onchange="readURL(this);" /><br>
+                <img id="blah" style="max-width:100px; max-height:100px;vertical-align:middle; position:relative;opacity: 0.55;filter: alpha(opacity=50)" alt="Prévisualisation" />
+                </div><br>
+                <input type="submit" class="album_form" name="confirmer" value="Confirmer">
+            </form>
+            </div>
+ </td>
         <td></td>
-        <td></td>
-</tr>
+    </tr>
     <tr>
-        <td style="text-align:center">
+        <td style="text-align:center;margin-top:-55px">
         
-    <div class="container" style ="float:left; margin-left:30%; margin-top:0; display: inline;max-width: 350px; text-align:center">
-        <br>
-      <form action="../Controllers/upload_music.php" style="margin-top:250px" method="POST" name="album_choice" enctype="multipart/form-data">
-        Titre de l'album :<br>
-        <input type="text" class="album_form" style ="text-align:center" name="album" placeholder="Nom de l'album"><br>
-        Nombre de pistes :<br>
-        <input type="number" class="album_form"style ="width:50px; text-align:center " min ="1" max="30" step="1" name="track_count"value="1"><br>
-        Date (jj/mm/aaaa) :<br>
-        <input type="date" class="album_form" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
-        <div class="container" class="album_form" style="display:inline-block; text-align:center">
-        Cover : <br>
-        <input type='file' class="album_form_file" name ='coverFile' onchange="readURL(this);" /><br>
-        <img id="blah" style="max-width:100px; max-height:100px;vertical-align:middle; position:relative;opacity: 0.75;filter: alpha(opacity=50)" alt="Preview" />
-        </div><br>
-        <input type="submit" class="album_form" name="confirmer" value="Confirmer">
-      </form>
-    </div>
- 
+            
         </td>
     </tr>
         <tfoot class="footer_zone" style="width:101.45%;height:10%;margin-left:-15px">
@@ -174,7 +174,7 @@
     <div style="position:fixed;
   bottom:0;
   z-index:50000;background:#3f4c6b;height:50px;width:100%;color:#decba4;margin-left:-10px"><div class="player" style="margin-left:50px"> dskqhd s doisgd uosqgd soqgduosg dsq igdsqiodg sqogds uoqg<br>
-player</div></div>
+player</div></d
 </body>
 
 </html>
