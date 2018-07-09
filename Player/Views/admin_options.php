@@ -103,7 +103,25 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align:center">Petites infos
+        <td style="text-align:center">
+        
+    <div class="container" style ="float:left; margin-left:25%; margin-top:0; display: inline;max-width: 350px; text-align:center">
+      <form action="../Controllers/upload_music.php" method="POST" name="album_choice" enctype="multipart/form-data">
+        Titre de l'album :<br>
+        <input type="text" class="album_form" style ="text-align:center" name="album" placeholder="Nom de l'album"><br>
+        Nombre de pistes :<br>
+        <input type="number" class="album_form"style ="width:50px; text-align:center " min ="1" max="30" step="1" name="track_count"value="1"><br>
+        Date (jj/mm/aaaa) :<br>
+        <input class ="noselect" class="album_form"type="date" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
+        <div class="container" class="album_form" style="display:inline-block; text-align:center">
+        Cover : <br>
+        <input type='file' class="album_form_file" name ='coverFile' onchange="readURL(this);" />
+        <img id="blah" style="max-width:100px; max-height:150px;vertical-align:middle; position:relative;opacity: 0.75;filter: alpha(opacity=50)" alt="Preview" />
+        </div><br>
+        <input type="submit" class="album_form" name="confirmer" value="Confirmer">
+      </form>
+    </div>
+ 
         </td>
     </tr>
         <tfoot class="footer_zone" style="width:101.45%;height:10%;margin-left:-15px">

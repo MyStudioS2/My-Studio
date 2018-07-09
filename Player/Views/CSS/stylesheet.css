@@ -81,8 +81,15 @@ ul {
 
 }
 
-input:hover,
-input:active {
+.button1:hover,
+.button1:active {
+
+    background:#FFFFF5;
+    color: #333333;
+
+}
+.button2:hover,
+.button2:active {
 
     background:#FFFFF5;
     color: #333333;
@@ -128,13 +135,18 @@ span .options{
 .corpse {
     margin-top:20px;
 }
-input[type=search], .search-form{
+.search{
+    background:none;
+    color:#fffbd5;
+    border:none;
+}
+.search-form{
     background:none;
     color:#fffbd5;
     border:none;
 }
 
-input[type=search]:active{
+.search_form::active{
     color:#FFFFF5;
     background:none;
 }
@@ -160,3 +172,89 @@ input[type=search]:invalid{
     font-size:12px;
  
 }
+audio{
+    font-size: 18px;
+    color: #decba4;
+    background-color :#C71585;
+  }
+  input, button {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    color: #333333;
+    width : 170px;
+    height: 35px;
+    margin-top: 20px;
+    border:0;
+    border-radius: 6px;
+    border-color: #decba4;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+               
+input[type=date]::selection {
+    border: 1px dotted #999;
+    background:#FFFFF5;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+                                  font-family: 'Encode Sans Condensed', sans-serif;
+    color: #333333;
+    width : 170px;
+    height: 35px;
+    margin-top: 20px;
+    border:0;
+    border-radius: 6px;
+    border-color: #decba4;
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+.noselect::selection {
+    border: 1px dotted #999;
+    background:#FFFFF5;
+    border-radius: 0;
+  
+                                  font-family: 'Encode Sans Condensed', sans-serif;
+    color: #333333;
+    width : 170px;
+    height: 35px;
+    margin-top: 20px;
+    border:0;
+    border-radius: 6px;
+    border-color: #decba4;
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+.album_form, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+.album_form:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 3px solid rgba(81, 203, 238, 1);
+}
+.album_form_file, textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+  }
+   
+  .album_form:focus_file, textarea:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+  }
