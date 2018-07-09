@@ -26,6 +26,6 @@
             rmdir($dir);
             unset($new_dir,$i,$check_dir,$rm_dir);
         }
-        return "Mission accomplished, user have been erased from database";
+        return "Mission accomplished, user datas have been erased from server";
     }
 ?>

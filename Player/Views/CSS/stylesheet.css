@@ -4,7 +4,10 @@ body {
     font-family: 'Raleway', sans-serif;
     background:hsla(199, 19%, 29%, 0.815);
     color:#decba4;
-
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
 }
 
 .options_zone{
@@ -42,15 +45,8 @@ ul {
     margin-right: 10%;
     margin-bottom:-25px;
     position:relative;
-    border:0;
-    border-radius: 6px;
     border-color: #decba4;
     cursor: pointer;
-    transition: 
-    background 250ms ease-in-out, 
-    transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 
 }
 .button2 {
@@ -63,13 +59,8 @@ ul {
     margin-right: 5%;
     margin-bottom:-25px;
     position:relative;
-    border:0;
-    border-radius: 6px;
     border-color: #decba4;
     cursor: pointer;
-    transition: 
-    background 250ms ease-in-out, 
-    transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -126,15 +117,30 @@ span .options{
     position:absolute;
     display: inline-block;
     margin-top:8px;
-}
-#show_hide {
-    
+    max-height:39px;
+    overflow:hidden;
 }
 @media only screen and (max-width: 800px) {
 
     #show_hide,
     #corpse {
         display: none;
+    }
+
+}
+@media only screen and (max-width: 800px) {
+
+    #hello_text,
+    #hello {
+        font-size: 15px;
+    }
+
+}
+@media only screen and (max-width: 450px) {
+
+    #hello_text,
+    #hello {
+        font-size: 9px;
     }
 
 }
@@ -290,3 +296,4 @@ audio{
     padding: 3px 0px 3px 3px;
     margin: 5px 1px 3px 0px;
   }
+  
