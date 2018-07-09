@@ -11,7 +11,6 @@
                 unlink($files);
             }
         }
-        unset($new_dir,$i);
         if(isset($rm_dir)){
             $i = count($rm_dir);
             while($i > 0){
@@ -25,6 +24,8 @@
         if(is_dir($dir)){
             /*  Kills artist directory */
             rmdir($dir);
+            unset($new_dir,$i,$check_dir,$rm_dir);
         }
+        return "Mission accomplished, user have been erased from database";
     }
 ?>

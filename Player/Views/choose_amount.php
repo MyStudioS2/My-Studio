@@ -61,7 +61,98 @@
     border:0;
     border-radius: 6px;
     border-color: #decba4;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+               
+input[type=date]::selection {
+    border: 1px dotted #999;
+    background:#FFFFF5;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+                                  font-family: 'Encode Sans Condensed', sans-serif;
+    color: #333333;
+    width : 170px;
+    height: 35px;
+    margin-top: 20px;
+    border:0;
+    border-radius: 6px;
+    border-color: #decba4;
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+.noselect::selection {
+    border: 1px dotted #999;
+    background:#FFFFF5;
+    border-radius: 0;
+  
+                                  font-family: 'Encode Sans Condensed', sans-serif;
+    color: #333333;
+    width : 170px;
+    height: 35px;
+    margin-top: 20px;
+    border:0;
+    border-radius: 6px;
+    border-color: #decba4;
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 3px solid rgba(81, 203, 238, 1);
+}
+input[type=date], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=date]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 2px solid rgba(81, 203, 238, 1);
+}
+input[type=number]{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=number]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 2px solid rgba(81, 203, 238, 1);
+}
+
 </style>
 <body onload="">
   <center>
@@ -72,7 +163,7 @@
         Nombre de pistes :<br>
         <input type="number" style ="width:50px; text-align:center " min ="1" max="30" step="1" name="track_count"value="1"><br>
         Date (jj/mm/aaaa) :<br>
-        <input type="date" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
+        <input class ="noselect" type="date" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
         <div class="container" style="display:inline-block; text-align:center">
         Cover : <br>
         <input type='file' name ='coverFile' onchange="readURL(this);" />

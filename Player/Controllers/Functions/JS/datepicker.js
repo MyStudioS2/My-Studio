@@ -15,4 +15,5 @@
 
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById("datepicker").setAttribute("max", today);
-}
+    document.getElementById("datepicker").setAttribute("max", today);
+    }
