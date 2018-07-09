@@ -6,11 +6,9 @@ function startTime() {
     var s = today.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('txt').innerHTML =
-    h + ":" + m + ":" + s;
+    document.getElementById('corpse').innerHTML =
+    h + ":" + m +"klshdksqh";
     var t = setTimeout(startTime, 500);
-    $('txt').text(h + ":" + m + ":" + s);
-});
 }
     function checkTime(i) {
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10

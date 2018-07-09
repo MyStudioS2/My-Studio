@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
         
 </head>
-<body style="width:98%;overflow-x:hidden" onLoad="startTime();datepicker()">
+<body style="width:98%;overflow-x:hidden" onLoad="startTime()">
     
     <table style="width:102.1%;height:95%;margin-left:-0.8%;margin-top:-10px">
             <tr style="width:100%;height:60px">
@@ -50,10 +50,10 @@
         </tr>
 
         <tr style="height:10%">
-            <td class="body_zone"style="text-align:center;float:middle;height:auto">
-                <div class="cop" style="width:380px;margin-left:25%;margin-top:15px;background-color:#780206;padding-right:1px;float:center;border-radius:6px;overflow-x:hidden">
+            <td class="body_zone" colspan="2"style="margin-top:10%;text-align:center;float:middle;height:auto">
+                <div class="cop" style="width:380px;margin-left:150px;margin-right:10%;margin-top:15px;background-color:#780206;padding-right:1px;float:center;border-radius:6px;overflow-x:hidden">
                     <table><tr style="border-color:#decba4"><td>        
-                        <br><span title="Liste des évènements, vous pouvez scroll pour en récupèrer d'avantage" style="float:center;margin-left:100px;margin-top:10px;text-align:center">
+                        <br><span title="Liste des évènements, vous pouvez scroll pour en récupèrer d'avantage" style="float:center;margin-left:100px;margin-top:10px;text-align:center;color:#FFFFF5">
                    Evènements à venir, <br><p style="margin-left:80px;margin-bottom:-25px;">la liste continue vers le bas</p></span>
                         <br>
                         <br>
@@ -84,9 +84,9 @@
                 </div>
 </div>
             </td>
-            <td class="options_zone" colspan ="2"rowspan="2"style="text-align:center;width:11%;height:auto">
+            <td class="options_zone" colspan ="2"rowspan="2"style="text-align:center;width:11%;margin:left:10px;height:auto">
                 <form action="../Player/index.php?page=administration" name="options" method="POST">
-                    <ul ss-container style="padding:0px;margin-top:-175px;background-color:#3C3B3F;height:310px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
+                    <ul ss-container style="padding:0px;margin-top:25px;background-color:#3C3B3F;height:310px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
                         <div class="options_choice"style="margin-top:5px">
                                 <li>
                                     <div class="option_choice">
@@ -137,11 +137,15 @@
         </td>
     </tr>
     <tr>
+        <td></td>
+        <td></td>
+</tr>
+    <tr>
         <td style="text-align:center">
         
     <div class="container" style ="float:left; margin-left:30%; margin-top:0; display: inline;max-width: 350px; text-align:center">
         <br>
-      <form action="../Controllers/upload_music.php" method="POST" name="album_choice" enctype="multipart/form-data">
+      <form action="../Controllers/upload_music.php" style="margin-top:250px" method="POST" name="album_choice" enctype="multipart/form-data">
         Titre de l'album :<br>
         <input type="text" class="album_form" style ="text-align:center" name="album" placeholder="Nom de l'album"><br>
         Nombre de pistes :<br>
@@ -170,7 +174,7 @@
     <div style="position:fixed;
   bottom:0;
   z-index:50000;background:#3f4c6b;height:50px;width:100%;color:#decba4;margin-left:-10px"><div class="player" style="margin-left:50px"> dskqhd s doisgd uosqgd soqgduosg dsq igdsqiodg sqogds uoqg<br>
-player</div></d
+player</div></div>
 </body>
 
 </html>
@@ -179,22 +183,7 @@ player</div></d
     search();
     body_load();
     datepicker();
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours(); /* Recupère l'heure */
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        h = checkTime(h);
-        s = checkTime(s);
-        document.getElementById('txt').innerHTML =
-        h + ":" + m ;
-        var t = setTimeout(startTime, 500);
-    }
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // Affiche une heure à deux chiffres en cas d'heure inférieure à 10 mamène
-        return i;
-    }
+    startTime();
 </script>
 
 <script type="text/javascript" src="../Player/Controllers/Functions/JS/img_preview.js"></script>
