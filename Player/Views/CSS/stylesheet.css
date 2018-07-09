@@ -1,11 +1,12 @@
 
-    body {
+body {
 
     font-family: 'Raleway', sans-serif;
     background:hsla(199, 19%, 29%, 0.815);
     color:#decba4;
 
 }
+
 .options_zone{
 
     font-weight:bold;
@@ -127,14 +128,41 @@ span .options{
     margin-top:8px;
 }
 @media only screen and (max-width: 800px) {
+
     #show_hide,
     #corpse {
         display: none;
     }
+
 }
+
 .corpse {
-    margin-top:20px;
+  border: 0px solid #decba4;
+  border-radius:6px;
+  overflow: hidden;
+  background-color: #333333;
+  overflow-y:scroll;
+  margin-left:40%;
+  display:block;text-align:center;height:45px;width:250px;
 }
+
+.corpse1 {
+
+    height: 70px;
+    margin-top:5px;
+    margin-right: -50px; /* maximum width of scrollbar */
+    padding-right: 50px; /* maximum width of scrollbar */
+    overflow-y: hidden;
+    width:95%;
+    background-color: #333333;
+
+}
+.corpse:focus, 
+  textarea:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+  }
 .search{
     background:none;
     color:#fffbd5;

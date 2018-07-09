@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
         
 </head>
-<body style="width:98%" onLoad="startTime()">
+<body style="width:98%;overflow-x:hidden" onLoad="startTime()">
     
     <table style="width:102.1%;height:95%;margin-left:-0.8%;margin-top:-10px">
             <tr style="width:100%;height:60px">
@@ -50,14 +50,43 @@
         </tr>
 
         <tr style="height:10%">
-            <td class="body_zone"style="text-align:center;float:middle">
-                <div class="corpse" id="corpse">
-                    Lorem Ipsum Dolor Sit Amet
+            <td class="body_zone"style="text-align:center;float:middle;height:auto">
+                <div class="cop" style="width:380px;margin-left:25%;margin-top:15px;background-color:#780206;padding-right:1px;float:center;border-radius:6px;overflow-x:hidden">
+                    <table><tr style="border-color:#decba4"><td>        
+                        <br><span title="Liste des évènements, vous pouvez scroll pour en récupèrer d'avantage" style="float:center;margin-left:100px;margin-top:10px;text-align:center">
+                   Evènements à venir, <br><p style="margin-left:80px;margin-bottom:-25px;">la liste continue vers le bas</p></span>
+                        <br>
+                        <br>
+</td></tr></table>
+                    <div class ="parent" style="float:center;margin-left:30%display:block;color:#333333;background-color:#FFFFF5;border-radius:3px;text-align:center;height:100%;width:395px;padding-right:17px;overflow-hidden;margin-right:-10px">
+                    <div class='child' style='float:center;width:465px; margin-top:0; width:100%; height:100px;overflow-y:scroll;box-sizing:content-box;padding-right:17px'>
+                            <span class="events" style="text-align:indent;vertical-align:super">Concert de Lomepal à Paris</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                            <span class="events" style="text-align:indent">Concert de Sid dans toute la France</span><br>
+                    </div>
                 </div>
+</div>
             </td>
             <td class="options_zone" colspan ="2"rowspan="2"style="text-align:center;width:11%;height:auto">
                 <form action="../Player/index.php?page=administration" name="options" method="POST">
-                    <ul ss-container style="padding:0px;margin-top:25px;background-color:#3C3B3F;height:310px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
+                    <ul ss-container style="padding:0px;margin-top:-175px;background-color:#3C3B3F;height:310px;width:170px;border-radius:6px;margin-right:15px" class="ulol">
                         <div class="options_choice"style="margin-top:5px">
                                 <li>
                                     <div class="option_choice">
@@ -110,7 +139,8 @@
     <tr>
         <td style="text-align:center">
         
-    <div class="container" style ="float:left; margin-left:25%; margin-top:0; display: inline;max-width: 350px; text-align:center">
+    <div class="container" style ="float:left; margin-left:30%; margin-top:0; display: inline;max-width: 350px; text-align:center">
+        <br>
       <form action="../Controllers/upload_music.php" method="POST" name="album_choice" enctype="multipart/form-data">
         Titre de l'album :<br>
         <input type="text" class="album_form" style ="text-align:center" name="album" placeholder="Nom de l'album"><br>
@@ -137,6 +167,10 @@
             </tr>
         </tfoot>
     </table>   
+    <div style="position:fixed;
+  bottom:0;
+  z-index:50000;background:#3f4c6b;height:50px;width:100%;color:#decba4;margin-left:-10px"><div class="player" style="margin-left:50px"> dskqhd s doisgd uosqgd soqgduosg dsq igdsqiodg sqogds uoqg<br>
+player</div></d
 </body>
 
 </html>
@@ -145,7 +179,6 @@
     search();
     body_load();
     datepicker();
-    readURL();
     function startTime() {
         var today = new Date();
         var h = today.getHours(); /* Recupère l'heure */
