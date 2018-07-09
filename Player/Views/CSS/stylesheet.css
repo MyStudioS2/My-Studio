@@ -189,7 +189,7 @@ audio{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
                
-input[type=date]::selection {
+.noselect::selection {
     border: 1px dotted #999;
     background:#FFFFF5;
     border-radius: 0;
@@ -253,7 +253,8 @@ input[type=date]::selection {
     margin: 5px 1px 3px 0px;
   }
    
-  .album_form:focus_file, textarea:focus {
+  .album_form_file:focus, 
+  textarea:focus {
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     padding: 3px 0px 3px 3px;
     margin: 5px 1px 3px 0px;

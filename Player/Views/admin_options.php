@@ -7,11 +7,16 @@
         <title>MyStudio, admin</title>
         <meta content='http-equiv' content-type='text/html'/>
         <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <link type="text/CSS" rel="stylesheet" href="../Player/Views/CSS/stylesheet.css">
-        <script type="text/javascript" src="../Controllers/Functions/JS/startTime().js"></script>
-    <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-    
+        <script type="text/javascript" src="../Controllers/Functions/JS/startTime.js"></script>
+        <script type="text/javascript" src="../Controllers/Functions/JS/datepicker.js"></script>
+        <script type="text/javascript" src="../Controllers/Functions/JS/body_load.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+        
 </head>
 <body style="width:98%" onLoad="startTime()">
     
@@ -112,7 +117,7 @@
         Nombre de pistes :<br>
         <input type="number" class="album_form"style ="width:50px; text-align:center " min ="1" max="30" step="1" name="track_count"value="1"><br>
         Date (jj/mm/aaaa) :<br>
-        <input class ="noselect" class="album_form"type="date" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
+        <input type="date" class ="noselect" class="album_form" onclick="datepicker()" id="datepicker" style="width:70px" name="release_date"><br>
         <div class="container" class="album_form" style="display:inline-block; text-align:center">
         Cover : <br>
         <input type='file' class="album_form_file" name ='coverFile' onchange="readURL(this);" />
@@ -139,27 +144,30 @@
 <script>
     search();
     body_load();
-        function startTime() {
-            var today = new Date();
-            var h = today.getHours(); /* Recupère l'heure */
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-            m = checkTime(m);
-            h = checkTime(h);
-            s = checkTime(s);
-            document.getElementById('txt').innerHTML =
-            h + ":" + m ;
-            var t = setTimeout(startTime, 500);
-        }
-        function checkTime(i) {
-            if (i < 10) {i = "0" + i};  // Affiche une heure à deux chiffres en cas d'heure inférieure à 10 mamène
-            return i;
-        }
-    
+    datepicker();
+    readURL();
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours(); /* Recupère l'heure */
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        h = checkTime(h);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+        h + ":" + m ;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // Affiche une heure à deux chiffres en cas d'heure inférieure à 10 mamène
+        return i;
+    }
 </script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    datepicker();
+    function myFunction() {
+    location.reload();
+}
+</script>
 <script type="text/javascript" src="../Controllers/Functions/JS/img_preview.js"></script>
 <script type="text/javascript" src="../Controllers/Functions/JS/search.js"></script>
