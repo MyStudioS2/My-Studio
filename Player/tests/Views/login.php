@@ -42,30 +42,15 @@
         </div>
         
         <div class="col-xs-6" style="color:#FFFFFF" id="hide">
-            <a href="../Player/index.php?page=administration" title="Rendez-Vous">
-                <img src="../Views/icons/icons8-schedule-64.png" alt="Kitten" width="30px" height ="30px" title="Rendez-vous">
-            </a>
-            <a href="../Player/index.php?page=administration">
-                <img src="../Views/icons/address-book-solid.svg" alt="Kitten" width="25px" height ="25px" title="Suivi">
-            </a>
-            <a href="../Player/index.php?page=administration">
-                <img src="../Views/icons/address-book-solid.svg" alt="Kitten" width="25px" height ="25px">
-            </a>
+            Bonjour visiteur!
         </div>
 
-        <div class="col-xs-6">
-            <form action="../test_bootstrap.php" class="search_form" id="target" name="search_form" method="POST" style="margin-top:10px;margin-left:0px;margin-right:5px;float:left">
-                    <input type="search" autofocus id="search_in" class ="search" optional result="5" size="40"name="search"title="Appuyez sur Entrée pour lancer la requête" placeholder="Rechercher un animal..."/>
-            </form>
-            <a href="../test_bootstrap.php" title="Messagerie">
-                <img src="../Views/icons/address-book-solid.svg" alt="Kitten" width="25px" height ="25px" >
+        <div class="col-xs-6">            
+            <a href="../index.php?page=Login" title="Connexion">
+                <img src="../Views/icons/login-password1.png" alt="Kitten" width="25px" height ="25px">
             </a>
-            <a href="../test_bootstrap.php" title="Paramètres">
-                <img src="../Views/icons/cogs-solid.svg" alt="Kitten" width="30px" height ="30px">
-            </a>
-            
-            <a href="../test_bootstrap.php" title="Déconnexion">
-                <img src="../Views/icons/sign-out-alt-solid.svg" alt="Kitten" width="25px" height ="25px">
+            <a href="../test_bootstrap.php" title="Inscription">
+                <img src="../Views/icons/registration.png" alt="Kitten" width="25px" height ="25px">
             </a>
         </div>
 
@@ -82,60 +67,41 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-4" style="max-height:400px">
+        <div class="col-xs-6" style="max-height:400px;width:55%">
             <div class="container" style="width:350px;max-height:350px;overflow-y:hidden;overflow-x:hidden">
-                <form role="form" class="form container-fluid border border-dark rounded" action="index.php?page=Inscription" method="POST" style="overflow-y:scroll;overflow-x:hidden;height:350px" name="register_form" >
-                        
-                    <fieldset class="well" >
-                        <h4 style="position:relative;padding:8px;left:25%">Inscription</h4>
-                        <div class="form-group">
-                            <label class="label" for="name" style='margin-top:5px'>Email</label>
-                            <input type="email" class="form-control space-bottom" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required value="" />
-                        
-                        </div>
-                        <div class="form-group">
-                            <label class="label" for="name">Prénom</label>
-                            <input type="text" class="form-control space-bottom" name="first_name" placeholder="Prénom" required value="" />
-                        </div>
-                        <div class="form-group">
-                            <label class="label" for="name">Nom</label>
-                            <input type="text" class="form-control space-bottom" name="last_name" placeholder="Nom" required value="" />
-                        </div>
-                        <div class="form-group">
-                            <label class="label" for="name">Adresse</label>
-                            <input type="text" class="form-control space-bottom" name="address" placeholder="Adresse" required value="" />
-                        </div>
-                        <div class="form-group">
-                            <label class="label" for="name">Code Postal</label>
-                            <input type="text" class="form-control space-bottom" name="postal_code" placeholder="Code Postal" pattern=".{2,5}" title="Entrez un code postal valide" required value="" />
-                        </div>
-                        <div class="form-group">
-                            <label class="label" for="name">Ville</label>
-                            <input type="text" class="form-control space-bottom" name="city" placeholder="Ville" required value="" />
-                        </div>
-                        <div class="form-group">
-                            <label class="label" for="name">Téléphone</label>
-                            <input type="tel" class="form-control space-bottom" name="phone_number" placeholder="Numéro de téléphone" minlength="10" maxlength="12" pattern="^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$" title="ENtrez un numéro de téléphone valide" required value="" />
-                        </div>
-                        <div class="form-group">
-                            <label class="label"for="name">Mot de passe</label>
-                            <input type="password" class="form-control space-bottom" name="password" placeholder="Mot de passe" pattern=".{6,}" title="Au moins 6 charactères" required/>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label class="label" for="name">Confirmation mot de passe</label>
-                            <input type="password" class="form-control space-bottom" name="cpassword" placeholder="Mot de passe" required/>
-                            
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-block btn-primary space-bottom" name="register" value="Register" />
-                        </div>
-                    </fieldset>
-                </form>
+            <form>
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+        <p style="color:#D38312"><strong>Connexion</strong></p>
+        <div class="col-auto" style="margin-left:-15px">
+          <label class="sr-only" for="inlineFormInputGroup">Email</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"style="width:175px" placeholder="Username">
+          </div>
+        </div>
+      <label class="sr-only" for="inlineFormInput" style="margin-top:10px">Mot de Passe</label>
+      <input type="password" class="form-control mb-2" id="inlineFormInput" style="width:212px" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+        <label class="form-check-label" for="autoSizingCheck">
+          Se souvenir de moi
+        </label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-2" required style="background:#333333;margin-left:-10px">Submit</button>
+    </div>
+  </div>
+</form>
             </div>
         </div>
             
-        <div class="col-xs-8" style="border:0.5px solid #333333;border-radius:4px">
+        <div class="col-xs-6" style="border:0.5px solid #333333;border-radius:4px;width:400px;margin-right:-5px">
             <div class="container" style="width:400px;max-height:350px;overflow-y:scroll;overflow-x:hidden;color:#decba4">
                 <p class="first_sentence">Bienvenue sur le site de Heal mon Bichon</p>
                 <p class="first_sentence">Votre clinique vétérinaire de référence à Ivry-sur-Seine</p>
