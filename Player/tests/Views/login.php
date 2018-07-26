@@ -60,7 +60,8 @@
     <div class="row">
 
         <div class="col-xs-8">
-            
+            <?php if (isset($successmsg)) { success($successmsg); } ?>
+            <?php if (isset($errormsg)) { alert($errormsg); } ?>
         </div>
         <div class="col-xs-4">
         
