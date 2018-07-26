@@ -79,11 +79,11 @@
             <div class="input-group-prepend">
               <div class="input-group-text">@</div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"style="width:175px" placeholder="Username">
+            <input type="text" class="form-control" id="inlineFormInputGroup" title="Veuillez saisir l'email correspondant à votre compte" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" style="width:175px" placeholder="Adresse mail">
           </div>
         </div>
       <label class="sr-only" for="inlineFormInput" style="margin-top:10px">Mot de Passe</label>
-      <input type="password" class="form-control mb-2" id="inlineFormInput" style="width:212px" placeholder="Jane Doe">
+      <input type="password" class="form-control mb-2" id="inlineFormInput" title="Veuillez saisir le mot de passe correspondant à votre adresse mail"style="width:212px" placeholder="Mot de passe">
     </div>
     <div class="col-auto">
       <div class="form-check mb-2">
