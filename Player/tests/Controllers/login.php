@@ -1,7 +1,9 @@
 <?php
 session_start();
-include_once("../Models/db_connect.php");
-include('../Controllers/Functions/PHP/messages.php');
+include_once("../tests/Models/db_connect.php");
+include('../tests/Controllers/Functions/PHP/messages.php');
+include('../tests/Models/actual_date.php');
+$actual_date = get_date($db);
 
 switch(isset($_POST['register'])):  
     case 'Register':
@@ -25,6 +27,6 @@ switch(isset($_POST['register'])):
         default:
     endswitch;
     
-include('../Views/html_top_login.php');
-include('./Views/login.php');
+include('../tests/Views/html_top_login.php');
+include('../tests/Views/login.php');
 ?>
