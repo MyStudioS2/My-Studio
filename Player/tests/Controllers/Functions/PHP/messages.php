@@ -1,10 +1,9 @@
 <?php
     function alert($string) {
-        echo "<div class='alert alert-danger alert-dismissible'style='background:#f83600;margin-left:370px;width:250px;color:#decba4;border:0.5px solid #decba4'>
-            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>".$string."</div>";
+        echo "<div class='alert alert-danger alert-dismissible'style='background:#f83600;text-align:center;margin-left:360px;height:80px;font-size:13px;width:210px;color:#FFFFFF;border:0.5px solid #decba4'>"
+        .$string."</div>";
     }
     function success($string) {
-        echo "<div class='alert alert-success alert-dismissible' style='background:#7b920a;margin-left:5370px;width:250px;color:#decba4'>
-        <a href='#' class='close' data-dismiss='alert'style='color:#decba4' aria-label='close'>&times;</a>".$string."</div>";
+        echo "<div class='alert alert-success alert-dismissible' style='margin-left:370px;width:250px;height:100px;color:#FFFFFF'>".$string."</div>";
     }
 ?>

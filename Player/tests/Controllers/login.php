@@ -15,15 +15,15 @@ switch(isset($_POST['login'])):
         $row = $stmt->fetch();
         $_SESSION['ID'] = $row['ID'];
         $_SESSION['role'] = $row['role'];
-        var_dump($row);
         
         if($row){
             include('../tests/Models/status_update.php');
             $successmsg = "Connexion réussie! Redirection en cours";
             header('refresh:5;url=index.php?page=Messages');
         } else {
-            $errormsg = "Vous n'avez pas de compte! <a href='index.php?page=Register' class='alert-link'></br>Cliquez ici pour vous enregistrer</a>";
-            
+            $errormsg = "
+            Vous n'avez pas de compte!<p> Vous allez être redirigé vers la page d'inscription</p>";
+            header('refresh:5;url=index.php?page=Register');
         }
         include('../tests/Views/html_top_login.php');
         include('../tests/Views/login.php');
