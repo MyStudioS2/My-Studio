@@ -1,45 +1,46 @@
     <div class="row">
 
-        <div class="col-xs-8">
-            <?php if (isset($successmsg)) { success($successmsg); } ?>
-            <?php if (isset($errormsg)) { alert($errormsg); } ?>
-        </div>
-        <div class="col-xs-4">
-        
+        <div class="col-xs-12">
+            <p style='color:#decba4'><?php if (isset($successmsg)) { success($successmsg); } ?>
+            <?php if (isset($errormsg)) { alert($errormsg); } ?></p>
+            
         </div>
     </div>
     <div class="row">
         <div class="col-xs-6" style="max-height:400px;width:55%">
             <div class="container" style="width:350px;max-height:350px;overflow-y:hidden;overflow-x:hidden">
-            <form>
-  <div class="form-row align-items-center">
-    <div class="col-auto">
-        <p style="color:#D38312"><strong>Connexion</strong></p>
-        <div class="col-auto" style="margin-left:-15px">
-          <label class="sr-only" for="inlineFormInputGroup">Email</label>
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text">@</div>
-            </div>
-            <input type="text" name="em" class="form-control" id="inlineFormInputGroup" title="Veuillez saisir l'email correspondant à votre compte" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" style="width:175px" placeholder="Adresse mail">
-          </div>
-        </div>
-      <label class="sr-only" for="inlineFormInput" style="margin-top:10px">Mot de Passe</label>
-      <input type="password" name="pw" class="form-control mb-2" id="inlineFormInput" title="Veuillez saisir le mot de passe correspondant à votre adresse mail"style="width:212px" placeholder="Mot de passe">
-    </div>
-    <div class="col-auto">
-      <div class="form-check mb-2">
-        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-        <label class="form-check-label" for="autoSizingCheck">
-          Se souvenir de moi
-        </label>
-      </div>
-    </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-2" required style="background:#333333;margin-left:-10px">Submit</button>
-    </div>
-  </div>
-</form>
+            <form action="../tests/index.php?page=Login" method="POST" name="login" value="log">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <p style="color:#D38312"><strong>Connexion</strong></p>
+                        <div class="col-auto" style="margin-left:-15px">
+                        <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                        <p style="color:#decba4">Mail</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">@</div>
+                            </div>
+                            <input type="text" name="em" class="form-control" id="inlineFormInputGroup" title="Veuillez saisir l'email valide correspondant à votre compte" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+                            style="width:175px" placeholder="Adresse mail" value='<?php if(isset($_POST["em"])){ echo $_POST["em"];}?>'>
+                        </div>
+                        </div>
+                        <p style="color:#decba4">Mot de Passe</p>
+                    <label class="sr-only" for="inlineFormInput" style="margin-top:20px">Mot de Passe</label>
+                    <input type="password" name="pw" class="form-control mb-2" value='<?php if(isset($_POST["pw"])){ echo $_POST["pw"];}?>' id="inlineFormInput" title="Veuillez saisir le mot de passe correspondant à votre adresse mail (minimum 5 caractères)"style="width:212px" pattern=".{5,45}" required placeholder="Mot de passe">
+                    </div>
+                    <div class="col-auto">
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                        <label class="form-check-label" for="autoSizingCheck">
+                        Se souvenir de moi
+                        </label>
+                    </div>
+                    </div>
+                    <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2" required style="background:#333333;margin-left:-10px" name="login">Submit</button>
+                    </div>
+                </div>
+                </form>
             </div>
         </div>
             
@@ -57,9 +58,9 @@
                         <li> Porte de Choisy</li>
                     </ul> 
                 <P>Des métros et RER (ligne 1/7/14 RER A/B/C/D) sont accessibles sur l'ensemble de la ligne 7.</p>
-        <div id="map" class="map"  name="map_canvas"></div>
+                <div id="map" class="map"  name="map_canvas"></div>
+            </div>
         </div>
-</div>
     </div>
 </body>
 <script>
