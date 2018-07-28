@@ -1,9 +1,8 @@
 <?php
-var_dump($_POST);
     if(isset($_GET['page']))
     switch($_GET['page']):
-            case 'Inscription';
-                include './tests/Controllers/register.php';
+            case 'Register';
+                include '../tests/Controllers/register.php';
                 break;
             case 'Login';
                 include '../tests/Controllers/login.php';
@@ -77,8 +76,6 @@ var_dump($_POST);
                     include './Controllers/new_appointment.php';
                 break;
                 default:
-                    include './error/404/404.php';
-                    include './Views/templates/html_top.php';
                 endswitch;
         else {
             include './Views/templates/html_top.php';

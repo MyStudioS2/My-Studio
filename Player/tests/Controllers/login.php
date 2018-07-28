@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../tests/Models/db_connect.php");
+include("../tests/Models/db_connect.php");
 include('../tests/Controllers/Functions/PHP/messages.php');
 include('../tests/Models/actual_date.php');
 $actual_date = get_date($db);
@@ -19,18 +19,16 @@ switch(isset($_POST['login'])):
         if($row){
             include('../tests/Models/status_update.php');
             $successmsg = "Connexion réussie! Redirection en cours";
-            header('refresh:5;url=index.php?page=Messages');
+            header('refresh:5;url=index.php?page=Lobby');
         } else {
             $errormsg = "
             Vous n'avez pas de compte!<p> Vous allez être redirigé vers la page d'inscription</p>";
             header('refresh:5;url=index.php?page=Register');
         }
-        include('../tests/Views/html_top_login.php');
-        include('../tests/Views/login.php');
         break;
         default:
-        include('../tests/Views/html_top_login.php');
-        include('../tests/Views/login.php');
     endswitch;
+    include('../tests/Views/html_top_login.php');
+    include('../tests/Views/login.php');
     
 ?>
