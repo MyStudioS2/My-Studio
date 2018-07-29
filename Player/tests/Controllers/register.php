@@ -46,7 +46,7 @@ switch(isset($_POST['register'])):
             include('../tests/Controllers/Functions/PHP/backup_clients.php');
             include('../tests/Models/register_clients.php');
             $_SESSION['ID'] = $db ->lastInsertId();
-            $_SESSION['cat'] = "client";
+            $_SESSION['role'] = "client";
             $successmsg = "Vous êtes bien inscrit et connecté, redirection en cours!";
             header('refresh:10;url=index.php?page=Lobby');
             $connect = true;

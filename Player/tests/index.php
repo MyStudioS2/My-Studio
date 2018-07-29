@@ -8,13 +8,10 @@
                 include '../tests/Controllers/login.php';
                 break;
             case 'Logout';
-                include './Controllers/logout.php';
+                include '../tests/Controllers/logout.php';
                 break;
-            case 'Home';    
-                include './Controllers/home.php';
-                break;
-            case 'Members_lobby':
-                include './Controllers/members_lobby.php';
+            case 'Lobby';    
+                include '../tests/Controllers/lobby.php';
                 break;
             /* case 'Tracking';
                 if(isset($_SESSION['type']))
