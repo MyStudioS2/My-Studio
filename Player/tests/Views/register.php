@@ -11,7 +11,7 @@
                     </div>
 <div class="row">
         <div class="col-xs-4" style="max-height:400px">
-            <div class="container" style="width:350px;max-height:350px;overflow-y:hidden;overflow-x:hidden">
+            <div class="container" style="width:350px;max-height:350px;overflow-y:hidden;overflow-x:hidden;margin-left:100px">
                 <form role="form" class="form container-fluid border border-dark rounded" action="index.php?page=Register" method="POST" style="overflow-y:scroll;overflow-x:hidden;height:350px" name="register_form" >
                         
                     <fieldset class="well" >
