@@ -45,9 +45,10 @@ switch(isset($_POST['register'])):
             // Add row to database
             include('../tests/Controllers/Functions/PHP/backup_clients.php');
             include('../tests/Models/register_clients.php');
-            include('../tests/Models/status_update.php');
+            $_SESSION['ID'] = $db ->lastInsertId();
+            $_SESSION['cat'] = "client";
             $successmsg = "Vous êtes bien inscrit et connecté, redirection en cours!";
-            header('refresh:5;url=index.php?page=Lobby');
+            header('refresh:10;url=index.php?page=Lobby');
             $connect = true;
         }
     }

@@ -18,7 +18,7 @@
                         <h4 style="position:relative;padding:8px;left:25%">Inscription</h4>
                         <div class="form-group">
                             <label class="label" for="name" style='margin-top:5px'>Email</label>
-                            <input type="email" class="form-control space-bottom" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required value="<?php if($error || $flag_email_taken || $flag_name_taken) echo $email; ?>" />
+                            <input type="email" class="form-control space-bottom" autofocus name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required value="<?php if($error || $flag_email_taken || $flag_name_taken) echo $email; ?>" />
                         </div>
                         <div class="form-group">
                             <label class="label" for="name">Prénom</label>
